@@ -1,0 +1,400 @@
+{% extends "website/base.html" %}
+{% load static %}
+{% block title %}Mobile Application Development{% endblock %}
+
+{% block content %}
+<style>
+    #scrollToTopBtn {
+            display: none; /* Initially hide the button */
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #100562;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            line-height: 50px;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+        }
+
+        #scrollToTopBtn:hover {
+            background-color: #ffe401;
+        }
+
+</style>
+
+
+    <main>
+        <!-- Define main content section -->
+            <style>
+        label {
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+    </style>
+    <!-- Start Login Area -->
+
+
+    <section class="contact-area pb-100" style="background: #100561">
+        <div class="page-content">
+            <div class="container">
+                <div class="row">
+                    <div class="section-title">
+                        <br>
+                        <h2 style="color:white;font-weight:bold;"><Span style="color: #ffe401; font-weight:bold;">Register</Span> With Us</h2>
+                        <p style="color:white">You are just one step behind to join the Sipher Web. I promise you to give my
+                            best if
+                            you will ll be a part of Sipher Web</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                                        <div class="card-body">
+                        <form action="https://sipherweb.com/Insertform" method="Post">
+                            <input type="hidden" name="_token" value="6yXCOc1Qtg7FOI2uWp6Nqq3i20wt0u7iR8BGmLvE" autocomplete="off">                            <div class="row form-group">
+                                <div class="col-lg-6 col-md-6 col-sm-12 ">
+                                    <label class="control-label">Student Mobile Number</label>
+                                    <input class="form-control" type="number" name="Number" maxlength="10" minlength="10"
+                                        placeholder="Enter Student Mobile Number" required id="mobile_number">
+                                        <div id="mobile-error" style="display:none; color:red;"></div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <label class="control-label">Student Name</label>
+                                    <input class="form-control" type="text" name="Name"
+                                        placeholder="Enter Student Name" required="" id="name">
+                                    <span class="error text-danger" id="name-error" style="display: none">Numbers are not
+                                        allowed in the Name.</span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="row form-group">
+                                <div class="col-lg-6 col-md-6 col-sm-12 ">
+                                    <label class="control-label ">&nbsp;Choose Technology</label>
+                                    <select class="form-control bs-select-hidden " name="Technology" required=""
+                                        style="height: 50px; width:50px; overflow-y: auto;">
+                                        <optgroup label="For 45 Days Trainings">
+                                            <option value="" selected="" disabled=""
+                                                class="scrollable-dropdown">
+                                                -Choose Technology-
+                                            </option>
+                                            <option value="PHP">PHP</option>
+                                            <option value="Android">Android</option>
+                                            <option value="ASP.NET">ASP.NET</option>
+                                            <option value="JAVA">JAVA</option>
+                                            <option value="Python">Python</option>
+                                            <option value="Electronics - IOT">Electronics - IOT</option>
+                                            <option value="Electronics - Embedded">
+                                                Electronics - Embedded
+                                            </option>
+                                            <option value="MERN Full Stack">MERN Full Stack</option>
+                                            <option value="Digital Marketing">
+                                                Digital Marketing
+                                            </option>
+                                        </optgroup>
+
+                                        <optgroup label="For 6 Month Trainings">
+                                            <option value="Embedded System">Embedded System</option>
+                                            <option value="Machine Learning">Machine Learning</option>
+                                            <option value="Plc Scade">Plc Scade</option>
+                                            <option value="E-Cad">E-Cad</option>
+                                            <option value="AutoCad">AutoCad</option>
+                                            <option value="Solid Works">Solid Works</option>
+                                            <option value="Revit Mep">Revit Mep</option>
+                                            <option value="Hvac Desing & Drafting">
+                                                Hvac Desing & Drafting
+                                            </option>
+                                            <option value="Plumbing Design & Draftin">
+                                                Plumbing Design & Draftin
+                                            </option>
+                                            <option value="Catia">Catia</option>
+                                            <option value="Stadd Pro">Stadd Pro</option>
+                                        </optgroup>
+
+                                        <option value="Not Yet Decided">Not Yet Decided</option>
+                                    </select>
+
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <label class="control-label"> &nbsp;Choose Training</label>
+                                    <select class="form-control bs-select-hidden" name="Training" required=""
+                                        id="select-box">
+                                        <option value="">-Choose Training-</option>
+                                        <option value="Online Summer Training">
+                                            Online Summer Training
+                                        </option>
+                                        <option value="Vocational Training">
+                                            Vocational Training
+                                        </option>
+                                        <option value="Summer Training">Summer Training</option>
+                                        <option value="Winter Training">Winter Training</option>
+                                        <option value="Industrial Training">
+                                            Industrial Training
+                                        </option>
+                                        <option value="Apprenticeship Training">
+                                            Apprenticeship Training
+                                        </option>
+                                        <option value="Internship Training">
+                                            Internship Training
+                                        </option>
+                                        <option value="Project Training">Project Training</option>
+                                        <option value="Not Yet Decided">Not Yet Decided</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <label class="control-label">&nbsp; Select Your Qualification</label>
+                                    <select class="form-control bs-select-hidden" name="Qualification" required=""
+                                        id="education">
+                                        <option value="">-Select Your Qualification-</option>
+                                        <option value="Diploma">Diploma</option>
+                                        <option value="Diploma (PGDCA)">Diploma (PGDCA)</option>
+                                        <option value="B.Tech">B. Tech</option>
+                                        <option value="Diploma">Diploma</option>
+                                        <option value="BCA">BCA</option>
+                                        <option value="MCA">MCA</option>
+                                        <option value="M.Tech">M. Tech</option>
+                                        <option value="MBA">MBA</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <label class="control-label"> &nbsp;Select Your Department/Branch</label>
+                                    <select class="form-control bs-select-hidden" name="Branch" required=""
+                                        id="year">
+                                        <option value="">-Select Department/Branch-</option>
+                                        <option value="Computer Application">Computer Application </option>
+                                        <option value="Computer Science & Engineering">Computer Science & Engineering
+                                        </option>
+                                        <option value="Information technology">Information technology</option>
+                                        <option value="Electronices &COmmunication Engineering">Electronices &Communication
+                                            Engineering</option>
+                                        <option value="Electrical Engineering">Electrical Engineering</option>
+                                        <option value="Mechianical Engineering">Mechianical Engineering</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+
+                                    <label class="control-label">Your Address</label>
+                                    <input class="form-control" type="text" name="Address"
+                                        placeholder="Enter Your Address" required id="Address">
+                                    <span class="error text-danger" id="name-error1" style="display: none">Numbers are
+                                        not allowed in the Address</span>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <label class="control-label"> &nbsp;Select Year</label>
+                                    <select class="form-control bs-select-hidden" name="Year" required=""
+                                        id="year">
+                                        <option value="">-Select Year-</option>
+                                        <option value="First Year (1st)">First Year (1st)</option>
+                                        <option value="Second Year (2nd)">Second Year (2nd)</option>
+                                        <option value="Third Year (3rd)">Third Year (3rd)</option>
+                                        <option value="Final Year (4th)">Final Year (4th)</option>
+                                        <option value="Completed">Completed</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <label class="control-label">Student Father's Name</label>
+                                    <input class="form-control" type="text" name="Father_name"
+                                        placeholder="Enter Student Father's Name" id="Father" required>
+                                    <span class="error text-danger" id="name-error2" style="display: none">Numbers are
+                                        not allowed in the Father's Name</span>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <label class="control-label">Student Email ID</label>
+                                    <input class="form-control" type="text" name="Email"
+                                        placeholder="Enter Student Email ID" required="" id="name">
+                                </div>
+
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <label class="control-label">Student College's Name</label>
+                                    <input class="form-control" type="text" name="College_name"
+                                        placeholder="Enter College Father's Name" id="college" required>
+                                    <span class="error text-danger" id="name-error3" style="display: none">Numbers are
+                                        not allowed in the name.</span>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <label class="control-label">Student Mother Name</label>
+                                    <input class="form-control" type="text" name="Mother_name"
+                                        placeholder="Enter Student Mother Name" required="" id="mother">
+                                    <span class="error text-danger" id="name-error4" style="display: none">Numbers are
+                                        not allowed in the Mother Name.</span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="row form-group">
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+
+                                    <label class="control-label">Date</label>
+                                    <input class="form-control valid" type="Date" name="Dob"
+                                        placeholder="Enter Amount" required="" aria-invalid="false">
+
+
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <label class="control-label">Amount To Pay Now</label>
+                                    <input class="form-control valid" type="number" readonly="" value="500"
+                                        id="amount" name="Amount" placeholder="Enter Amount" required=""
+                                        aria-invalid="false">
+
+                                </div>
+
+                            </div>
+
+                            <br><br>
+                            <div class="col-lg-12 text-center">
+                                <button name="submit" type="submit" value="Submit" class="btn btn-success"  id="submit-button" disabled>Register
+                                    Now</button>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <script>
+      document.getElementById('mobile_number').addEventListener('input', function(e) {
+    var input = e.target;
+    var value = input.value;
+    var errorMessage = document.getElementById('mobile-error');
+    var submitButton = document.getElementById('submit-button');
+
+    // Truncate the value to 10 digits if it exceeds 10 digits
+    if (value.length > 10) {
+        input.value = value.slice(0, 10);
+    }
+
+    // Show error message if the input is less than 10 digits and disable submit button
+    if (value.length < 10) {
+        errorMessage.style.display = 'block';
+        errorMessage.textContent = 'Please enter exactly 10 digits.';
+        submitButton.disabled = true;
+    } else {
+        errorMessage.style.display = 'none';
+        submitButton.disabled = false;
+    }
+});
+
+document.getElementById('name').addEventListener('input', function(e) {
+    var input = e.target;
+    var errorMessage = document.getElementById('name-error');
+    var value = input.value;
+
+    // Check if the value contains any digits
+    if (/\d/.test(value)) {
+        // If a digit is found, remove the last character and display the error message
+        input.value = value.slice(0, -1);
+        errorMessage.style.display = 'block';
+        errorMessage.textContent = 'Names cannot contain numbers.';
+    } else {
+        // Hide the error message if the input is valid
+        errorMessage.style.display = 'none';
+    }
+});
+
+
+        document.getElementById('Address').addEventListener('input', function(e) {
+            var input = e.target;
+            var errorMessage = document.getElementById('name-error1');
+            var value = input.value;
+
+            // Check if the value contains any digits
+            if (/\d/.test(value)) {
+                // If a digit is found, remove the last character and display the error message
+                input.value = value.slice(0, -1);
+                errorMessage.style.display = 'block';
+            } else {
+                // Hide the error message if the input is valid
+                errorMessage.style.display = 'none';
+            }
+        });
+
+        document.getElementById('Father').addEventListener('input', function(e) {
+            var input = e.target;
+            var errorMessage = document.getElementById('name-error2');
+            var value = input.value;
+
+            // Check if the value contains any digits
+            if (/\d/.test(value)) {
+                // If a digit is found, remove the last character and display the error message
+                input.value = value.slice(0, -1);
+                errorMessage.style.display = 'block';
+            } else {
+                // Hide the error message if the input is valid
+                errorMessage.style.display = 'none';
+            }
+        });
+
+        document.getElementById('college').addEventListener('input', function(e) {
+            var input = e.target;
+            var errorMessage = document.getElementById('name-error3');
+            var value = input.value;
+
+            // Check if the value contains any digits
+            if (/\d/.test(value)) {
+                // If a digit is found, remove the last character and display the error message
+                input.value = value.slice(0, -1);
+                errorMessage.style.display = 'block';
+            } else {
+                // Hide the error message if the input is valid
+                errorMessage.style.display = 'none';
+            }
+        });
+
+        document.getElementById('mother').addEventListener('input', function(e) {
+            var input = e.target;
+            var errorMessage = document.getElementById('name-error4');
+            var value = input.value;
+
+            // Check if the value contains any digits
+            if (/\d/.test(value)) {
+                // If a digit is found, remove the last character and display the error message
+                input.value = value.slice(0, -1);
+                errorMessage.style.display = 'block';
+            } else {
+                // Hide the error message if the input is valid
+                errorMessage.style.display = 'none';
+            }
+        });
+    </script>
+
+
+
+
+    </main>
+<button id="scrollToTopBtn">↑</button>
+{% endblock content %}

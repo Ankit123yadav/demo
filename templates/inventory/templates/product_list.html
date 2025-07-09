@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Product List</h2>
+    <div class="row">
+        {% with products="dummy" %}
+        {% for i in "123456" %}
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Product {{ forloop.counter }}</h5>
+                    <p class="card-text">
+                        <strong>Category:</strong> Electronics<br>
+                        <strong>Stock:</strong> {{ 10|add:forloop.counter }} units<br>
+                        <strong>Price:</strong> ${{ 99|add:forloop.counter }}<br>
+                        <strong>Status:</strong> Available<br>
+                        <strong>Purchase Date:</strong> 2024-01-0{{ forloop.counter }}<br>
+                        <strong>Expiry Date:</strong> 2025-12-0{{ forloop.counter }}
+                    </p>
+                    <div class="text-center mt-3">
+                        <a href="#" class="btn btn-primary btn-sm me-2">Edit</a>
+                        <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% endwith %}
+    </div>
+</div>
+{% endblock %}

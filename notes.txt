@@ -1,0 +1,26 @@
+Website Applications:
+- Certificate Management
+- User Registration System
+- Dynamic Forms Builder
+- Content Management:
+  * Gallery Management
+  * Job Postings
+  * Workshop Management
+  * Event Management
+- Contact Us System
+
+Core Functionality:
+- Website Core Codebase
+    *popup updates
+- Authentication System:
+  * User Login
+  * Admin Login
+  * Session Management
+
+Dashboard Features:
+- Announcement System
+- Analytics Dashboard
+- User Management
+
+
+

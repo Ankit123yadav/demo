@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main>
+    <section class="contact-area pb-100" style="background: #100561">
+        <div class="page-content">
+            <div class="container">
+                <div class="row">
+                    <div class="section-title text-center">
+                        <br>
+                        <h2 style="color:white"><span style="color: #ffe401; font-weight:bold;">Upload</span> Document</h2>
+                        <p style="color:white">Upload your important documents securely to Sipher Web Academy. Supported formats: PDF, DOCX, JPG, PNG.</p>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-md-8">
+                        <div class="card" style="box-shadow: 0 4px 24px rgba(16,5,98,0.10); border-radius: 1rem;">
+                            <div class="card-body">
+                                <form action="{% url 'upload_docm' %}" method="post" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <div class="mb-3">
+                                        <label for="full_name" class="form-label" style="color:#100561; font-weight:600;">Full Name</label>
+                                        <input class="form-control" type="text" name="full_name" id="full_name" placeholder="Enter your full name" required style="border-radius:0.5rem;">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label" style="color:#100561; font-weight:600;">Email</label>
+                                        <input class="form-control" type="email" name="email" id="email" placeholder="Enter your email" required style="border-radius:0.5rem;">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="document" class="form-label" style="color:#100561; font-weight:600;">Select Document</label>
+                                        <input class="form-control" type="file" name="document" id="document" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" required style="border-radius:0.5rem;">
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="submit" class="btn" style="background:#100561; color:#ffe401; font-weight:600; border-radius:0.5rem; padding:0.5rem 2rem;">Upload</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock content %}

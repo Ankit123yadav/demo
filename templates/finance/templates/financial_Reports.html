@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    .kpi-box {
+        background: #f5f7fa;
+        padding: 15px;
+        border-radius: 10px;
+        text-align: center;
+        margin-bottom: 20px;
+        box-shadow: 0 0 5px rgba(0,0,0,0.05);
+    }
+    .kpi-title { font-weight: bold; font-size: 14px; }
+    .kpi-value { font-size: 22px; margin: 10px 0; color: #004080; }
+    .kpi-subtext { font-size: 12px; color: gray; }
+
+    .chart-small { max-width: 300px; height: 220px; margin: auto; }
+    .table th, .table td { font-size: 14px; }
+
+    .bg-dark-blue { background-color: #001f3f; color: white; }
+</style>
+
+<div class="container py-4">
+    <h2 class="mb-4">IT Training Financial Dashboard</h2>
+
+    <!-- KPI Section -->
+    <div class="row">
+        <div class="col-md-4">
+            <div class="kpi-box">
+                <div class="kpi-title">Quick Ratio</div>
+                <div class="kpi-value">0.55:1</div>
+                <div class="kpi-subtext">Target: 0.50 or higher</div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="kpi-box">
+                <div class="kpi-title">Current Ratio</div>
+                <div class="kpi-value">3.50:1</div>
+                <div class="kpi-subtext">Target: 2.0 or higher</div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="kpi-box">
+                <div class="kpi-title">Debt to Equity</div>
+                <div class="kpi-value">0.65:1</div>
+                <div class="kpi-subtext">Target: 0.50 or less</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts Section -->
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-dark-blue">Assets vs Liabilities</div>
+                <div class="card-body chart-small">
+                    <canvas id="assetsChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-dark-blue">Net Profit Margin</div>
+                <div class="card-body chart-small">
+                    <canvas id="profitChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Segment Table -->
+    <div class="card">
+        <div class="card-header bg-dark-blue">Training Income Summary</div>
+        <div class="card-body p-0">
+            <table class="table table-bordered m-0">
+                <thead class="table-light">
+                    <tr>
+                        <th>Course</th>
+                        <th>Gross Revenue</th>
+                        <th>Net Revenue</th>
+                        <th>Expenses</th>
+                        <th>Profit %</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Web Development</td>
+                        <td>$4,000</td>
+                        <td>$3,000</td>
+                        <td>$1,000</td>
+                        <td>25%</td>
+                    </tr>
+                    <tr>
+                        <td>Data Science</td>
+                        <td>$5,000</td>
+                        <td>$3,500</td>
+                        <td>$1,500</td>
+                        <td>30%</td>
+                    </tr>
+                    <tr>
+                        <td>Cyber Security</td>
+                        <td>$2,000</td>
+                        <td>$1,500</td>
+                        <td>$500</td>
+                        <td>25%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    new Chart(document.getElementById('assetsChart'), {
+        type: 'bar',
+        data: {
+            labels: ['Assets', 'Liabilities'],
+            datasets: [{
+                label: 'USD',
+                data: [80000, 30000],
+                backgroundColor: ['#1f77b4', '#ff7f0e']
+            }]
+        },
+        options: {
+            plugins: { legend: { display: false } },
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+
+    new Chart(document.getElementById('profitChart'), {
+        type: 'line',
+        data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+            datasets: [{
+                label: 'Net Profit %',
+                data: [15, 16, 14, 17, 16, 18],
+                borderColor: '#e74c3c',
+                backgroundColor: 'rgba(231, 76, 60, 0.2)',
+                tension: 0.3,
+                fill: true
+            }]
+        },
+        options: {
+            plugins: {
+                legend: { position: 'bottom' }
+            },
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+</script>
+{% endblock %}

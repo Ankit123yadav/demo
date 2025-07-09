@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    .icon-box {
+        text-align: center;
+        padding: 15px;
+        background: #004080;
+        color: white;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+
+    .icon-box h5 {
+        margin-top: 10px;
+        font-size: 16px;
+    }
+
+    .icon-box p {
+        font-size: 14px;
+        margin: 0;
+    }
+
+    .summary-label {
+        font-weight: bold;
+    }
+
+    .chart-container-small,
+    .chart-container-bar {
+        width: 100%;
+        height: 400px;
+    }
+
+    .equal-height {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 400px;
+    }
+
+    .bg-dark-blue {
+        background-color: #001f3f;
+        color: white;
+    }
+</style>
+
+<div class="container py-4">
+    <h2 class="mb-4">IT Training Payment Dashboard</h2>
+
+    <!-- Course Fee Breakdown -->
+    <div class="row text-center">
+        <div class="col-md-3">
+            <div class="icon-box">
+                <i class="mdi mdi-laptop"></i>
+                <h5>Web Development</h5>
+                <p>$1,200<br><small>Due: Nov–Dec</small></p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="icon-box">
+                <i class="mdi mdi-database"></i>
+                <h5>Data Science</h5>
+                <p>$1,500<br><small>Due: Dec</small></p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="icon-box">
+                <i class="mdi mdi-robot"></i>
+                <h5>AI & ML</h5>
+                <p>$1,800<br><small>Due: Dec</small></p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="icon-box">
+                <i class="mdi mdi-shield-account"></i>
+                <h5>Cyber Security</h5>
+                <p>$1,300<br><small>Due: Dec</small></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Trend Chart -->
+    <div class="card mb-4">
+        <div class="card-header bg-dark-blue">
+            <h5 class="mb-0">Monthly Payment Collection Trend</h5>
+        </div>
+        <div class="card-body chart-container-bar">
+            <canvas id="paymentChart"></canvas>
+            <p class="mt-2 text-center"><strong>Total Collected:</strong> $6,500</p>
+        </div>
+    </div>
+
+    <!-- Payment Methods + Net Savings -->
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-dark-blue">
+                    <h5 class="mb-0">Most Used Payment Methods</h5>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>UPI / QR Code</li>
+                        <li>Net Banking</li>
+                        <li>Credit/Debit Card</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 equal-height">
+            <div class="chart-container-small">
+                <canvas id="savingChart"></canvas>
+                <div class="text-center mt-2"><strong>Training Fund Usage</strong></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ChartJS Script -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    new Chart(document.getElementById('paymentChart'), {
+        type: 'bar',
+        data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+            datasets: [
+                {
+                    label: 'Expected Payment',
+                    data: [1000, 1200, 1400, 1600, 1800, 2000],
+                    backgroundColor: '#4e73df'
+                },
+                {
+                    label: 'Actual Payment',
+                    data: [800, 1100, 1300, 1500, 1750, 1950],
+                    backgroundColor: '#36b9cc'
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }
+    });
+
+    new Chart(document.getElementById('savingChart'), {
+        type: 'doughnut',
+        data: {
+            labels: ['Used Funds', 'Remaining'],
+            datasets: [{
+                data: [65, 35],
+                backgroundColor: ['#00c0ef', '#001f3f']
+            }]
+        },
+        options: {
+            cutout: '70%',
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }
+    });
+</script>
+{% endblock %}

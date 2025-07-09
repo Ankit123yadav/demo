@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+  <div class="card shadow-sm">
+    <div class="card-header bg-info text-white d-flex justify-content-between align-items-center">
+      <h4 class="mb-0">Student Feedback - IT Sector</h4>
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addFeedbackModal">Submit Feedback</button>
+    </div>
+    <div class="card-body">
+      <table class="table table-bordered table-hover">
+        <thead class="thead-light">
+          <tr>
+            <th>S.No</th>
+            <th>Student Name</th>
+            <th>Branch</th>
+            <th>Course</th>
+            <th>Feedback</th>
+            <th>Rating</th>
+            <th>Submitted On</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for feedback in student_feedbacks %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ feedback.student_name }}</td>
+            <td>{{ feedback.branch }}</td>
+            <td>{{ feedback.course }}</td>
+            <td>{{ feedback.comments }}</td>
+            <td>{{ feedback.rating }}/5</td>
+            <td>{{ feedback.submitted_on }}</td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td>1</td>
+            <td>Akash Mehta</td>
+            <td>CSE</td>
+            <td>Python Programming</td>
+            <td>Very helpful sessions and clear explanations!</td>
+            <td>5/5</td>
+            <td>2025-06-15</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Sneha Sharma</td>
+            <td>IT</td>
+            <td>Web Development</td>
+            <td>Could use more interactive examples, but overall good.</td>
+            <td>4/5</td>
+            <td>2025-06-12</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for Submitting Feedback -->
+<div class="modal fade" id="addFeedbackModal" tabindex="-1" aria-labelledby="addFeedbackModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-info text-white">
+        <h5 class="modal-title" id="addFeedbackModalLabel">Submit Feedback</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="addFeedbackFormModal" method="post">
+          {% csrf_token %}
+          <div class="form-group mb-3">
+            <label for="student_name">Student Name</label>
+            <input type="text" class="form-control" id="student_name" name="student_name" required>
+          </div>
+          <div class="form-group mb-3">
+            <label for="branch">Branch</label>
+            <input type="text" class="form-control" id="branch" name="branch" required placeholder="e.g., CSE, IT, ECE">
+          </div>
+          <div class="form-group mb-3">
+            <label for="course">Course (IT Sector)</label>
+            <input type="text" class="form-control" id="course" name="course" required placeholder="e.g., AI/ML, Web Dev, Networking">
+          </div>
+          <div class="form-group mb-3">
+            <label for="comments">Feedback</label>
+            <textarea class="form-control" id="comments" name="comments" rows="3" required></textarea>
+          </div>
+          <div class="form-group mb-3">
+            <label for="rating">Rating (1 to 5)</label>
+            <select class="form-select" id="rating" name="rating" required>
+              <option value="" disabled selected>Select Rating</option>
+              <option value="1">1 - Poor</option>
+              <option value="2">2 - Fair</option>
+              <option value="3">3 - Good</option>
+              <option value="4">4 - Very Good</option>
+              <option value="5">5 - Excellent</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" form="addFeedbackFormModal">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.getElementById('addFeedbackFormModal').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var form = this;
+  var formData = new FormData(form);
+  fetch('#', {
+    method: 'POST',
+    headers: { 'X-Requested-With': 'XMLHttpRequest' },
+    body: formData
+  })
+  .then(response => response.ok ? response.text() : Promise.reject())
+  .then(data => {
+    var modal = bootstrap.Modal.getInstance(document.getElementById('addFeedbackModal'));
+    modal.hide();
+    location.reload();
+  })
+  .catch(() => form.submit());
+});
+</script>
+{% endblock %}

@@ -1,0 +1,624 @@
+{% load static %}
+<!-- Include jQuery -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <title>Home Page</title>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Revolution Slider CSS -->
+        <link rel="stylesheet" href="{% static 'website/revolution/css/settings.css' %}">
+        <link rel="stylesheet" href="{% static 'website/revolution/css/layers.css' %}">
+        <link rel="stylesheet" href="{% static 'website/revolution/css/navigation.css' %}">
+
+        <!-- Links of CSS files -->
+        <link rel="stylesheet" href="{% static 'website/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'website/css/boxicons.min.css' %}">
+        <link rel="stylesheet" href="{% static 'website/css/flaticon.css' %}">
+        <link rel="stylesheet" href="{% static 'website/css/owl.carousel.min.css' %}">
+        <link rel="stylesheet" href="{% static 'website/css/owl.theme.default.min.css' %}">
+        <link rel="stylesheet" href="{% static 'website/css/odometer.min.css' %}">
+        <link rel="stylesheet" href="{% static 'website/css/meanmenu.min.css' %}">
+        <link rel="stylesheet" href="{% static 'website/css/animate.min.css' %}">
+        <link rel="stylesheet" href="{% static 'website/css/nice-select.min.css' %}">
+        <link rel="stylesheet" href="{% static 'website/css/viewer.min.css' %}">
+        <link rel="stylesheet" href="{% static 'website/css/slick.min.css' %}">
+        <link rel="stylesheet" href="{% static 'website/css/magnific-popup.min.css' %}">
+        <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'website/css/dark.css' %}">
+        <link rel="stylesheet" href="{% static 'website/css/responsive.css' %}">
+
+
+        <link rel="icon" type="image/png" href="{% static 'assets/img/sipher logo.png' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Include jQuery Notify -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/styles/metro/notify-metro.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js"></script>
+
+<style>
+    #scrollToTopBtn {
+            display: none; /* Initially hide the button */
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #100562;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            line-height: 50px;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+        }
+
+        #scrollToTopBtn:hover {
+            background-color: #ffe401;
+        }
+
+</style>
+</head>
+
+<body>
+    <!-- Preloader -->
+    {% comment %} <div class="preloader">
+    <div class="loader">
+        <div class="shadow"></div>
+        <div class="box"></div>
+    </div> {% endcomment %}
+</div>
+    <!-- End Preloader -->
+    
+    <div id="loader"></div>
+    <header>
+        <!-- Include header content here -->
+        <div class="top-header top-header-style-four">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 col-md-8">
+                <ul class="top-header-contact-info">
+                    <li>
+                       Call us:
+                        <a href="tel:9125545607">+9125545607</a>
+                    </li>
+                </ul>
+
+                <div class="top-header-social">
+                    <span>Follow us:</span>
+                    <a href="https://www.facebook.com/profile.php?id=61557833703797&mibextid=ZbWKwL" target="_blank"><i class='bx bxl-facebook'></i></a>
+                    <a href="https://wa.link/rrq248" target="_blank"><i class='bx bxl-whatsapp'></i></a>
+                    <a href="https://www.linkedin.com/company/sipher-web-pvt-ltd/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://www.instagram.com/sipherweb?igsh=eHBlZXllcWs4cW56" target="_blank"><i class='bx bxl-instagram'></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4">
+                <ul class="top-header-login-register">
+                    <li class="nav-item dropdown">
+  <a href="#" class="nav-link dropdown-toggle" id="verifyDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+    <i class='bx bx-log-in'></i> Verify Certificate
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="verifyDropdown">
+    <li><a class="dropdown-item " style="color: #100562;padding-left:30px" onmouseover="this.style.color='#ffe401'" onmouseout="this.style.color='#100562'" href="{% url 'verified' %}"><i class='bx ps-1 mt-1 bx-check-shield'></i> Verify Certificate</a></li>
+    <li><a class="dropdown-item"  style="color: #100562;  padding-left:30px" onmouseover="this.style.color='#ffe401'" onmouseout="this.style.color='#100562'" href="{% url 'download_certificate' %}"><i class=' mt-1 bx ps-1 bx-download'></i> Download Certificate</a></li>
+  </ul>
+</li>
+                    
+                    <li><a href="{% url 'registration' %}"><i class='bx bx-log-in-circle'></i> Register</a></li>
+                    <li><a href="{% url 'login' %}"><i class='bx bx-log-in-circle'></i> Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <!-- Start Header Area -->
+ <header class="header-area p-relative">
+
+    <!-- Start Navbar Area -->
+    <div class="navbar-area navbar-style-three">
+        <div class="raque-responsive-nav">
+            <div class="container">
+                <div class="raque-responsive-menu">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="{% static 'assets/img/Logo 1.png' %}" class="black-logo" alt="logo">
+                            <img src="{% static 'assets/img/logo 2.png' %}" class="white-logo" alt="logo">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      <div class="raque-nav">
+            <div class="container">
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <a class="navbar-brand" href="{% url 'index' %}">
+                        <img src="{% static 'website/img/Logo 1.png' %}" class="black-logo" alt="logo">
+                        {% comment %} <img src="{% static 'website/img/logo 2.png' %}" class="white-logo" alt="logo"> {% endcomment %}
+                    </a>
+
+                    <div class="collapse navbar-collapse mean-menu">
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a href="#" class="nav-link active">Home</a>
+
+                            </li>
+
+                            <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About Company <i
+                                        class='bx bx-chevron-down'></i></a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About us</a>
+                                    </li>
+                                    <li class="nav-item"><a href="{% url 'expert' %}" class="nav-link">Our Expert</a>
+                                    </li>
+                                    <li class="nav-item"><a href="{% url 'carrer' %}" class="nav-link">Career</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a href="#" class="nav-link">Training <i
+                                        class='bx bx-chevron-down'></i></a>
+                                <ul class="dropdown-menu">
+
+                                    <li class="nav-item"><a href="#" class="nav-link">Summer Training <i
+                                                class='bx bx-chevron-right'></i></a>
+                                        <ul class="dropdown-menu">
+                                            <li class="nav-item"><a href="{% url 'csit' %}" class="nav-link">Summer Training
+                                                    (CS/IT)</a>
+
+                                            </li>
+
+                                            <li class="nav-item"><a href="{% url 'eeec' %}" class="nav-link">Summer
+                                                    Training
+                                                    (EC/EE)</a></li>
+
+                                            <li class="nav-item"><a href="{% url 'ceme' %}" class="nav-link">Summer
+                                                    Training
+                                                    (CE/ME)</a></li>
+                                        </ul>
+
+
+                                    <li class="nav-item"><a href="{% url 'apprenticeship' %}" class="nav-link">Apprenticeship
+                                            Program</a></li>
+
+                                    <li class="nav-item"><a href="{% url 'industrials' %}" class="nav-link">Industrial
+                                            Training</a></li>
+                                    <li class="nav-item"><a href="{% url 'winter' %}" class="nav-link">Winter Training</a>
+                                    </li>
+
+                                    <li class="nav-item"><a href="{% url 'syllabus' %}" class="nav-link">Syllabus Training</a>
+                                    </li>
+
+                            </li>
+
+
+
+
+                        </ul>
+                        </li>
+
+
+
+
+                        <li class="nav-item"><a href="#" class="nav-link">Services<i
+                                    class='bx bx-chevron-down'></i></a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a href="{% url 'software' %}" class="nav-link">Software
+                                        Development</a></li>
+
+                                <li class="nav-item"><a href="{% url 'website' %}" class="nav-link">Website
+                                        Development</a></li>
+
+                                <li class="nav-item"><a href="{% url 'mobile' %}" class="nav-link">Application
+                                        Development</a></li>
+
+                                <li class="nav-item"><a href="{% url 'digital' %}" class="nav-link">Digital
+                                        Marketing</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a href="#" class="nav-link"> Gallery <i
+                                    class='bx bx-chevron-down'></i></a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a href="{% url 'semgallery' %}" class="nav-link">Seminars/Workshop</a>
+                                </li>
+
+                                <li class="nav-item"><a href="{% url 'teamgallery' %}" class="nav-link">Event
+                                       </a></li>
+
+
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a href="{% url 'courses' %}" class="nav-link">Course</a></li>
+                        <li class="nav-item"><a href="{% url 'registration' %}" class="nav-link">Registration</a></li>
+                        <li class="nav-item"><a  href="{% url 'contactus' %}" class="nav-link">Contact-Us</a></li>
+
+                        </ul>
+
+
+                    </div>
+                </nav>
+            </div>
+        </div> 
+    </div>
+    <!-- End Navbar Area -->
+
+    <!-- Start Sticky Navbar Area -->
+    <div class="navbar-area navbar-style-four header-sticky">
+        <div class="raque-nav">
+            <div class="container">
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <a class="navbar-brand" href="https://sipherweb.com/index.html">
+                        <img src="{% static 'website/img/Logo 1.png' %}" class="black-logo" alt="logo">
+                        <img src="{% static 'website/img/logo 2.png' %}" class="white-logo" alt="logo">
+                    </a>
+
+                    <div class="collapse navbar-collapse">
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a href="{% url 'index' %}" class="nav-link active">Home</a>
+
+                            </li>
+
+                            </li>
+
+                            <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About Company <i
+                                class='bx bx-chevron-down'></i></a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About us</a>
+
+                                    </li>
+
+                                    <li class="nav-item"><a href="{% url 'expert' %}" class="nav-link">Our Expert</a>
+                                    </li>
+
+                                    <li class="nav-item"><a href="{% url 'carrer' %}" class="nav-link">Career</a>
+                                    </li>
+
+
+
+                                </ul>
+                            </li>
+
+                            <li class="nav-item"><a href="#" class="nav-link">Training <i
+                                class='bx bx-chevron-down'></i></a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a href="{% url 'csit' %}" class="nav-link">Summer Training <i
+                                        class='bx bx-chevron-right'></i></a>
+                                        <ul class="dropdown-menu">
+                                            <li class="nav-item"><a href="{% url 'csit' %}" class="nav-link">Summer Training
+                                                (CS/IT)</a>
+
+                                        </li>
+
+                                        <li class="nav-item"><a href="{% url 'eeec' %}" class="nav-link">Winter
+                                                Training
+                                                (EC/EE)</a></li>
+
+                                        <li class="nav-item"><a href="{% url 'ceme' %}" class="nav-link">Summer
+                                                Training
+                                                (CE/ME)</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="nav-item"><a href="{% url 'apprenticeship' %}" class="nav-link">Apprenticeship
+                                        Program</a></li>
+
+                                <li class="nav-item"><a href="{% url 'industrials' %}" class="nav-link">Industrial
+                                        Training</a></li>
+                                <li class="nav-item"><a href="{% url 'winter' %}" class="nav-link">Winter Training</a>
+                                </li>
+
+                                <li class="nav-item"><a href="{% url 'syllabus' %}" class="nav-link">Syllabus Training</a>
+                                </li>
+
+
+
+
+
+
+
+                                </ul>
+                            </li>
+
+                            <li class="nav-item"><a href="index.html#" class="nav-link">Services<i
+                                class='bx bx-chevron-down'></i></a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a href="{% url 'software' %}" class="nav-link">Software
+                                        Development</a></li>
+
+                                <li class="nav-item"><a href="{% url 'website' %}" class="nav-link">Website
+                                        Development</a></li>
+
+                                <li class="nav-item"><a href="{% url 'mobile' %}" class="nav-link">Application
+                                        Development</a></li>
+
+                                <li class="nav-item"><a href="{% url 'digital' %}" class="nav-link">Digital
+                                        Marketing</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item"><a href="#" class="nav-link"> Gallery <i
+                                class='bx bx-chevron-down'></i></a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a href="{% url 'semgallery' %}" class="nav-link">Seminars/Workshop</a>
+                                    </li>
+
+                                    <li class="nav-item"><a href="{% url 'teamgallery' %}" class="nav-link">Event
+                                           </a></li>
+                                </ul>
+                            </li> 
+                            <li class="nav-item"><a href="{% url 'courses' %}" class="nav-link">Course</a></li> 
+                          <li class="nav-item"><a href="{% url 'registration' %}" class="nav-link">Registration</a></li> 
+                           <li class="nav-item"><a href="{% url 'contactus' %}" class="nav-link">Contact-Us</a></li>
+                        </ul>
+
+                        <div class="others-option">
+
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- End Sticky Navbar Area -->
+
+</header>
+<!-- End Header Area -->
+
+    </header>
+
+
+  {% block content %}
+  
+  {% endblock content %}
+
+
+
+
+
+
+   
+ 
+    
+
+
+
+
+
+
+    
+
+
+
+<script>
+
+    document.getElementById('name').addEventListener('input', function(e) {
+        var input = e.target;
+        var errorMessage = document.getElementById('name-error1');
+        var value = input.value;
+
+        // Check if the value contains any digits
+        if (/\d/.test(value)) {
+            // If a digit is found, remove the last character and display the error message
+            input.value = value.slice(0, -1);
+            errorMessage.style.display = 'block';
+        } else {
+            // Hide the error message if the input is valid
+            errorMessage.style.display = 'none';
+        }
+    });
+
+    document.getElementById('address').addEventListener('input', function(e) {
+        var input = e.target;
+        var errorMessage = document.getElementById('name-error2');
+        var value = input.value;
+
+        // Check if the value contains any digits
+        if (/\d/.test(value)) {
+            // If a digit is found, remove the last character and display the error message
+            input.value = value.slice(0, -1);
+            errorMessage.style.display = 'block';
+        } else {
+            // Hide the error message if the input is valid
+            errorMessage.style.display = 'none';
+        }
+    });
+
+    document.getElementById('text').addEventListener('input', function(e) {
+        var input = e.target;
+        var errorMessage = document.getElementById('name-error3');
+        var value = input.value;
+
+        // Check if the value contains any digits
+        if (/\d/.test(value)) {
+            // If a digit is found, remove the last character and display the error message
+            input.value = value.slice(0, -1);
+            errorMessage.style.display = 'block';
+        } else {
+            // Hide the error message if the input is valid
+            errorMessage.style.display = 'none';
+        }
+    });
+
+
+</script>
+
+
+
+
+
+    </main>
+<button id="scrollToTopBtn">↑</button>
+    <footer>
+        <!-- Include footer content here -->
+        <footer class="footer-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-footer-widget mb-30">
+                    <h3>Contact Us</h3>
+
+                    <ul class="contact-us-link">
+                        <li>
+                            <i class='bx bx-map'></i>
+                            <a href="index.html#" target="_blank">First Floor, C-1 / 364, Near Muglai Hutz, Sector G, Jankipuram, Tedhi Pulia, Lucknow</a>
+                        </li>
+                        <li>
+                            <i class='bx bx-phone-call'></i>
+                            <a href="index.html#">9125545607</a>
+                        </li>
+                        <li>
+                            <i class='bx bx-phone-call'></i>
+                            <a href="index.html#">9125525608</a>
+                        </li>
+                        <li>
+                            <i class='bx bx-envelope'></i>
+                            <a href="index.html#"><span class="__cf_email__" data-cfemail="2c44494040436c5e4d5d5949024f4341"> Info@sipherweb.com</span></a>
+                        </li>
+                    </ul>
+
+                    <ul class="social-link">
+                        <li><a href="https://www.facebook.com/profile.php?id=61557833703797&mibextid=ZbWKwL" class="d-block" target="_blank"><i class='bx bxl-facebook'></i></a></li>
+                        <li><a href="https://wa.link/rrq248" class="d-block" target="_blank"><i class='bx bxl-whatsapp'></i></a></li>
+                        <li><a href="https://www.instagram.com/sipherweb?igsh=eHBlZXllcWs4cW56" class="d-block" target="_blank"><i class='bx bxl-instagram'></i></a></li>
+                        <li><a href="https://www.linkedin.com/company/sipher-web-pvt-ltd/" class="d-block" target="_blank"><i class='bx bxl-linkedin'></i></a></li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-6 col-sm-6">
+                <div class="single-footer-widget mb-30">
+                    <h3>Training Program</h3>
+
+                    <ul class="support-link">
+                        <li><a href="csit">Summer Traning</a></li>
+                        <li><a href="Apprenticeship">Apprenticeship Program</a></li>
+                        <li><a href="Industrial">Industrial Training</a></li>
+                        <li><a href="winter">Winter Training</a></li>
+                        <li><a href="Syllabus">Syllabus Training</a></li>
+                        <li><a href="index.html#">Corporate Training</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-6 col-sm-6">
+                <div class="single-footer-widget mb-30">
+                    <h3>Services</h3>
+
+                    <ul class="useful-link">
+                        <li><a href="software">Technical Training</a></li>
+                        <li><a href="website">Web Development</a></li>
+                        <li><a href="mobile">Application Development</a></li>
+                        <li><a href="software">Software Development</a></li>
+                        <li><a href="digital">Digital Marketing</a></li>
+                        <li><a href="website">Ui/Ux Design</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-footer-widget mb-30">
+                    <h3>Newsletter</h3>
+
+                    <div class="newsletter-box">
+                        <p>To get the latest news and latest updates from us.</p>
+
+                        <form class="newsletter-form" data-bs-toggle="validator">
+                            <label>Your e-mail address:</label>
+                            <input type="email" class="input-newsletter" placeholder="Enter your email" name="EMAIL" required="" autocomplete="off">
+                            
+                            <button type="submit">Subscribe</button>
+                            <div id="validator-newsletter" class="form-result"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom-area">
+        <div class="container">
+
+            <p><i class='bx bx-copyright'></i> <script data-cfasync="false" src="https://sipherweb.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear())</script> <a href="index.html" target="_blank">Sipher Web</a> Designed By <i style="color: #ffe401;"> Sipher web Team </i> | All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+    </footer>
+    <script src="{% static 'static/website/js/jquery.min.js' %}"></script>
+<script src="{% static 'website/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'website/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'website/js/mixitup.min.js' %}"></script>
+<script src="{% static 'website/js/parallax.min.js' %}"></script>
+<script src="{% static 'website/js/jquery.appear.min.js' %}"></script>
+<script src="{% static 'website/js/odometer.min.js' %}"></script>
+<script src="{% static 'website/js/particles.min.js' %}"></script>
+<script src="{% static 'website/js/meanmenu.min.js' %}"></script>
+<script src="{% static 'website/js/jquery.nice-select.min.js' %}"></script>
+<script src="{% static 'website/js/viewer.min.js' %}"></script>
+<script src="{% static 'website/js/slick.min.js' %}"></script>
+<script src="{% static 'website/js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'website/js/jquery.ajaxchimp.min.js' %}"></script>
+<script src="{% static 'website/js/form-validator.min.js' %}"></script>
+<script src="{% static 'website/js/contact-form-script.js' %}"></script>
+<script src="{% static 'website/js/main.js' %}"></script>
+
+<!-- Slider Revolution core JavaScript files -->
+<script src="{% static 'website/revolution/js/jquery.themepunch.tools.min.js' %}"></script>
+<script src="{% static 'website/revolution/js/jquery.themepunch.revolution.min.js' %}"></script>
+<script src="{% static 'website/revolution/js/extensions/revolution.extension.actions.min.js' %}"></script>
+<script src="{% static 'website/revolution/js/extensions/revolution.extension.carousel.min.js' %}"></script>
+<script src="{% static 'website/revolution/js/extensions/revolution.extension.kenburn.min.js' %}"></script>
+<script src="{% static 'website/revolution/js/extensions/revolution.extension.layeranimation.min.js' %}"></script>
+<script src="{% static 'website/revolution/js/extensions/revolution.extension.migration.min.js' %}"></script>
+<script src="{% static 'website/revolution/js/extensions/revolution.extension.navigation.min.js' %}"></script>
+<script src="{% static 'website/revolution/js/extensions/revolution.extension.parallax.min.js' %}"></script>
+<script src="{% static 'website/revolution/js/extensions/revolution.extension.slideanims.min.js' %}"></script>
+<script src="{% static 'website/revolution/js/extensions/revolution.extension.video.min.js' %}"></script>
+<script src="{% static 'website/assets/js/rev-slider-custom.js' %}"></script>
+
+    <!-- Include your scripts here -->
+    <script>
+        $(document).ready(function () {
+            $("#myModal").modal('show');
+        });
+
+        // Function to show/hide scroll-to-top button based on scroll position
+        function toggleScrollToTopButton() {
+            var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Add scroll event listener to window
+            window.addEventListener("scroll", toggleScrollToTopButton);
+
+            // Add click event listener to scroll-to-top button
+            document.getElementById("scrollToTopBtn").addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            });
+        });
+    </script>
+    
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Add New Product</h2>
+    <div class="card shadow-sm border-0">
+        <div class="card-body">
+            <form method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="name" class="form-label">Product Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="category" class="form-label">Category</label>
+                        <select class="form-select" id="category" name="category">
+                            <option value="electronics">Electronics</option>
+                            <option value="software">Software</option>
+                            <option value="training_material">Training Materials</option>
+                            <option value="subscriptions">Subscriptions</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="stock_quantity" class="form-label">Stock Quantity</label>
+                        <input type="number" class="form-control" id="stock_quantity" name="stock_quantity" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="purchase_price" class="form-label">Purchase Price ($)</label>
+                        <input type="number" class="form-control" id="purchase_price" name="purchase_price" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="selling_price" class="form-label">Selling Price ($)</label>
+                        <input type="number" class="form-control" id="selling_price" name="selling_price" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="purchase_date" class="form-label">Purchase Date</label>
+                        <input type="date" class="form-control" id="purchase_date" name="purchase_date" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="expiry_date" class="form-label">Expiry Date (Optional)</label>
+                        <input type="date" class="form-control" id="expiry_date" name="expiry_date">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="status" class="form-label">Status</label>
+                        <select class="form-select" id="status" name="status">
+                            <option value="Available">Available</option>
+                            <option value="Expiring Soon">Expiring Soon</option>
+                            <option value="Out-of-Stock">Out-of-Stock</option>
+                        </select>
+                    </div>
+                    <div class="text-center mt-3">
+    <button type="submit" class="btn btn-success">Save Product</button>
+  </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

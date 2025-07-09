@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    .chart-container-small {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    .equal-height {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 300px;
+    }
+</style>
+<div class="container py-4">
+    <h2 class="mb-4">Expense Dashboard</h2>
+
+    <!-- Summary Cards -->
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="card text-white bg-primary">
+                <div class="card-body">
+                    <h5>Total Expenses</h5>
+                    <h3>₹65,000</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-danger">
+                <div class="card-body">
+                    <h5>Monthly Budget</h5>
+                    <h3>₹1,00,000</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-warning">
+                <div class="card-body">
+                    <h5>Pending Bills</h5>
+                    <h3>₹12,500</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-success">
+                <div class="card-body">
+                    <h5>Approved Claims</h5>
+                    <h3>₹25,000</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Expense Table -->
+    <div class="card">
+        <div class="card-header">
+            <h5>Recent Expenses</h5>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Stationery</td>
+                        <td>Office</td>
+                        <td>₹3,000</td>
+                        <td class="text-success">Paid</td>
+                        <td>2025-06-10</td>
+                        <td>
+                            <button class="btn btn-sm btn-info">View</button>
+                            <button class="btn btn-sm btn-warning">Edit</button>
+                            <button class="btn btn-sm btn-danger">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Internet Bill</td>
+                        <td>Utilities</td>
+                        <td>₹2,500</td>
+                        <td class="text-danger">Pending</td>
+                        <td>2025-06-12</td>
+                        <td>
+                            <button class="btn btn-sm btn-info">View</button>
+                            <button class="btn btn-sm btn-warning">Edit</button>
+                            <button class="btn btn-sm btn-danger">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Client Meeting Lunch</td>
+                        <td>Hospitality</td>
+                        <td>₹5,000</td>
+                        <td class="text-success">Paid</td>
+                        <td>2025-06-08</td>
+                        <td>
+                            <button class="btn btn-sm btn-info">View</button>
+                            <button class="btn btn-sm btn-warning">Edit</button>
+                            <button class="btn btn-sm btn-danger">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

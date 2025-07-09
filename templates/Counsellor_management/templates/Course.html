@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Course Management{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+
+  <!-- Course List -->
+  <div class="card mb-5">
+    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+      <h5 class="mb-0">All Courses</h5>
+      <a href="#courseForm" class="btn btn-light btn-sm" data-bs-toggle="collapse">
+        <i class="fas fa-plus"></i> Add New Course
+      </a>
+    </div>
+    <div class="card-body">
+      {% if courses %}
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Course Name</th>
+            <th>Description</th>
+            <th>Duration</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for course in courses %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ course.name }}</td>
+            <td>{{ course.description }}</td>
+            <td>{{ course.duration }}</td>
+            <td>
+              <a href="{% url 'course-update' course.id %}" class="btn btn-sm btn-warning">Edit</a>
+              <a href="{% url 'course-delete' course.id %}" class="btn btn-sm btn-danger">Delete</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <p>No courses found. Add your first course below.</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Add/Edit Course Form -->
+  <div class="card collapse" id="courseForm">
+    <div class="card-header bg-success text-white">
+      <h5 class="mb-0">Add / Edit Course</h5>
+    </div>
+    <div class="card-body">
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Save Course</button>
+        <a href="#" class="btn btn-secondary">Cancel</a>
+      </form>
+    </div>
+  </div>
+
+  <!-- Batches under Course (optional detail view) -->
+  {% if selected_course %}
+  <div class="card mt-5">
+    <div class="card-header bg-info text-white">
+      <h5 class="mb-0">Batches under Course: {{ selected_course.name }}</h5>
+    </div>
+    <div class="card-body">
+      {% if selected_course_batches %}
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Batch Name</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for batch in selected_course_batches %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ batch.name }}</td>
+            <td>{{ batch.start_date }}</td>
+            <td>{{ batch.end_date }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <p>No batches assigned to this course.</p>
+      {% endif %}
+    </div>
+  </div>
+  {% endif %}
+
+</div>
+{% endblock %}

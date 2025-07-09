@@ -1,0 +1,86 @@
+<<<<<<< HEAD
+db.sqlite3
+=======
+<<<<<<< HEAD
+.venv/
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+=======
+# SQLite database
+*.sqlite3
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Django
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+media/
+staticfiles/
+
+# VSCode
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+*.env
+
+# Node
+node_modules/
+
+# Compiled
+*.so
+*.egg-info/
+
+# Backup
+*~
+*.bak
+
+# Test
+.coverage
+htmlcov/
+
+# Others
+.idea/
+>>>>>>> origin/Amisha
+>>>>>>> origin/aman

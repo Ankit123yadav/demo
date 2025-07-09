@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container py-4">
+    <h2 class="mb-4">Invoices</h2>
+
+    <!-- Summary Cards -->
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <div class="card text-white bg-primary">
+                <div class="card-body">
+                    <h5>Total Invoices</h5>
+                    <h3>45</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-success">
+                <div class="card-body">
+                    <h5>Total Amount</h5>
+                    <h3>₹1,75,000</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-warning">
+                <div class="card-body">
+                    <h5>Pending Payments</h5>
+                    <h3>₹35,000</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Invoices Table -->
+    <div class="card">
+        <div class="card-header">
+            <h5>Invoice List</h5>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Invoice No</th>
+                        <th>Client/Student</th>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>INV-1001</td>
+                        <td>Priya Sharma</td>
+                        <td>2025-06-01</td>
+                        <td>₹12,500</td>
+                        <td class="text-success">Paid</td>
+                        <td>
+                            <button class="btn btn-sm btn-info">View</button>
+                            <button class="btn btn-sm btn-warning">Edit</button>
+                            <button class="btn btn-sm btn-danger">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>INV-1002</td>
+                        <td>Rahul Verma</td>
+                        <td>2025-06-05</td>
+                        <td>₹30,000</td>
+                        <td class="text-danger">Pending</td>
+                        <td>
+                            <button class="btn btn-sm btn-info">View</button>
+                            <button class="btn btn-sm btn-warning">Edit</button>
+                            <button class="btn btn-sm btn-danger">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>INV-1003</td>
+                        <td>Anjali Singh</td>
+                        <td>2025-06-07</td>
+                        <td>₹2,000</td>
+                        <td class="text-success">Paid</td>
+                        <td>
+                            <button class="btn btn-sm btn-info">View</button>
+                            <button class="btn btn-sm btn-warning">Edit</button>
+                            <button class="btn btn-sm btn-danger">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

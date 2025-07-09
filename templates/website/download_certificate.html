@@ -1,0 +1,49 @@
+{% extends "website/base.html" %}
+{% load static %}
+{% block content %}
+<main>
+    <section class="contact-area pb-100" style="background: #100561">
+        <div class="page-content">
+            <div class="container">
+                <div class="row">
+                    <div class="section-title">
+                        <br>
+                        <h2 style="color:white"><span style="color: #ffe401; font-weight:bold;">Download</span> Your Certificate</h2>
+                        <p style="color:white">Enter your certificate number, name, and phone number below to securely download your official Sipher Web Academy certificate. For any issues, please contact our support team.</p>
+                    </div>
+                </div>
+                <div class="card" style="max-width: 500px; margin: 0 auto; box-shadow: 0 4px 24px rgba(16,5,98,0.10); border-radius: 1rem;">
+                    <div class="card-body">
+                        <form action="{% url 'download_certificate' %}" method="post">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="certificate_number" class="form-label" style="color:#100561; font-weight:600;">Certificate Number</label>
+                                <input class="form-control" type="text" name="certificate_number" id="certificate_number" placeholder="Enter your certificate number" required style="border-radius:0.5rem;">
+                            </div>
+                            <div class="mb-3">
+                                <label for="full_name" class="form-label" style="color:#100561; font-weight:600;">Full Name</label>
+                                <input class="form-control" type="text" name="full_name" id="full_name" placeholder="Enter your full name" required style="border-radius:0.5rem;">
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone_number" class="form-label" style="color:#100561; font-weight:600;">Phone Number</label>
+                                <input class="form-control" type="tel" name="phone_number" id="phone_number" placeholder="Enter your phone number" required pattern="[0-9]{10}" maxlength="10" style="border-radius:0.5rem;">
+                            </div>
+                            <div class="text-center">
+                                <button name="submit" type="submit" value="Submit" class="btn" style="background:#100561; color:#ffe401; font-weight:600; border-radius:0.5rem; padding:0.5rem 2rem;"> Go </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-5">
+                    <div class="col-lg-8 col-md-10 text-center">
+               
+                        <h1 style="color:white"><span style="color: #ffe401; font-weight:bold;">Sample Certificate</span> Preview</h1>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Certificate_sample.jpg/960px-Certificate_sample.jpg?20211217184812" alt="Sample Certificate" style="max-width:100%; border-radius:1rem; box-shadow:0 2px 12px rgba(16,5,98,0.10); margin-bottom:1.5rem; border:4px solid #ffe401; background:#fff;" />
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock content %}

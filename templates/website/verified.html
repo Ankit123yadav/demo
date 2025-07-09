@@ -1,0 +1,56 @@
+{% extends "website/base.html" %}
+{% load static %}
+{% block content %}
+                       
+    <main>
+        <!-- Define main content section -->
+            <section class="contact-area pb-100" style="background: #100561">
+        <div class="page-content">
+            <div class="container">
+                <div class="row">
+                    <div class="section-title">
+                        <br>
+                        <h2 style="color:white"><span style="color: #ffe401; font-weight:bold;">Verify</span> Certificate With Us</h2>
+                        <p style="color:white">You are just one step behind to join the Sipher Web. I promise you to give my
+                            best if
+                            you will ll be a part of Sipher Web</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    
+                                        <div class="card-body">
+                        <form action="https://sipherweb.com/searchcertificate" method="Post">
+                            <input type="hidden" name="_token" value="6yXCOc1Qtg7FOI2uWp6Nqq3i20wt0u7iR8BGmLvE" autocomplete="off">                            <div class="row form-group">
+                                <div class="col-lg-12 col-md-6 col-sm-12 ">
+                                    <label class="control-label">Enter Your Certificate Number</label>
+                                    <input class="form-control" type="text" name="certificate_number"
+                                        placeholder="Enter Your Certificate Number" required id="mobile_number">
+                                </div>
+
+
+                            </div>
+
+
+
+                            <br>
+                            <div class="col-lg-12 text-center">
+                                <button name="submit" type="submit" value="Submit" class="btn btn-success">Verified
+                                    Now</button>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+    </main>
+{% endblock content %}

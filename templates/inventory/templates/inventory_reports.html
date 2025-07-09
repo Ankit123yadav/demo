@@ -1,0 +1,162 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <h2>Inventory Management</h2>
+    
+    <!-- Action Button -->
+    <button class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#addInventoryModal">
+        <i class="fas fa-plus-circle me-2"></i> Add New Item
+    </button>
+
+    <!-- Dashboard Stats -->
+    <div class="row g-3 mb-4">
+        <div class="col-md-3">
+            <div class="card border-0 h-100">
+                <div class="card-body text-white p-4 rounded-3 shadow-sm"
+                     style="background: linear-gradient(135deg, #007bff, #0056b3);">
+                    <h6>Total Items</h6>
+                    <h3>{{ items.count }}</h3>
+                    <small>Active inventory</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card border-0 h-100">
+                <div class="card-body text-white p-4 rounded-3 shadow-sm"
+                     style="background: linear-gradient(135deg, #28a745, #218838);">
+                    <h6>Available Resources</h6>
+                    <h3>{{ available_items.count }}</h3>
+                    <small>Currently in stock</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card border-0 h-100">
+                <div class="card-body text-white p-4 rounded-3 shadow-sm"
+                     style="background: linear-gradient(135deg, #ffc107, #e0a800);">
+                    <h6>Expiring Soon</h6>
+                    <h3>{{ expiring_items.count }}</h3>
+                    <small>Licenses expiring in 30 days</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card border-0 h-100">
+                <div class="card-body text-white p-4 rounded-3 shadow-sm"
+                     style="background: linear-gradient(135deg, #dc3545, #c82333);">
+                    <h6>Out-of-Stock</h6>
+                    <h3>{{ out_of_stock.count }}</h3>
+                    <small>Needs restocking</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inventory Table -->
+    <div class="card shadow-sm border-0">
+        <div class="card-body">
+            <h4>Inventory List</h4>
+            <table class="table table-bordered table-hover">
+                <thead class="thead-light">
+                    <tr>
+                        <th>S.No</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Quantity</th>
+                        <th>Purchase Date</th>
+                        <th>Expiry Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in items %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.get_category_display }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>{{ item.purchase_date|date:"Y-m-d" }}</td>
+                        <td>{{ item.expiry_date|date:"Y-m-d" }}</td>
+                        <td>
+                            <span class="badge {% if item.status == 'Available' %}bg-success{% elif item.status == 'Expiring Soon' %}bg-warning text-dark{% else %}bg-danger{% endif %}">
+                                {{ item.status }}
+                            </span>
+                        </td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary edit-item-btn"
+                                    data-id="{{ item.id }}"
+                                    data-name="{{ item.name }}"
+                                    data-category="{{ item.category }}"
+                                    data-quantity="{{ item.quantity }}"
+                                    data-purchase="{{ item.purchase_date|date:'Y-m-d' }}"
+                                    data-expiry="{{ item.expiry_date|date:'Y-m-d' }}"
+                                    data-status="{{ item.status }}"
+                                    data-bs-toggle="modal" data-bs-target="#editInventoryModal">
+                                <i class="fas fa-edit me-1"></i> Edit
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger delete-item-btn"
+                                    data-id="{{ item.id }}"
+                                    data-name="{{ item.name }}"
+                                    data-bs-toggle="modal" data-bs-target="#deleteInventoryModal">
+                                <i class="fas fa-trash-alt me-1"></i> Delete
+                            </button>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="8" class="text-center text-muted py-4">No inventory items found.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Add Inventory Modal -->
+<div class="modal fade" id="addInventoryModal" tabindex="-1" aria-labelledby="addInventoryModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="addInventoryForm" method="POST" Action="">
+                {% csrf_token %}
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">Add New Inventory Item</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="form-control mb-3" name="name" placeholder="Item Name" required>
+                    <select class="form-select mb-3" name="category">
+                        <option value="hardware">Hardware</option>
+                        <option value="software">Software</option>
+                        <option value="materials">Course Materials</option>
+                        <option value="subscription">Subscription</option>
+                    </select>
+                    <input type="number" class="form-control mb-3" name="quantity" placeholder="Quantity" required>
+                    <input type="date" class="form-control mb-3" name="purchase_date" required>
+                    <input type="date" class="form-control mb-3" name="expiry_date">
+                    <select class="form-select mb-3" name="status">
+                        <option value="Available">Available</option>
+                        <option value="Expiring Soon">Expiring Soon</option>
+                        <option value="Out-of-Stock">Out-of-Stock</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success">Save Item</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+document.querySelectorAll('.delete-item-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        document.getElementById('deleteInventoryItemId').value = button.dataset.id;
+        document.getElementById('deleteInventoryItemName').textContent = button.dataset.name;
+        new bootstrap.Modal(document.getElementById('deleteInventoryModal')).show();
+    });
+});
+</script>
+{% endblock %}

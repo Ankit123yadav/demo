@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    .chart-container-small {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    .equal-height {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 300px;
+    }
+    .chart-container-small canvas {
+        display: block;
+        margin: auto;
+    }
+    .chart-labels-inline {
+        text-align: center;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+</style>
+<div class="container py-4">
+    <h2 class="mb-4">Transaction Dashboard</h2>
+
+    <!-- Search & Filter -->
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <input type="text" class="form-control" placeholder="Search by name or purpose">
+        </div>
+        <div class="col-md-4">
+            <select class="form-control">
+                <option value="">Filter by Category</option>
+                <option value="Student">Student</option>
+                <option value="Client">Client</option>
+                <option value="Employee">Employee</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <input type="date" class="form-control">
+        </div>
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="card text-white bg-primary">
+                <div class="card-body">
+                    <h5>Total Transactions</h5>
+                    <h3>125</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-success">
+                <div class="card-body">
+                    <h5>Amount Received</h5>
+                    <h3>$12,000</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-warning">
+                <div class="card-body">
+                    <h5>Cost per Person</h5>
+                    <h3>$100</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-danger">
+                <div class="card-body">
+                    <h5>Hours Trained</h5>
+                    <h3>350 hrs</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Graphs -->
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <canvas id="transactionsByMonth"></canvas>
+        </div>
+        <div class="col-md-6">
+            <canvas id="hoursByMonthChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Total Income Summary -->
+    <div class="alert alert-info">
+        Total Income This Month: $12,000
+    </div>
+
+    <!-- Tax Report -->
+    <div class="card mb-4">
+        <div class="card-header bg-secondary text-white">
+            <h5 class="mb-0">Tax Report</h5>
+        </div>
+        <div class="card-body">
+            <p><strong>Taxable Income:</strong> $12,000</p>
+            <p><strong>Tax Rate:</strong> 10%</p>
+            <p><strong>Tax Due:</strong> $1,200</p>
+            <p class="text-muted">* This is an auto-calculated report based on total received income.</p>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    new Chart(document.getElementById('transactionsByMonth'), {
+        type: 'bar',
+        data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+            datasets: [{
+                label: 'Transactions',
+                data: [10, 20, 15, 25, 18, 37],
+                backgroundColor: '#36b9cc'
+            }]
+        }
+    });
+
+    new Chart(document.getElementById('hoursByMonthChart'), {
+        type: 'line',
+        data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+            datasets: [{
+                label: 'Hours Trained',
+                data: [40, 55, 60, 70, 65, 60],
+                borderColor: '#1cc88a',
+                fill: false
+            }]
+        }
+    });
+</script>
+{% endblock %}

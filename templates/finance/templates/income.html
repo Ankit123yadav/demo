@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container py-4">
+    <h2 class="mb-4">Monthly Income Summary</h2>
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <div class="card text-white bg-success">
+                <div class="card-body">
+                    <h5>Total Revenue</h5>
+                    <h3>₹1,20,000</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card text-white bg-info">
+                <div class="card-body">
+                    <h5>Net Profit</h5>
+                    <h3>₹45,000</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Income Breakdown -->
+    <div class="card">
+        <div class="card-header bg-dark text-white">Income Statement</div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead class="table-light">
+                    <tr>
+                        <th>Source</th>
+                        <th>Amount (₹)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Course Fees</td>
+                        <td>₹60,000</td>
+                    </tr>
+                    <tr>
+                        <td>Client Billing</td>
+                        <td>₹40,000</td>
+                    </tr>
+                    <tr>
+                        <td>Miscellaneous</td>
+                        <td>₹20,000</td>
+                    </tr>
+                    <tr class="table-success">
+                        <th>Total Income</th>
+                        <th>₹1,20,000</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,218 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    .chart-container-small {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    .equal-height {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 300px;
+    }
+    .chart-container-small canvas {
+        display: block;
+        margin: auto;
+    }
+    .chart-labels-inline {
+        text-align: center;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+</style>
+<div class="container py-4">
+    <h2 class="mb-4">Transaction Dashboard</h2>
+
+    <!-- Summary Cards -->
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="card text-white bg-primary">
+                <div class="card-body">
+                    <h5>Total Transactions</h5>
+                    <h3>120</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-success">
+                <div class="card-body">
+                    <h5>Amount Received</h5>
+                    <h3>₹1,20,000</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-warning">
+                <div class="card-body">
+                    <h5>Cost per Person</h5>
+                    <h3>₹1,000</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-danger">
+                <div class="card-body">
+                    <h5>Hours Trained</h5>
+                    <h3>588 hrs</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Graphs -->
+    <div class="row mb-4">
+        <div class="col-md-6 equal-height">
+            <div class="chart-container-small">
+                <canvas id="transactionModeChart"></canvas>
+                <div class="chart-labels-inline">Online vs Offline</div>
+            </div>
+        </div>
+        <div class="col-md-6 equal-height">
+            <div class="chart-container-small">
+                <canvas id="categoryTransactionChart"></canvas>
+                <div class="chart-labels-inline">Transactions by Category</div>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <canvas id="transactionsByMonth"></canvas>
+        </div>
+        <div class="col-md-6">
+            <canvas id="hoursByMonthChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Transaction Table -->
+    <div class="card">
+        <div class="card-header">
+            <h5>Recent Transactions (Students, Clients, Employees)</h5>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Purpose</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="transactionTableBody">
+                    <!-- Data will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const transactions = [
+        {
+            id: 1,
+            name: 'Priya Sharma',
+            category: 'Student',
+            purpose: 'Course Fee',
+            amount: '₹12,500',
+            status: 'Paid',
+            statusClass: 'text-success',
+            date: '2025-06-10'
+        },
+        {
+            id: 2,
+            name: 'Rahul Verma',
+            category: 'Client',
+            purpose: 'Consultation',
+            amount: '₹30,000',
+            status: 'Pending',
+            statusClass: 'text-danger',
+            date: '2025-06-12'
+        },
+        {
+            id: 3,
+            name: 'Anjali Singh',
+            category: 'Employee',
+            purpose: 'Reimbursement',
+            amount: '₹2,000',
+            status: 'Processed',
+            statusClass: 'text-success',
+            date: '2025-06-08'
+        }
+    ];
+
+    const tableBody = document.getElementById('transactionTableBody');
+    transactions.forEach(t => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${t.id}</td>
+            <td>${t.name}</td>
+            <td>${t.category}</td>
+            <td>${t.purpose}</td>
+            <td>${t.amount}</td>
+            <td class="${t.statusClass}">${t.status}</td>
+            <td>${t.date}</td>
+            <td>
+                <button class="btn btn-sm btn-info">View</button>
+                <button class="btn btn-sm btn-warning">Edit</button>
+                <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+        `;
+        tableBody.appendChild(row);
+    });
+
+    new Chart(document.getElementById('transactionModeChart'), {
+        type: 'doughnut',
+        data: {
+            labels: ['Online', 'Offline'],
+            datasets: [{
+                label: 'Training Mode',
+                data: [52, 48],
+                backgroundColor: ['#4e73df', '#e83e8c']
+            }]
+        }
+    });
+
+    new Chart(document.getElementById('transactionsByMonth'), {
+        type: 'bar',
+        data: {
+            labels: ['Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May'],
+            datasets: [{
+                label: 'Transactions',
+                data: [17, 10, 10, 10, 13, 14],
+                backgroundColor: '#36b9cc'
+            }]
+        }
+    });
+
+    new Chart(document.getElementById('hoursByMonthChart'), {
+        type: 'line',
+        data: {
+            labels: ['Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May'],
+            datasets: [{
+                label: 'Hours Trained',
+                data: [1110, 779, 616, 959, 1180, 900],
+                borderColor: '#1cc88a',
+                fill: false
+            }]
+        }
+    });
+
+    new Chart(document.getElementById('categoryTransactionChart'), {
+        type: 'pie',
+        data: {
+            labels: ['Students', 'Clients', 'Employees'],
+            datasets: [{
+                label: 'Transactions by Category',
+                data: [60, 35, 25],
+                backgroundColor: ['#4e73df', '#36b9cc', '#f6c23e']
+            }]
+        }
+    });
+</script>
+{% endblock %}

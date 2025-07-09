@@ -1,0 +1,186 @@
+{% extends "website/base.html" %}
+{% load static %}
+
+{% block title %}contactus{% endblock %}
+{% block content %}
+
+
+<style>
+    #scrollToTopBtn {
+            display: none; /* Initially hide the button */
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #100562;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            line-height: 50px;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+        }
+
+        #scrollToTopBtn:hover {
+            background-color: #ffe401;
+        }
+
+</style>
+</head>
+
+
+    <!-- End Preloader -->
+    
+
+
+    <main>
+        <!-- Define main content section -->
+            <!-- Start Page Title Area -->
+    <div class="page-title-area page-title-style-two item-bg2 jarallax" data-jarallax='{"speed": 0.3}' style="height: 50px;">
+        <div class="container">
+            <div class="page-title-content">
+                <ul>
+                    <li><a href="https://sipherweb.com/index.html">Home</a></li>
+                    <li><a href="https://sipherweb.com/courses-2-columns-style-1.html">Contact Us</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- End Page Title Area -->
+
+    <!-- Start Contact Info Area -->
+    <section class="contact-info-area pt-100 pb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="contact-info-box mb-30">
+                        <div class="icon">
+                            <i class='bx bx-envelope'></i>
+                        </div>
+
+                        <h3>Email Here</h3>
+                        <p><a href="contactus#"><span class="__cf_email__"
+                                    data-cfemail="4b232e2727240b392a3a3e2e65282426">Info@sipherweb.com</span></a></p>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="contact-info-box mb-30">
+                        <div class="icon">
+                            <i class='bx bx-map'></i>
+                        </div>
+
+                        <h3>Location Here</h3>
+                        <p><a href="https://goo.gl/maps/Mii9keyeqXeNH4347" target="_blank">First Floor, C-1 / 364, Near
+                                Muglai Hutz, Sector G, Jankipuram, Tedhi Pulia, Lucknow
+                            </a></p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-0 offset-md-3 offset-sm-3">
+                    <div class="contact-info-box mb-30">
+                        <div class="icon">
+                            <i class='bx bx-phone-call'></i>
+                        </div>
+
+                        <h3>Call Here</h3>
+                        <p><a href="tel:9125545607">9125545607</a></p>
+                        <p><a href="tel:9125525608">9125525608</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="particles-js-circle-bubble-2"></div>
+    </section>
+    <!-- End Contact Info Area -->
+
+    <!-- Start Contact Area -->
+    <section class="contact-area pb-100">
+        <div class="container">
+            <div class="section-title">
+                <span class="sub-title">Contact Us</span>
+                <h3  style="color: #100562; font-weight:bold;"><span style="color: #ffe401; font-weight:bold;">Drop us</span> Message for any Query</h3>
+            </div>
+
+
+            <div class="contact-form">
+                <div class="col-lg-12 col-md-12">
+                                        <div class="students-feedback-form">
+                        <form action="https://sipherweb.com/Insertcontact" method="post">
+                            <input type="hidden" name="_token" value="6yXCOc1Qtg7FOI2uWp6Nqq3i20wt0u7iR8BGmLvE" autocomplete="off">                            <div class="row">
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Your name*" name="name">
+                                        <span class="label-title"><i class='bx bx-user'></i></span>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Your email*" name="email">
+                                        <span class="label-title"><i class='bx bx-envelope'></i></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Your phone*" name="phone">
+                                        <span class="label-title"><i class='bx bx-phone'></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Your address*" name="msg">
+                                        <span class="label-title"><i class='bx bx-home'></i></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="form-group">
+                                        <textarea cols="30" rows="5" name="Text" class="form-control" placeholder="Write something here (Optional)"></textarea>
+                                        <span class="label-title"><i class='bx bx-edit'></i></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12 col-md-12">
+                                    <button type="submit" class="default-btn"><i
+                                            class='bx bx-paper-plane icon-arrow before'></i><span class="label">Send
+                                            Message</span><i class="bx bx-paper-plane icon-arrow after"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="particles-js-circle-bubble-3"></div>
+        <div class="contact-bg-image"><img src="assets/img/map.png" alt="image"></div>
+
+    </section>
+    <div id="map">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d28462.50003077332!2d80.958089!3d26.909445!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399957c122281889%3A0xfc548cb147027514!2sSipher%20Web%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1714846121335!5m2!1sen!2sin"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <!-- End Contact Area -->
+
+
+
+    </main>
+
+   
+
+
+
+{% endblock content %}
