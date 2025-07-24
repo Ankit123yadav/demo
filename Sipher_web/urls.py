@@ -19,13 +19,15 @@ from django.urls import path, include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", include("apps.core.urls")),  # Include core app URLs
-    path("", include("apps.usermanagement.urls")),  # Add usermanagement URLs
-    path("", include("apps.employee_management.urls")),
-    path("", include("apps.authentication.urls")),
-    path("", include("apps.inventory.urls")),
-    path("", include("apps.finance.urls")),
-    path("", include("apps.counsellor.urls")),
-    path("", include("apps.trainer_managment.urls")),
-    path("", include("apps.website.urls")),  # Add website URLs
+    path("dashboard/", include("apps.core.urls")),  # Include core app URLs
+    path("dashboard/", include("apps.usermanagement.urls")),  # Add usermanagement URLs
+    path("dashboard/", include("apps.employee_management.urls")),
+    path("dashboard/", include("apps.authentication.urls")),
+    path("dashboard/", include("apps.inventory.urls")),
+    path("dashboard/", include("apps.finance.urls")),
+    path("dashboard/", include("apps.counsellor.urls")),
+    path("dashboard/", include("apps.trainer_managment.urls")),
+    path("", include("apps.website.urls")),
+    path("dashboard/", include("apps.management.urls")),  # Include management app URLs
+        # Add website URLs
 ]

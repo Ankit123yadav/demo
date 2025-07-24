@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     "apps.usermanagement", 
     "apps.employee_management",
     "apps.authentication",
-    "apps.inventory",  # Custom app for inventory management
+    "apps.inventory", 
+    "apps.management" # Custom app for management
 ]
 
 MIDDLEWARE = [

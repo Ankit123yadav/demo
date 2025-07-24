@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 style="text-align:center;margin-top:30px;margin-bottom:30px;font-size:2.5em;font-weight:bold;letter-spacing:1px;">
+  Upload Templates
+</h1>
+
+<!-- Initial Upload Button -->
+<div style="text-align:right;margin-top:30px; margin-left:420px;">
+  <button type="button" id="show-form-btn" class="btn btn-primary" style="padding:8px 24px;font-size:1.1em;">
+    Upload Certificate
+  </button>
+</div>
+
+<!-- Hidden Form -->
+<div id="upload-form-wrapper" style="display:none;text-align:right;margin-bottom:100px;">
+  <form method="post" enctype="multipart/form-data" id="certificate-upload-form">
+    {% csrf_token %}
+    <div style="margin-bottom:10px;">
+      {% comment %} <label for="certificate_file" style="font-weight:500;">Choose Certificate File:</label> {% endcomment %}
+      <input type="file" name="certificate_file" id="certificate_file" accept="application/pdf,image/*" style="display:inline-block;margin-top:30px;" required>
+    </div>
+    <button type="submit" class="btn btn-success" style="padding:8px 24px;font-size:1.1em; margin-right:200px;">Submit</button>
+  </form>
+</div>
+
+<!-- Preview -->
+<div id="certificate-preview" style="text-align:center;margin-bottom:80px;"></div>
+
+<!-- Display uploaded file -->
+{% if certificate_url %}
+  <div style="text-align:center;margin-bottom:40px;">
+    {% if certificate_url|lower|slice:'-4:' == '.pdf' %}
+      <iframe src="{{ certificate_url }}" width="700" height="500" style="border:1px solid #ccc;"></iframe>
+    {% else %}
+      <img src="{{ certificate_url }}" alt="Uploaded Certificate"
+           style="max-width:700px;width:100%;border:1px solid #ccc;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,0.07);">
+    {% endif %}
+  </div>
+{% endif %}
+
+<script>
+  const showFormBtn = document.getElementById('show-form-btn');
+  const uploadFormWrapper = document.getElementById('upload-form-wrapper');
+  const fileInput = document.getElementById('certificate_file');
+  const previewDiv = document.getElementById('certificate-preview');
+
+  showFormBtn.addEventListener('click', () => {
+    uploadFormWrapper.style.display = 'block';
+    showFormBtn.style.display = 'none';
+  });
+
+  fileInput?.addEventListener('change', function (e) {
+    previewDiv.innerHTML = '';
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const url = URL.createObjectURL(file);
+    if (file.type === 'application/pdf') {
+      previewDiv.innerHTML = `<iframe src="${url}" width="700" height="500" style="border:1px solid #ccc;"></iframe>`;
+    } else if (file.type.startsWith('image/')) {
+      previewDiv.innerHTML = `<img src="${url}" alt="Preview"
+        style="max-width:700px;width:100%;border:1px solid #ccc;border-radius:8px;
+        box-shadow:0 2px 12px rgba(0,0,0,0.07);">`;
+    } else {
+      previewDiv.innerHTML = '<p style="color:red;">Unsupported file type.</p>';
+    }
+  });
+</script>
+{% endblock %}
+
+
+
