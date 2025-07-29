@@ -7,12 +7,12 @@
 
 
 
-<!-- Tailwind CSS --> 
+<!-- Tailwind CSS -->
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
 
 
- <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
- 
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
@@ -438,7 +438,7 @@
 
     .btn-grad {
         background-image: linear-gradient(to right,
-rgb(236, 235, 230) 0%,
+                rgb(236, 235, 230) 0%,
                 #ffffff 51%,
                 #ece9e6 100%);
         padding: 8px 12px;
@@ -550,7 +550,6 @@ rgb(236, 235, 230) 0%,
         }
     }
 
-
     @media (max-width: 460px) {
         .home {
             gap: 0;
@@ -569,176 +568,170 @@ rgb(236, 235, 230) 0%,
         }
 
     }
-
-
 </style>
 
 <style>
-      @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Nunito:wght@300;600&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Nunito:wght@300;600&display=swap");
+
+    .sec {
+        display: grid;
+        grid-template-columns: 50% 45%;
+        place-items: center;
+        gap: 60px;
+        min-height: 100vh;
+        padding: 20px 60px;
+    }
+
+    .swiper {
+        position: relative;
+        width: 450px;
+        height: 530px;
+    }
+
+    .swiper-slide {
+        position: relative;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        user-select: none;
+        border-radius: 20px;
+    }
 
 
 
+    .cost {
+        position: absolute;
+        top: 8px;
+        right: 6px;
+        background: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        border-radius: 30px;
+        padding: 6px 10px;
+        color: #fff;
+        font-size: clamp(0.8rem, 4vw, 0.9rem);
+        font-weight: 600;
+    }
 
+    .dark-text {
+        color: #202134;
+    }
 
-.sec {
-  display: grid;
-  grid-template-columns: 50% 45%;
-  place-items: center;
-  gap: 60px;
-  min-height: 100vh;
-  padding: 20px 60px;
-}
-.swiper {
-  position: relative;
-  width: 450px;
-  height: 530px;
-}
+    .swiper-slide img {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+    }
 
-.swiper-slide {
-  position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  user-select: none;
-  border-radius: 20px;
-}
+    .overlay {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 150px;
+        padding: 10px 20px;
+        background: rgba(93, 95, 145, 0.2);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        color: #fff;
+        border-radius: 0 0 20px 20px;
+    }
 
+    .overlay h1 {
+        font-size: clamp(1.2rem, 4vw, 1.5rem);
+        font-weight: 600;
+    }
 
+    .overlay p {
+        font-size: clamp(0.8rem, 4vw, 0.9rem);
+        font-weight: 300;
+        line-height: 1.3;
+    }
 
-.cost {
-  position: absolute;
-  top: 8px;
-  right: 6px;
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-  border-radius: 30px;
-  padding: 6px 10px;
-  color: #fff;
-  font-size: clamp(0.8rem, 4vw, 0.9rem);
-  font-weight: 600;
-}
+    .ratings {
+        display: flex;
+        column-gap: 10px;
+        margin-top: -6px;
+    }
 
-.dark-text {
-  color: #202134;
-}
+    .ratings span {
+        font-size: clamp(0.8rem, 4vw, 0.9rem);
+        font-weight: 300;
+    }
 
-.swiper-slide img {
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-}
+    .star {
+        color: #afe312;
+    }
 
-.overlay {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 150px;
-  padding: 10px 20px;
-  background: rgba(93, 95, 145, 0.2);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
-  color: #fff;
-  border-radius: 0 0 20px 20px;
-}
+    .logo {
+        position: fixed;
+        right: -20px;
+        bottom: -30px;
+        z-index: 10;
+    }
 
-.overlay h1 {
-  font-size: clamp(1.2rem, 4vw, 1.5rem);
-  font-weight: 600;
-}
+    .logo img {
+        width: 120px;
+    }
 
-.overlay p {
-  font-size: clamp(0.8rem, 4vw, 0.9rem);
-  font-weight: 300;
-  line-height: 1.3;
-}
+    @media (max-width: 890px) {
+        .logo {
+            right: -10px;
+            bottom: -20px;
+        }
 
-.ratings {
-  display: flex;
-  column-gap: 10px;
-  margin-top: -6px;
-}
+        .logo img {
+            width: 80px;
+        }
+    }
 
-.ratings span {
-  font-size: clamp(0.8rem, 4vw, 0.9rem);
-  font-weight: 300;
-}
+    @media (max-width: 1050px) {
+        .swiper {
+            width: 350px;
+            height: 450px;
+        }
+    }
 
-.star {
-  color: #afe312;
-}
+    @media (max-width: 930px) {
+        .sec {
+            grid-template-columns: 100%;
+            grid-template-rows: 55% 40%;
+            grid-template-areas:
+                "slider"
+                "content";
+            place-items: center;
+            gap: 64px;
+            padding: 60px;
+        }
 
-.logo {
-  position: fixed;
-  right: -20px;
-  bottom: -30px;
-  z-index: 10;
-}
+        .swiper {
+            grid-area: slider;
+        }
 
-.logo img {
-  width: 120px;
-}
+        .content {
+            grid-area: content;
+            text-align: center;
+        }
 
-@media (max-width: 890px) {
-  .logo {
-  right: -10px;
-  bottom: -20px;
-}
-  
- .logo img {
-  width: 80px;
-  }
-}
+        .content h1 {
+            margin-bottom: 20px;
+        }
+    }
 
-@media (max-width: 1050px) {
-  .swiper {
-    width: 350px;
-    height: 450px;
-  }
-}
+    @media (max-width: 470px) {
+        .sec {
+            padding: 40px 40px 60px;
+        }
 
-@media (max-width: 930px) {
-  .sec {
-    grid-template-columns: 100%;
-    grid-template-rows: 55% 40%;
-    grid-template-areas:
-      "slider"
-      "content";
-    place-items: center;
-    gap: 64px;
-    padding: 60px;
-  }
-
-  .swiper {
-    grid-area: slider;
-  }
-
-  .content {
-    grid-area: content;
-    text-align: center;
-  }
-
-  .content h1 {
-    margin-bottom: 20px;
-  }
-}
-
-@media (max-width: 470px) {
-  .sec {
-    padding: 40px 40px 60px;
-  }
-
-  .swiper {
-    width: 300px;
-    height: 400px;
-  }
-}
-    
-    </style>
+        .swiper {
+            width: 300px;
+            height: 400px;
+        }
+    }
+</style>
 </head>
 
 
@@ -909,123 +902,144 @@ rgb(236, 235, 230) 0%,
 
 <section class="about-area ptb-130 bg-white">
     <div class="container" style="margin: 0 auto;">
-           <div class="text-center " >
-            <h2 class="text-4xl font-bold " style="color:#100562; font-weight:bold;"><span
-                    class="text-yellow-400">About </span>Us​</h2>
+        <div class="text-center ">
+            <h2 class="text-4xl font-bold " style="color:#100562; font-weight:bold;"><span class="text-yellow-400">About
+                </span>Us​</h2>
 
         </div>
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-12">
                 <section class="sec">
- 
 
-      <div class="swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="Summer Training at Sipher Web Academy" />
-            <div class="cost">Summer Training</div>
-            <div class="overlay" style="background: linear-gradient(180deg, rgba(16,5,98,0.7) 0%, rgba(0,0,0,0.5) 100%);">
-              <h1 style="color: #ffe401;padding-top: 10px; font-weight:bold; text-align:center">Summer Training</h1>
-              <p style="color:hsl(51, 18.90%, 92.70%); font-weight:bold; text-align:center">
-                Gain hands-on experience with real-world projects, guided by industry experts. Elevate your practical skills and boost your career prospects this summer.
-              </p>
-              <div class="ratings">
-                <div class="stars">
-                  <ion-icon class="star" name="star"></ion-icon>
-                  <ion-icon class="star" name="star"></ion-icon>
-                  <ion-icon class="star" name="star"></ion-icon>
-                  <ion-icon class="star" name="star"></ion-icon>
-                  <ion-icon class="star" name="star-half-outline"></ion-icon>
-                </div>
-            
-              </div>
-              <a href="/courses" class="btn-grad" style="transform: translateY(5px);">Learn More</a>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=400&q=80" alt="Apprenticeship Program at Sipher Web Academy" />
-            <div class="cost">Apprenticeship</div>
-            <div class="overlay" style="background: linear-gradient(180deg, rgba(16,5,98,0.7) 0%, rgba(0,0,0,0.5) 100%);">
-              <h1 style="color: #ffe401;padding-top: 10px; font-weight:bold; text-align:center">Apprenticeship Program</h1>
-              <p style="color:hsl(51, 18.90%, 92.70%); font-weight:bold; text-align:center">
-                Work alongside industry mentors, earn while you learn, and build a strong professional network. Start your journey to a successful career.
-              </p>
-              <div class="ratings">
-                <div class="stars">
-                  <ion-icon class="star" name="star"></ion-icon>
-                  <ion-icon class="star" name="star"></ion-icon>
-                  <ion-icon class="star" name="star"></ion-icon>
-                  <ion-icon class="star" name="star"></ion-icon>
-                  <ion-icon class="star" name="star"></ion-icon>
-                </div>
-               
-              </div>
-              <a href="/courses" class="btn-grad"  style="transform: translateY(5px);">Learn More</a>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=400&q=80" alt="Winter Training at Sipher Web Academy" />
-            <div class="cost dark-text">Winter Training</div>
-            <div class="overlay" style="background: linear-gradient(180deg, rgba(16,5,98,0.7) 0%, rgba(0,0,0,0.5) 100%);">
-              <h1 style="color: #ffe401;padding-top: 10px; font-weight:bold; text-align:center">Winter Training</h1>
-              <p style="color:hsl(51, 18.90%, 92.70%); font-weight:bold; text-align:center">
-                Accelerate your learning during the winter break with intensive, career-focused courses designed to help you stand out.
-              </p>
-              <div class="ratings">
-                <div class="stars">
-                  <ion-icon class="star" name="star"></ion-icon>
-                  <ion-icon class="star" name="star"></ion-icon>
-                  <ion-icon class="star" name="star"></ion-icon>
-                  <ion-icon class="star" name="star"></ion-icon>
-                  <ion-icon class="star" name="star-half-outline"></ion-icon>
-                </div>
-          
-              </div>
-              <a href="/courses" class="btn-grad" style="transform: translateY(5px);">Learn More</a>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Industrial Training at Sipher Web Academy" />
-            <div class="cost dark-text">Industrial Training</div>
-            <div class="overlay" style="background: linear-gradient(180deg, rgba(16,5,98,0.7) 0%, rgba(0,0,0,0.5) 100%);">
-              <h1 style="color: #ffe401;padding-top: 10px; font-weight:bold; text-align:center">Industrial Training</h1>
-              <p style="color:hsl(51, 18.90%, 92.70%); font-weight:bold; text-align:center"s>
-                Prepare for the corporate world with live projects, soft skills development, and real industry exposure. Become job-ready with Sipher Web Academy.
-              </p>
-              <div class="ratings">
-                <div class="stars">
-                  <ion-icon class="star" name="star"></ion-icon>
-                  <ion-icon class="star" name="star"></ion-icon>
-                  <ion-icon class="star" name="star"></ion-icon>
-                  <ion-icon class="star" name="star"></ion-icon>
-                  <ion-icon class="star" name="star" outline></ion-icon>
-                </div>
-                
-              </div>
-              <a href="/courses" class="btn-grad"  style="transform: translateY(5px);">Learn More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-  
-    </section>
+
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80"
+                                    alt="Summer Training at Sipher Web Academy" />
+                                <div class="cost">Summer Training</div>
+                                <div class="overlay"
+                                    style="background: linear-gradient(180deg, rgba(16,5,98,0.7) 0%, rgba(0,0,0,0.5) 100%);">
+                                    <h1 style="color: #ffe401;padding-top: 10px; font-weight:bold; text-align:center">
+                                        Summer Training</h1>
+                                    <p style="color:hsl(51, 18.90%, 92.70%); font-weight:bold; text-align:center">
+                                        Gain hands-on experience with real-world projects, guided by industry experts.
+                                        Elevate your practical skills and boost your career prospects this summer.
+                                    </p>
+                                    <div class="ratings">
+                                        <div class="stars">
+                                            <ion-icon class="star" name="star"></ion-icon>
+                                            <ion-icon class="star" name="star"></ion-icon>
+                                            <ion-icon class="star" name="star"></ion-icon>
+                                            <ion-icon class="star" name="star"></ion-icon>
+                                            <ion-icon class="star" name="star-half-outline"></ion-icon>
+                                        </div>
+
+                                    </div>
+                                    <a href="/courses" class="btn-grad" style="transform: translateY(5px);">Learn
+                                        More</a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=400&q=80"
+                                    alt="Apprenticeship Program at Sipher Web Academy" />
+                                <div class="cost">Apprenticeship</div>
+                                <div class="overlay"
+                                    style="background: linear-gradient(180deg, rgba(16,5,98,0.7) 0%, rgba(0,0,0,0.5) 100%);">
+                                    <h1 style="color: #ffe401;padding-top: 10px; font-weight:bold; text-align:center">
+                                        Apprenticeship Program</h1>
+                                    <p style="color:hsl(51, 18.90%, 92.70%); font-weight:bold; text-align:center">
+                                        Work alongside industry mentors, earn while you learn, and build a strong
+                                        professional network. Start your journey to a successful career.
+                                    </p>
+                                    <div class="ratings">
+                                        <div class="stars">
+                                            <ion-icon class="star" name="star"></ion-icon>
+                                            <ion-icon class="star" name="star"></ion-icon>
+                                            <ion-icon class="star" name="star"></ion-icon>
+                                            <ion-icon class="star" name="star"></ion-icon>
+                                            <ion-icon class="star" name="star"></ion-icon>
+                                        </div>
+
+                                    </div>
+                                    <a href="/courses" class="btn-grad" style="transform: translateY(5px);">Learn
+                                        More</a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=400&q=80"
+                                    alt="Winter Training at Sipher Web Academy" />
+                                <div class="cost dark-text">Winter Training</div>
+                                <div class="overlay"
+                                    style="background: linear-gradient(180deg, rgba(16,5,98,0.7) 0%, rgba(0,0,0,0.5) 100%);">
+                                    <h1 style="color: #ffe401;padding-top: 10px; font-weight:bold; text-align:center">
+                                        Winter Training</h1>
+                                    <p style="color:hsl(51, 18.90%, 92.70%); font-weight:bold; text-align:center">
+                                        Accelerate your learning during the winter break with intensive, career-focused
+                                        courses designed to help you stand out.
+                                    </p>
+                                    <div class="ratings">
+                                        <div class="stars">
+                                            <ion-icon class="star" name="star"></ion-icon>
+                                            <ion-icon class="star" name="star"></ion-icon>
+                                            <ion-icon class="star" name="star"></ion-icon>
+                                            <ion-icon class="star" name="star"></ion-icon>
+                                            <ion-icon class="star" name="star-half-outline"></ion-icon>
+                                        </div>
+
+                                    </div>
+                                    <a href="/courses" class="btn-grad" style="transform: translateY(5px);">Learn
+                                        More</a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
+                                    alt="Industrial Training at Sipher Web Academy" />
+                                <div class="cost dark-text">Industrial Training</div>
+                                <div class="overlay"
+                                    style="background: linear-gradient(180deg, rgba(16,5,98,0.7) 0%, rgba(0,0,0,0.5) 100%);">
+                                    <h1 style="color: #ffe401;padding-top: 10px; font-weight:bold; text-align:center">
+                                        Industrial Training</h1>
+                                    <p style="color:hsl(51, 18.90%, 92.70%); font-weight:bold; text-align:center" s>
+                                        Prepare for the corporate world with live projects, soft skills development, and
+                                        real industry exposure. Become job-ready with Sipher Web Academy.
+                                    </p>
+                                    <div class="ratings">
+                                        <div class="stars">
+                                            <ion-icon class="star" name="star"></ion-icon>
+                                            <ion-icon class="star" name="star"></ion-icon>
+                                            <ion-icon class="star" name="star"></ion-icon>
+                                            <ion-icon class="star" name="star"></ion-icon>
+                                            <ion-icon class="star" name="star" outline></ion-icon>
+                                        </div>
+
+                                    </div>
+                                    <a href="/courses" class="btn-grad" style="transform: translateY(5px);">Learn
+                                        More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
             </div>
 
-            <div class="col-lg-6 col-md-12 " style= "transform: translateY(-25px); ">
+            <div class="col-lg-6 col-md-12 " style="transform: translateY(-25px); ">
 
                 <h1 style=" color: #100562; ;
-            font-weight:bold; font-size: 40px;"><span style="color: #ffe401;font-weight:bold;">Master</span> New Skills and Forge Ahead
+            font-weight:bold; font-size: 40px;"><span style="color: #ffe401;font-weight:bold;">Master</span> New Skills
+                    and Forge Ahead
                     into Success</h1>
-                <h1>We can support student forum 24/7 for Empowering Minds, Supporting students.</h1><br/>
+                <h1>We can support student forum 24/7 for Empowering Minds, Supporting students.</h1><br />
                 <p style="text-align: justify">At Sipher Web : our client-centric focus drives every decision we
                     make. Through collaborative partnerships, we tailor solutions to meet your unique needs and
                     exceed expectations. Our commitment to excellence ensures that every project is executed
                     with precision and quality. With a dynamic approach to training and development, we empower
                     individuals and organizations to thrive in the ever-changing IT landscape. Together, let's
                     unlock new possibilities and drive innovation for lasting success</p>
-<br/>
+                <br />
                 <div class="features-text">
-                    <h5><i class='bx bx-planet'></i>A place where you can achieve</h5><br/>
+                    <h5><i class='bx bx-planet'></i>A place where you can achieve</h5><br />
                     <p>Education encompasses both the teaching and learning of knowledge, proper conduct, and
                         technical competency.</p>
                 </div>
@@ -1060,7 +1074,7 @@ rgb(236, 235, 230) 0%,
 
             <div class="single-blog-post mb-30">
                 <!--<img src="https://sipherweb.com/storage/Image/1.jpg" alt="image">-->
-              <img src="{% static 'website/img/business-coaching/events-img1.jpg' %}" alt="Image">
+                <img src="{% static 'website/img/business-coaching/events-img1.jpg' %}" alt="Image">
             </div>
             <div class="single-blog-post mb-30">
                 <!--<img src="https://sipherweb.com/storage/Image/15.png" alt="image">-->
@@ -1151,321 +1165,335 @@ rgb(236, 235, 230) 0%,
 
 
 
-  <section class="funfacts-area bg-white pt-100">
-        <div class="container-fluid">
-            <div class="section-title text-left">
-              
-                <h2 style=" color: #100562;
-            font-weight:bold; text-align:center; transform: translatex(250px);"><span style="color: #ffe401;font-weight:bold;">Trending</span> Training Courses</h2>
+<section class="funfacts-area bg-white pt-100">
+    <div class="container-fluid">
+        <div class="section-title text-left">
+
+            <h2 style=" color: #100562;
+            font-weight:bold; text-align:center; transform: translatex(250px);"><span
+                    style="color: #ffe401;font-weight:bold;">Trending</span> Training Courses</h2>
 
 
 
             <div class="courses-categories-slides owl-carousel owl-theme">
 
-                                    <div class="single-categories-courses-box mb-30">
-                        <div class="icon">
-                            <img src="{% static 'website/img/php.png' %}" class="white-logo"
-                                alt="logo" style="border-radius:50%;">
-                                
-                                
-                                <!-- <img src="/storage/Image/php.png" class="white-logo"-->
-                                <!--alt="logo" style="border-raduis:50%;">-->
-                                
-                        </div>
-                        <h3>Php Technology</h3>
+                <div class="single-categories-courses-box mb-30">
+                    <div class="icon">
+                        <img src="{% static 'website/img/php.png' %}" class="white-logo" alt="logo"
+                            style="border-radius:50%;">
+
+
+                        <!-- <img src="/storage/Image/php.png" class="white-logo"-->
+                        <!--alt="logo" style="border-raduis:50%;">-->
+
+                    </div>
+                    <h3>Php Technology</h3>
                     <a href="Registration"><button class="btn btn-danger mx-auto"><span>Register Now</span></button></a>
 
 
+                </div>
+                <div class="single-categories-courses-box mb-30">
+                    <div class="icon">
+                        <img src="{% static 'website/img/mern.jpeg' %}" class="white-logo" alt="logo"
+                            style="border-radius:50%;">
+
+
+                        <!-- <img src="/storage/Image/mern-stack-icon-1 (1).png" class="white-logo"-->
+                        <!--alt="logo" style="border-raduis:50%;">-->
+
                     </div>
-                                    <div class="single-categories-courses-box mb-30">
-                        <div class="icon">
-                            <img src="{% static 'website/img/mern.jpeg' %}" class="white-logo"
-                                alt="logo" style="border-radius:50%;">
-                                
-                                
-                                <!-- <img src="/storage/Image/mern-stack-icon-1 (1).png" class="white-logo"-->
-                                <!--alt="logo" style="border-raduis:50%;">-->
-                                
-                        </div>
-                        <h3>Mern Technology</h3>
+                    <h3>Mern Technology</h3>
                     <a href="Registration"><button class="btn btn-danger mx-auto"><span>Register Now</span></button></a>
 
 
+                </div>
+                <div class="single-categories-courses-box mb-30">
+                    <div class="icon">
+                        <img src="{% static 'website/img/bot.png' %}" class="white-logo" alt="logo"
+                            style="border-radius:50%;">
+
+
+                        <!-- <img src="/storage/Image/bot.png" class="white-logo"-->
+                        <!--alt="logo" style="border-raduis:50%;">-->
+
                     </div>
-                                    <div class="single-categories-courses-box mb-30">
-                        <div class="icon">
-                            <img src="{% static 'website/img/bot.png' %}" class="white-logo"
-                                alt="logo" style="border-radius:50%;">
-                                
-                                
-                                <!-- <img src="/storage/Image/bot.png" class="white-logo"-->
-                                <!--alt="logo" style="border-raduis:50%;">-->
-                                
-                        </div>
-                        <h3>Bootstrap Technology</h3>
+                    <h3>Bootstrap Technology</h3>
                     <a href="Registration"><button class="btn btn-danger mx-auto"><span>Register Now</span></button></a>
 
 
+                </div>
+                <div class="single-categories-courses-box mb-30">
+                    <div class="icon">
+                        <img src="{% static 'website/img/python-package-index.svg' %}" class="white-logo" alt="logo"
+                            style="border-radius:50%;">
+
+
+                        <!-- <img src="/storage/Image/python-icon-18.jpg" class="white-logo"-->
+                        <!--alt="logo" style="border-raduis:50%;">-->
+
                     </div>
-                                    <div class="single-categories-courses-box mb-30">
-                        <div class="icon">
-                            <img src="{% static 'website/img/python-package-index.svg' %}" class="white-logo"
-                                alt="logo" style="border-radius:50%;">
-                                
-                                
-                                <!-- <img src="/storage/Image/python-icon-18.jpg" class="white-logo"-->
-                                <!--alt="logo" style="border-raduis:50%;">-->
-                                
-                        </div>
-                        <h3>Python Technology</h3>
+                    <h3>Python Technology</h3>
                     <a href="Registration"><button class="btn btn-danger mx-auto"><span>Register Now</span></button></a>
 
 
+                </div>
+                <div class="single-categories-courses-box mb-30">
+                    <div class="icon">
+                        <img src="{% static 'website/img/auto.jpg' %}" class="white-logo" alt="logo"
+                            style="border-radius:50%;">
+
+
+                        <!-- <img src="/storage/Image/auto.jpg" class="white-logo"-->
+                        <!--alt="logo" style="border-raduis:50%;">-->
+
                     </div>
-                                    <div class="single-categories-courses-box mb-30">
-                        <div class="icon">
-                            <img src="{% static 'website/img/auto.jpg' %}" class="white-logo"
-                                alt="logo" style="border-radius:50%;">
-                                
-                                
-                                <!-- <img src="/storage/Image/auto.jpg" class="white-logo"-->
-                                <!--alt="logo" style="border-raduis:50%;">-->
-                                
-                        </div>
-                        <h3>AutoCAD</h3>
+                    <h3>AutoCAD</h3>
                     <a href="Registration"><button class="btn btn-danger mx-auto"><span>Register Now</span></button></a>
 
 
-                    </div>
-                
+                </div>
+
             </div>
         </div>
 
 
-    </section>
+</section>
 
 
 
- <section class="students-feedback-form-area ptb-100 bg-white jarallax" data-jarallax='{"speed": 0.3}'>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-md-12">
-                    <div class="students-feedback-form-content">
-                        <h2>Committed To Excellence.</h2>
-                    </div>
+<section class="students-feedback-form-area ptb-100 bg-white jarallax" data-jarallax='{"speed": 0.3}'>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12">
+                <div class="students-feedback-form-content">
+                    <h2>Committed To Excellence.</h2>
                 </div>
+            </div>
 
-                <div class="col-lg-6 col-md-12">
-                    <div class="students-feedback-form">
-                        <h3>Student Feedback Form</h3>
+            <div class="col-lg-6 col-md-12">
+                <div class="students-feedback-form">
+                    <h3>Student Feedback Form</h3>
 
-                        <form action="https://sipherweb.com/Insertfeedback" method="post" enctype="multipart/form-data">
-                            <input type="hidden" name="_token" value="6yXCOc1Qtg7FOI2uWp6Nqq3i20wt0u7iR8BGmLvE" autocomplete="off">                            <div class="row">
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Your name*" name="name" id="name">
-                                        <span class="label-title"><i class='bx bx-user'></i></span>
-                                                                            </div>
-                                </div>
-
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Your address*" name="address" id="address">
-                                        <span class="label-title"><i class='bx bx-home'></i></span>
-                                                                            </div>
-                                </div>
-
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Your email*" name="email">
-                                        <span class="label-title"><i class='bx bx-envelope'></i></span>
-                                                                            </div>
-                                </div>
-
-                                <div class="col-lg-6 col-md-6">
-                                    
-                                    <div class="form-group">
-                                        <input type="file" class="form-control" placeholder="Your pic upload*" name="Img">
-                                          <label for="Img"> your image Upload</label>
-                                        <span class="label-title"><i class='bx bx-file'></i></span>
-                                                                            </div>
-                                </div>
-
-                                <div class="col-lg-12 col-md-12">
-                                    <div class="form-group">
-                                        <textarea cols="30" rows="5" id="text" name="text" class="form-control" placeholder="Write something here (Optional)"></textarea>
-                                        <span class="label-title"><i class='bx bx-edit'></i></span>
-                                                                            </div>
-                                </div>
-
-                                <div class="col-lg-12 col-md-12">
-                                    <button type="submit" class="default-btn"><i
-                                            class='bx bx-paper-plane icon-arrow before'></i><span class="label">Send
-                                            Message</span><i class="bx bx-paper-plane icon-arrow after"></i></button>
+                    <form action="https://sipherweb.com/Insertfeedback" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="_token" value="6yXCOc1Qtg7FOI2uWp6Nqq3i20wt0u7iR8BGmLvE"
+                            autocomplete="off">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Your name*" name="name"
+                                        id="name">
+                                    <span class="label-title"><i class='bx bx-user'></i></span>
                                 </div>
                             </div>
-                        </form>
-                    </div>
+
+                            <div class="col-lg-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Your address*" name="address"
+                                        id="address">
+                                    <span class="label-title"><i class='bx bx-home'></i></span>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Your email*" name="email">
+                                    <span class="label-title"><i class='bx bx-envelope'></i></span>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6">
+
+                                <div class="form-group">
+                                    <input type="file" class="form-control" placeholder="Your pic upload*" name="Img">
+                                    <label for="Img"> your image Upload</label>
+                                    <span class="label-title"><i class='bx bx-file'></i></span>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12">
+                                <div class="form-group">
+                                    <textarea cols="30" rows="5" id="text" name="text" class="form-control"
+                                        placeholder="Write something here (Optional)"></textarea>
+                                    <span class="label-title"><i class='bx bx-edit'></i></span>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12">
+                                <button type="submit" class="default-btn"><i
+                                        class='bx bx-paper-plane icon-arrow before'></i><span class="label">Send
+                                        Message</span><i class="bx bx-paper-plane icon-arrow after"></i></button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- End Mission Area -->
+    </div>
+</section>
+<!-- End Mission Area -->
 
-    <section class="funfacts-area pt-100 bg-white" style="margin-top: -35px;">
-        <div class="container-fluid">
-            <div class="funfacts-inner" style="background: #100561">
-                <div class="row">
-                    <div class="col-lg-3 col-md-3 col-6">
-                        <div class="single-funfact">
-                            <div class="icon">
-                                <i class='bx bxs-group'></i>
-                            </div>
-                            <h3 class="odometer" data-count="20">00</h3>
-                            <p>Expert Instructors</p>
+<section class="funfacts-area pt-100 bg-white" style="margin-top: -35px;">
+    <div class="container-fluid">
+        <div class="funfacts-inner" style="background: #100561">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-6">
+                    <div class="single-funfact">
+                        <div class="icon">
+                            <i class='bx bxs-group'></i>
                         </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-3 col-6">
-                        <div class="single-funfact">
-                            <div class="icon">
-                                <i class='bx bx-book-reader'></i>
-                            </div>
-                            <h3 class="odometer" data-count="50">00</h3>
-                            <p>Total Courses</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-3 col-6">
-                        <div class="single-funfact">
-                            <div class="icon">
-                                <i class='bx bx-user-pin'></i>
-                            </div>
-                            <h3 class="odometer" data-count="1000">00</h3>
-                            <p>Happy Students</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-3 col-6">
-                        <div class="single-funfact">
-                            <div class="icon">
-                                <i class='bx bxl-deviantart'></i>
-                            </div>
-                            <h3 class="odometer" data-count="10">00</h3>
-                            <p>Creative Events</p>
-                        </div>
+                        <h3 class="odometer" data-count="20">00</h3>
+                        <p>Expert Instructors</p>
                     </div>
                 </div>
 
-                <div id="particles-js-circle-bubble"></div>
+                <div class="col-lg-3 col-md-3 col-6">
+                    <div class="single-funfact">
+                        <div class="icon">
+                            <i class='bx bx-book-reader'></i>
+                        </div>
+                        <h3 class="odometer" data-count="50">00</h3>
+                        <p>Total Courses</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-6">
+                    <div class="single-funfact">
+                        <div class="icon">
+                            <i class='bx bx-user-pin'></i>
+                        </div>
+                        <h3 class="odometer" data-count="1000">00</h3>
+                        <p>Happy Students</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-6">
+                    <div class="single-funfact">
+                        <div class="icon">
+                            <i class='bx bxl-deviantart'></i>
+                        </div>
+                        <h3 class="odometer" data-count="10">00</h3>
+                        <p>Creative Events</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="particles-js-circle-bubble"></div>
+        </div>
+    </div>
+</section>
+&nbsp;
+
+
+
+
+<!-- Start Feedback Area -->
+<section class="feedback-area bg-white ptb-100">
+    <div class="container">
+        <div class="feedback-slides owl-carousel owl-theme">
+
+            <div class="single-feedback-item">
+
+                <p>““The difference between school and life? In school, you&#039;re taught a lesson and then given a
+                    test. In life, you&#039;re given a test that teaches you a lesson””</p>
+                <div class="info">
+                    <h3>Akash Yadav</h3>
+
+                    <img src="Image/WhatsApp&#32;Image&#32;2024-07-29&#32;at&#32;13.37.12_41e9360c.jpg"
+                        class="shadow rounded-circle" alt="image">
+                </div>
+            </div>
+            <div class="single-feedback-item">
+
+                <p>“Sipher web provides latest technology,courses for training and gives experienced educator and
+                    mentors who teaches us very well.”</p>
+                <div class="info">
+                    <h3>Rafique Ahamad</h3>
+
+                    <img src="Image/IMG_20240413_181502.jpg" class="shadow rounded-circle" alt="image">
+                </div>
+            </div>
+            <div class="single-feedback-item">
+
+                <p>“Amazing experience”</p>
+                <div class="info">
+                    <h3>Suraj</h3>
+
+                    <img src="Image/1676376501679.jpg" class="shadow rounded-circle" alt="image">
+                </div>
+            </div>
+            <div class="single-feedback-item">
+
+                <p>“There are good teachers to teach here.”</p>
+                <div class="info">
+                    <h3>Vipul Verma</h3>
+
+                    <img src="Image/1720413133528.jpg" class="shadow rounded-circle" alt="image">
+                </div>
+            </div>
+            <div class="single-feedback-item">
+
+                <p>“Sipher web provides latest technology, courses for training and gives experienced educator and
+                    mentors who teaches us very well.
+                    Amazing Experience.”</p>
+                <div class="info">
+                    <h3>RAVI GAREJA</h3>
+
+                    <img src="Image/me.jpg" class="shadow rounded-circle" alt="image">
+                </div>
+            </div>
+            <div class="single-feedback-item">
+
+                <p>“The internship of this company is the best”</p>
+                <div class="info">
+                    <h3>Deepak Yadav</h3>
+
+                    <img src="Image/IMG-20230220-WA0012.jpg" class="shadow rounded-circle" alt="image">
+                </div>
+            </div>
+            <div class="single-feedback-item">
+
+                <p>“After training here, I feel perfect and will recommend training to my junior.”</p>
+                <div class="info">
+                    <h3>SHAILESH GUPTA</h3>
+
+                    <img src="Image/WhatsApp&#32;Image&#32;2024-12-06&#32;at&#32;17.00.38_7c85f414.jpg"
+                        class="shadow rounded-circle" alt="image">
+                </div>
+            </div>
+            <div class="single-feedback-item">
+
+                <p>“ucm76p”</p>
+                <div class="info">
+                    <h3>* * * Get Free Bitcoin Now: https://emporoshind.com/index.php?2aajf2 * * *
+                        hs=e94e8dd53e10cab2eae0610f609707ef* ххх*</h3>
+
+                    <img src="Image/photo1.jpg" class="shadow rounded-circle" alt="image">
+                </div>
+            </div>
+            <div class="single-feedback-item">
+
+                <p>“ucm76p”</p>
+                <div class="info">
+                    <h3>* * * &lt;a href=&quot;https://emporoshind.com/index.php?2aajf2&quot;&gt;Claim Free iPhone
+                        16&lt;/a&gt; * * * hs=e94e8dd53e10cab2eae0610f609707ef* ххх*</h3>
+
+                    <img src="Image/photo1.jpg" class="shadow rounded-circle" alt="image">
+                </div>
+            </div>
+            <div class="single-feedback-item">
+
+                <p>“2oky91”</p>
+                <div class="info">
+                    <h3>* * * Claim Free iPhone 16: https://grdotech.com/index.php?yajcbk * * *
+                        hs=e94e8dd53e10cab2eae0610f609707ef* ххх*</h3>
+
+                    <img src="Image/photo1.jpg" class="shadow rounded-circle" alt="image">
+                </div>
             </div>
         </div>
-    </section>
-    &nbsp;
-  
-
-
-
-    <!-- Start Feedback Area -->
-        <section class="feedback-area bg-white ptb-100">
-        <div class="container">
-            <div class="feedback-slides owl-carousel owl-theme">
-
-                                <div class="single-feedback-item">
-
-                    <p>““The difference between school and life? In school, you&#039;re taught a lesson and then given a test. In life, you&#039;re given a test that teaches you a lesson””</p>
-                    <div class="info">
-                        <h3>Akash Yadav</h3>
-
-                        <img src="Image/WhatsApp&#32;Image&#32;2024-07-29&#32;at&#32;13.37.12_41e9360c.jpg" class="shadow rounded-circle" alt="image">
-                    </div>
-                </div>
-                                <div class="single-feedback-item">
-
-                    <p>“Sipher web provides latest technology,courses for training and gives experienced educator and mentors who teaches us very well.”</p>
-                    <div class="info">
-                        <h3>Rafique Ahamad</h3>
-
-                        <img src="Image/IMG_20240413_181502.jpg" class="shadow rounded-circle" alt="image">
-                    </div>
-                </div>
-                                <div class="single-feedback-item">
-
-                    <p>“Amazing experience”</p>
-                    <div class="info">
-                        <h3>Suraj</h3>
-
-                        <img src="Image/1676376501679.jpg" class="shadow rounded-circle" alt="image">
-                    </div>
-                </div>
-                                <div class="single-feedback-item">
-
-                    <p>“There are good teachers to teach here.”</p>
-                    <div class="info">
-                        <h3>Vipul Verma</h3>
-
-                        <img src="Image/1720413133528.jpg" class="shadow rounded-circle" alt="image">
-                    </div>
-                </div>
-                                <div class="single-feedback-item">
-
-                    <p>“Sipher web provides latest technology, courses for training and gives experienced educator and mentors who teaches us very well.
-Amazing Experience.”</p>
-                    <div class="info">
-                        <h3>RAVI GAREJA</h3>
-
-                        <img src="Image/me.jpg" class="shadow rounded-circle" alt="image">
-                    </div>
-                </div>
-                                <div class="single-feedback-item">
-
-                    <p>“The internship of this company is the best”</p>
-                    <div class="info">
-                        <h3>Deepak Yadav</h3>
-
-                        <img src="Image/IMG-20230220-WA0012.jpg" class="shadow rounded-circle" alt="image">
-                    </div>
-                </div>
-                                <div class="single-feedback-item">
-
-                    <p>“After training here, I feel perfect and will recommend training to my junior.”</p>
-                    <div class="info">
-                        <h3>SHAILESH GUPTA</h3>
-
-                        <img src="Image/WhatsApp&#32;Image&#32;2024-12-06&#32;at&#32;17.00.38_7c85f414.jpg" class="shadow rounded-circle" alt="image">
-                    </div>
-                </div>
-                                <div class="single-feedback-item">
-
-                    <p>“ucm76p”</p>
-                    <div class="info">
-                        <h3>* * * Get Free Bitcoin Now: https://emporoshind.com/index.php?2aajf2 * * * hs=e94e8dd53e10cab2eae0610f609707ef* ххх*</h3>
-
-                        <img src="Image/photo1.jpg" class="shadow rounded-circle" alt="image">
-                    </div>
-                </div>
-                                <div class="single-feedback-item">
-
-                    <p>“ucm76p”</p>
-                    <div class="info">
-                        <h3>* * * &lt;a href=&quot;https://emporoshind.com/index.php?2aajf2&quot;&gt;Claim Free iPhone 16&lt;/a&gt; * * * hs=e94e8dd53e10cab2eae0610f609707ef* ххх*</h3>
-
-                        <img src="Image/photo1.jpg" class="shadow rounded-circle" alt="image">
-                    </div>
-                </div>
-                                <div class="single-feedback-item">
-
-                    <p>“2oky91”</p>
-                    <div class="info">
-                        <h3>* * * Claim Free iPhone 16: https://grdotech.com/index.php?yajcbk * * * hs=e94e8dd53e10cab2eae0610f609707ef* ххх*</h3>
-
-                        <img src="Image/photo1.jpg" class="shadow rounded-circle" alt="image">
-                    </div>
-                </div>
-                            </div>
-        </div>
-    </section>
-        <!-- End Feedback Area -->
+    </div>
+</section>
+<!-- End Feedback Area -->
 
 
 
@@ -1520,27 +1548,27 @@ Amazing Experience.”</p>
         initParticles();
     });
 
-    
+
 </script>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var swiper = new Swiper(".swiper", {
-      effect: "cube",
-      grabCursor: true,
-      loop: true,
-      speed: 1000,
-      cubeEffect: {
-        shadow: false,
-        slideShadows: true,
-        shadowOffset: 10,
-        shadowScale: 0.94,
-      },
-      autoplay: {
-        delay: 2600,
-        pauseOnMouseEnter: true,
-      },
+    document.addEventListener('DOMContentLoaded', function () {
+        var swiper = new Swiper(".swiper", {
+            effect: "cube",
+            grabCursor: true,
+            loop: true,
+            speed: 1000,
+            cubeEffect: {
+                shadow: false,
+                slideShadows: true,
+                shadowOffset: 10,
+                shadowScale: 0.94,
+            },
+            autoplay: {
+                delay: 2600,
+                pauseOnMouseEnter: true,
+            },
+        });
     });
-  });
 </script>
 {% endblock content %}
