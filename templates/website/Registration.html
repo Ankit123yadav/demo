@@ -146,125 +146,36 @@
 
 
 
-{% comment %} 
-                  <div class="form-container">
-    <h2>Student Registration Form</h2>
-    <form>
 
-      <!-- Personal Details -->
-      <h3>Personal Details</h3>
-
-      <!-- 3-column row -->
-      <div class="row-3">
-        <div class="col-3">
-          <label for="fullname">Full Name</label>
-          <input type="text" id="fullname" name="fullname" required />
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert" style="max-width:600px;margin:10px auto;">
+          {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-        <div class="col-3">
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" required />
-        </div>
-        <div class="col-3">
-          <label for="whatsapp">WhatsApp Number</label>
-          <input type="tel" id="whatsapp" name="whatsapp" required />
-        </div>
-      </div>
-
-      <!-- 2-column rows -->
-      <div class="row">
-        <div class="col">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" required />
-        </div>
-        <div class="col">
-          <label for="father_name">Father's Name</label>
-          <input type="text" id="father_name" name="father_name" required />
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col">
-          <label for="mother_name">Mother's Name</label>
-          <input type="text" id="mother_name" name="mother_name" required />
-        </div>
-        <div class="col">
-          <label for="gender">Gender</label>
-          <select id="gender" name="gender" required>
-            <option value="">-- Select --</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col">
-          <label for="city">City</label>
-          <input type="text" id="city" name="city" />
-        </div>
-        <div class="col full-width">
-          <label for="address">Address</label>
-          <textarea id="address" name="address" rows="3" required></textarea>
-        </div>
-      </div>
-
-      <!-- Educational Details -->
-      <h3>Educational Details</h3>
-
-      <!-- 3-column row -->
-      <div class="row-3">
-        <div class="col-3">
-          <label for="qualification">Highest Qualification</label>
-          <input type="text" id="qualification" name="qualification" required />
-        </div>
-        <div class="col-3">
-          <label for="board">University / Board</label>
-          <input type="text" id="board" name="board" required />
-        </div>
-        <div class="col-3">
-          <label for="year">Passing Year</label>
-          <input type="number" id="year" name="year" required />
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col">
-          <label for="marks">Percentage / CGPA</label>
-          <input type="text" id="marks" name="marks" required />
-        </div>
-        <div class="col full-width">
-          <label for="skills">Skills / Subjects</label>
-          <textarea id="skills" name="skills" rows="3"></textarea>
-        </div>
-      </div>
-
-      <button type="submit">Submit</button>
-
-    </form>
-  </div> {% endcomment %}
-
-
+      {% endfor %}
+    {% endif %}
 
    <div class="form-container">
     <h2>Student Registration Form</h2>
-    <form>
+    <form method="post" >
+      {% csrf_token %}
 
       <!-- Personal Details -->
       <h3 class="title">Personal Details</h3>
 
       <div class="row rows">
         <div class="col-3">
-          <label for="fullname">Full Name</label>
-          <input type="text" id="fullname" name="fullname" required />
+          <label for="full_name">Full Name</label>
+          <input type="text" id="full_name" name="full_name" required />
         </div>
         <div class="col-3">
-          <label for="phone">Phone Number<span style="font-size: 0.8em;">(WhatsApp Number)</span></label>
+          <label for="phone">Phone Number<span style="font-size: 0.8em; font-weight:lighter;">(WhatsApp Number)</span></label>
           <input type="tel" id="phone" name="phone" required />
         </div>
         <div class="col-3">
-          <label for="whatsapp">Guardian's Number</label>
-          <input type="tel" id="whatsapp" name="whatsapp" required />
+          <label for="guardian_number">Guardian's Number</label>
+          <input type="tel" id="guardian_number" name="guardian_number" required />
         </div>
       </div>
 
@@ -311,37 +222,35 @@
           <label for="qualification">Qualification</label>
           <select id="qualification" name="qualification" required>
             <option value="">-- Select Qualification --</option>
-            <option>B.Tech</option>
-            <option>M.Tech</option>
-            <option>Diploma</option>
-            <option>BCA</option>
-            <option>MCA</option>
-            <option>Other</option>
+            <option value="B.Tech">B.Tech</option>
+            <option value="M.Tech">M.Tech</option>
+            <option value="Diploma">Diploma</option>
+            <option value="BCA">BCA</option>
+            <option value="MCA">MCA</option>
+            <option value="Other">Other</option>
           </select>
         </div>
         <div class="col-3">
           <label for="branch">Branch</label>
           <select id="branch" name="branch" required>
             <option value="">-- Select Branch --</option>
-            <option>Computer Science</option>
-            <option>Electrical</option>
-            <option>Mechanical</option>
-            <option>Civil</option>
-            <option>Information Technology</option>
-            <option>Electronics</option>
-            <option>Other</option>
-
+            <option value="Computer Science">Computer Science</option>
+            <option value="Electrical">Electrical</option>
+            <option value="Mechanical">Mechanical</option>
+            <option value="Civil">Civil</option>
+            <option value="Information Technology">Information Technology</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Other">Other</option>
           </select>
         </div>
         <div class="col-3">
           <label for="year">Year</label>
           <select id="year" name="year" required>
             <option value="">-- Select Year --</option>
-         <option>1 Year</option>
-         <option>2 Year</option>
-         <option>3 Year</option>
-         <option>4 Year</option>
-        
+            <option value="1 Year">1 Year</option>
+            <option value="2 Year">2 Year</option>
+            <option value="3 Year">3 Year</option>
+            <option value="4 Year">4 Year</option>
           </select>
         </div>
       </div>
@@ -351,23 +260,23 @@
           <label for="semester">Semester</label>
           <select id="semester" name="semester" required>
             <option value="">-- Select Semester --</option>
-            <option>1st</option>
-            <option>2nd</option>
-            <option>3rd</option>
-            <option>4th</option>
-            <option>5th</option>
-            <option>6th</option>
-            <option>7th</option>
-            <option>8th</option>
+            <option value="1st">1st</option>
+            <option value="2nd">2nd</option>
+            <option value="3rd">3rd</option>
+            <option value="4th">4th</option>
+            <option value="5th">5th</option>
+            <option value="6th">6th</option>
+            <option value="7th">7th</option>
+            <option value="8th">8th</option>
           </select>
         </div>
         <div class="col-3">
-          <label for="college">College Name</label>
-         <input type="text" id="college" name="college" required />
+          <label for="college_name">College Name</label>
+         <input type="text" id="college_name" name="college_name" required />
         </div>
         <div class="col-3">
-          <label for="marks">Percentage / CGPA</label>
-          <input type="text" id="marks" name="marks" />
+          <label for="percentage_or_cgpa">Percentage / CGPA</label>
+          <input type="text" id="percentage_or_cgpa" name="percentage_or_cgpa" />
         </div>
       </div>
 
@@ -380,16 +289,16 @@
 
 <div class="row rows">
   <div class="col-3">
-    <label for="course">Course Name</label>
-    <select id="course" name="course" required>
+    <label for="course_name">Course Name</label>
+    <select id="course_name" name="course_name" required>
       <option value="">-- Select Course --</option>
-      <option>Web Development</option>
-      <option>Data Science</option>
-      <option>Python Programming</option>
-      <option>JavaScript</option>
-      <option>React Native</option>
-      <option>UI/UX Design</option>
-      <option>Other</option>
+      <option value="Web Development">Web Development</option>
+      <option value="Data Science">Data Science</option>
+      <option value="Python Programming">Python Programming</option>
+      <option value="JavaScript">JavaScript</option>
+      <option value="React Native">React Native</option>
+      <option value="UI/UX Design">UI/UX Design</option>
+      <option value="Other">Other</option>
     </select>
   </div>
 
@@ -397,12 +306,12 @@
     <label for="duration">Duration</label>
     <select id="duration" name="duration" required>
       <option value="">-- Select Duration --</option>
-      <option>1 Month</option>
-      <option>2 Months</option>
-      <option>3 Months</option>
-       <option>45 Days</option>
-      <option>6 Months</option>
-      <option>JOT</option>
+      <option value="1 Month">1 Month</option>
+      <option value="2 Months">2 Months</option>
+      <option value="3 Months">3 Months</option>
+      <option value="45 Days">45 Days</option>
+      <option value="6 Months">6 Months</option>
+      <option value="JOT">JOT</option>
     </select>
   </div>
 
@@ -410,364 +319,20 @@
     <label for="mode">Mode</label>
     <select id="mode" name="mode" required>
       <option value="">-- Select Mode --</option>
-      <option>Online</option>
-      <option>Offline</option>
-      <option>Hybrid</option>
+      <option value="Online">Online</option>
+      <option value="Offline">Offline</option>
+      <option value="Hybrid">Hybrid</option>
     </select>
   </div>
 </div>
 
-{% comment %} <div class="row">
-  <div class="col-3">
-    <label for="batch">Batch Time</label>
-    <select id="batch" name="batch" required>
-      <option value="">-- Select Batch Time --</option>
-      <option>Morning (9AM - 11AM)</option>
-      <option>Noon (12PM - 2PM)</option>
-      <option>Afternoon (3PM - 5PM)</option>
-      <option>Evening (6PM - 8PM)</option>
-    </select>
-  </div>
 
-  <div class="col-3">
-    <label for="trainer">Trainer Name</label>
-    <input type="text" id="trainer" name="trainer" />
-  </div>
-
-  <div class="col-3">
-    <label for="start_date">Start Date</label>
-    <input type="date" id="start_date" name="start_date" required />
-  </div>
-</div> {% endcomment %}
       </div>
 
-      <button type="submit">Submit</button>
+      <button type="submit" onclick="showSubmitNotification(event)">Submit</button>
 
     </form>
   </div>
-
-                  {% comment %} <div class="form-container">
-    <h2>Student Registration Form</h2>
-    <form>
-
-      <!-- Personal Details -->
-      <h3>Personal Details</h3>
-      <div class="row">
-        <div class="col">
-          <label for="fullname">Full Name</label>
-          <input type="text" id="fullname" name="fullname" required />
-        </div>
-        <div class="col">
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" required />
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col">
-          <label for="phone">WhatsApp Number</label>
-          <input type="tel" id="whatsapp" name="whatsapp" required />
-        </div>
-        <div class="col">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" required />
-        </div>
-      </div>
-
-            <div class="row">
-        <div class="col">
-          <label for="text">Father's Name</label>
-          <input type="text" id="father_name" name="father_name" required />
-        </div>
-        <div class="col">
-          <label for="text">Mother's Name</label>
-          <input type="text" id="mother_name" name="mother_name" required />
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col">
-          <label for="gender">Gender</label>
-          <select id="gender" name="gender" required>
-            <option value="">-- Select --</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-        <div class="col">
-          <label for="city">City</label>
-          <input type="text" id="city" name="city" />
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col full-width">
-          <label for="address">Address</label>
-          <textarea id="address" name="address" rows="3" required></textarea>
-        </div>
-      </div>
-
-      <!-- Educational Details -->
-      <h3>Educational Details</h3>
-      <div class="row">
-        <div class="col">
-          <label for="qualification">Highest Qualification</label>
-          <input type="text" id="qualification" name="qualification" required />
-        </div>
-        <div class="col">
-          <label for="board">University / Board</label>
-          <input type="text" id="board" name="board" required />
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col">
-          <label for="year">Passing Year</label>
-          <input type="number" id="year" name="year" required />
-        </div>
-        <div class="col">
-          <label for="marks">Percentage / CGPA</label>
-          <input type="text" id="marks" name="marks" required />
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col full-width">
-          <label for="skills">Skills / Subjects</label>
-          <textarea id="skills" name="skills" rows="3"></textarea>
-        </div>
-      </div>
-
-      <button type="submit">Submit</button>
-
-    </form>
-  </div> {% endcomment %}
-
-                {% comment %} <div class="card">
-                                        <div class="card-body">
-                        <form action="https://sipherweb.com/Insertform" method="Post">
-                            <input type="hidden" name="_token" value="6yXCOc1Qtg7FOI2uWp6Nqq3i20wt0u7iR8BGmLvE" autocomplete="off">                            <div class="row form-group">
-                                <div class="col-lg-6 col-md-6 col-sm-12 ">
-                                    <label class="control-label">Student Mobile Number</label>
-                                    <input class="form-control" type="number" name="Number" maxlength="10" minlength="10"
-                                        placeholder="Enter Student Mobile Number" required id="mobile_number">
-                                        <div id="mobile-error" style="display:none; color:red;"></div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <label class="control-label">Student Name</label>
-                                    <input class="form-control" type="text" name="Name"
-                                        placeholder="Enter Student Name" required="" id="name">
-                                    <span class="error text-danger" id="name-error" style="display: none">Numbers are not
-                                        allowed in the Name.</span>
-                                </div>
-
-                            </div>
-
-
-                            <div class="row form-group">
-                                <div class="col-lg-6 col-md-6 col-sm-12 ">
-                                    <label class="control-label ">&nbsp;Choose Technology</label>
-                                    <select class="form-control bs-select-hidden " name="Technology" required=""
-                                        style="height: 50px; width:50px; overflow-y: auto;">
-                                        <optgroup label="For 45 Days Trainings">
-                                            <option value="" selected="" disabled=""
-                                                class="scrollable-dropdown">
-                                                -Choose Technology-
-                                            </option>
-                                            <option value="PHP">PHP</option>
-                                            <option value="Android">Android</option>
-                                            <option value="ASP.NET">ASP.NET</option>
-                                            <option value="JAVA">JAVA</option>
-                                            <option value="Python">Python</option>
-                                            <option value="Electronics - IOT">Electronics - IOT</option>
-                                            <option value="Electronics - Embedded">
-                                                Electronics - Embedded
-                                            </option>
-                                            <option value="MERN Full Stack">MERN Full Stack</option>
-                                            <option value="Digital Marketing">
-                                                Digital Marketing
-                                            </option>
-                                        </optgroup>
-
-                                        <optgroup label="For 6 Month Trainings">
-                                            <option value="Embedded System">Embedded System</option>
-                                            <option value="Machine Learning">Machine Learning</option>
-                                            <option value="Plc Scade">Plc Scade</option>
-                                            <option value="E-Cad">E-Cad</option>
-                                            <option value="AutoCad">AutoCad</option>
-                                            <option value="Solid Works">Solid Works</option>
-                                            <option value="Revit Mep">Revit Mep</option>
-                                            <option value="Hvac Desing & Drafting">
-                                                Hvac Desing & Drafting
-                                            </option>
-                                            <option value="Plumbing Design & Draftin">
-                                                Plumbing Design & Draftin
-                                            </option>
-                                            <option value="Catia">Catia</option>
-                                            <option value="Stadd Pro">Stadd Pro</option>
-                                        </optgroup>
-
-                                        <option value="Not Yet Decided">Not Yet Decided</option>
-                                    </select>
-
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <label class="control-label"> &nbsp;Choose Training</label>
-                                    <select class="form-control bs-select-hidden" name="Training" required=""
-                                        id="select-box">
-                                        <option value="">-Choose Training-</option>
-                                        <option value="Online Summer Training">
-                                            Online Summer Training
-                                        </option>
-                                        <option value="Vocational Training">
-                                            Vocational Training
-                                        </option>
-                                        <option value="Summer Training">Summer Training</option>
-                                        <option value="Winter Training">Winter Training</option>
-                                        <option value="Industrial Training">
-                                            Industrial Training
-                                        </option>
-                                        <option value="Apprenticeship Training">
-                                            Apprenticeship Training
-                                        </option>
-                                        <option value="Internship Training">
-                                            Internship Training
-                                        </option>
-                                        <option value="Project Training">Project Training</option>
-                                        <option value="Not Yet Decided">Not Yet Decided</option>
-                                    </select>
-                                </div>
-
-                            </div>
-
-                            <div class="row form-group">
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <label class="control-label">&nbsp; Select Your Qualification</label>
-                                    <select class="form-control bs-select-hidden" name="Qualification" required=""
-                                        id="education">
-                                        <option value="">-Select Your Qualification-</option>
-                                        <option value="Diploma">Diploma</option>
-                                        <option value="Diploma (PGDCA)">Diploma (PGDCA)</option>
-                                        <option value="B.Tech">B. Tech</option>
-                                        <option value="Diploma">Diploma</option>
-                                        <option value="BCA">BCA</option>
-                                        <option value="MCA">MCA</option>
-                                        <option value="M.Tech">M. Tech</option>
-                                        <option value="MBA">MBA</option>
-                                        <option value="Other">Other</option>
-                                    </select>
-
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <label class="control-label"> &nbsp;Select Your Department/Branch</label>
-                                    <select class="form-control bs-select-hidden" name="Branch" required=""
-                                        id="year">
-                                        <option value="">-Select Department/Branch-</option>
-                                        <option value="Computer Application">Computer Application </option>
-                                        <option value="Computer Science & Engineering">Computer Science & Engineering
-                                        </option>
-                                        <option value="Information technology">Information technology</option>
-                                        <option value="Electronices &COmmunication Engineering">Electronices &Communication
-                                            Engineering</option>
-                                        <option value="Electrical Engineering">Electrical Engineering</option>
-                                        <option value="Mechianical Engineering">Mechianical Engineering</option>
-                                        <option value="Other">Other</option>
-                                    </select>
-                                </div>
-
-                            </div>
-
-                            <div class="row form-group">
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-
-                                    <label class="control-label">Your Address</label>
-                                    <input class="form-control" type="text" name="Address"
-                                        placeholder="Enter Your Address" required id="Address">
-                                    <span class="error text-danger" id="name-error1" style="display: none">Numbers are
-                                        not allowed in the Address</span>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <label class="control-label"> &nbsp;Select Year</label>
-                                    <select class="form-control bs-select-hidden" name="Year" required=""
-                                        id="year">
-                                        <option value="">-Select Year-</option>
-                                        <option value="First Year (1st)">First Year (1st)</option>
-                                        <option value="Second Year (2nd)">Second Year (2nd)</option>
-                                        <option value="Third Year (3rd)">Third Year (3rd)</option>
-                                        <option value="Final Year (4th)">Final Year (4th)</option>
-                                        <option value="Completed">Completed</option>
-                                        <option value="Other">Other</option>
-                                    </select>
-                                </div>
-
-                            </div>
-
-                            <div class="row form-group">
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <label class="control-label">Student Father's Name</label>
-                                    <input class="form-control" type="text" name="Father_name"
-                                        placeholder="Enter Student Father's Name" id="Father" required>
-                                    <span class="error text-danger" id="name-error2" style="display: none">Numbers are
-                                        not allowed in the Father's Name</span>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <label class="control-label">Student Email ID</label>
-                                    <input class="form-control" type="text" name="Email"
-                                        placeholder="Enter Student Email ID" required="" id="name">
-                                </div>
-
-                            </div>
-
-                            <div class="row form-group">
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <label class="control-label">Student College's Name</label>
-                                    <input class="form-control" type="text" name="College_name"
-                                        placeholder="Enter College Father's Name" id="college" required>
-                                    <span class="error text-danger" id="name-error3" style="display: none">Numbers are
-                                        not allowed in the name.</span>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <label class="control-label">Student Mother Name</label>
-                                    <input class="form-control" type="text" name="Mother_name"
-                                        placeholder="Enter Student Mother Name" required="" id="mother">
-                                    <span class="error text-danger" id="name-error4" style="display: none">Numbers are
-                                        not allowed in the Mother Name.</span>
-                                </div>
-
-                            </div>
-
-
-                            <div class="row form-group">
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-
-                                    <label class="control-label">Date</label>
-                                    <input class="form-control valid" type="Date" name="Dob"
-                                        placeholder="Enter Amount" required="" aria-invalid="false">
-
-
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <label class="control-label">Amount To Pay Now</label>
-                                    <input class="form-control valid" type="number" readonly="" value="500"
-                                        id="amount" name="Amount" placeholder="Enter Amount" required=""
-                                        aria-invalid="false">
-
-                                </div>
-
-                            </div>
-
-                            <br><br>
-                            <div class="col-lg-12 text-center">
-                                <button name="submit" type="submit" value="Submit" class="btn btn-success"  id="submit-button" disabled>Register
-                                    Now</button>
-                            </div>
-
-
-                        </form>
-                    </div>
-                </div>
-            </div> {% endcomment %}
 
         </div>
 
@@ -884,6 +449,14 @@ document.getElementById('name').addEventListener('input', function(e) {
 
 
 
+    <script>
+      function showSubmitNotification(event) {
+        event.preventDefault();
+        // Optionally, validate form here before showing alert
+        alert('Your registration has been submitted!');
+        event.target.form.submit();
+      }
+    </script>
     </main>
 <button id="scrollToTopBtn">↑</button>
 {% endblock content %}
