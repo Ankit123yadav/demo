@@ -38,11 +38,12 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "apps.core", 
-    "apps.usermanagement", 
+    "apps.student_management", 
     "apps.employee_management",
     "apps.authentication",
     "apps.inventory", 
-    "apps.management" # Custom app for management
+    "apps.management",
+    "apps.form" # Custom app for form handling
 ]
 
 MIDDLEWARE = [

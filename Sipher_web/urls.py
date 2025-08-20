@@ -20,7 +20,7 @@ from django.urls import path, include
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("dashboard/", include("apps.core.urls")),  # Include core app URLs
-    path("dashboard/", include("apps.usermanagement.urls")),  # Add usermanagement URLs
+    path("dashboard/", include("apps.student_management.urls")),  # Add student management URLs
     path("dashboard/", include("apps.employee_management.urls")),
     path("dashboard/", include("apps.authentication.urls")),
     path("dashboard/", include("apps.inventory.urls")),

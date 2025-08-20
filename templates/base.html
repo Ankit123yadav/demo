@@ -393,22 +393,22 @@
             </a>
           </li>
 
-          <!-- User Management -->
-     <li class="nav-item nav-category">User Management</li>
+          <!-- Student Management -->
+     <li class="nav-item nav-category">Student Management</li>
 <li class="nav-item">
-  <a class="nav-link {% if request.resolver_match.url_name in 'user_list add_user roles_permissions user_logs' %}{% endif %}"
+  <a class="nav-link {% if request.resolver_match.url_name in 'student_list add_student roles_permissions student_logs' %}{% endif %}"
      data-bs-toggle="collapse"
-     href="#user-management"
-     aria-expanded="{% if request.resolver_match.url_name in 'user_list add_user roles_permissions user_logs' %}true{% else %}false{% endif %}"
-     aria-controls="user-management"
-     style="{% if request.resolver_match.url_name in 'user_list add_user roles_permissions user_logs' %}font-weight: bold; color: #0d6efd; background-color: rgba(13,110,253,0.1); border-radius: 4px;{% endif %}">
+     href="#student-management"
+     aria-expanded="{% if request.resolver_match.url_name in 'student_list add_student roles_permissions student_logs' %}true{% else %}false{% endif %}"
+     aria-controls="student-management"
+     style="{% if request.resolver_match.url_name in 'student_list add_student roles_permissions student_logs' %}font-weight: bold; color: #0d6efd; background-color: rgba(13,110,253,0.1); border-radius: 4px;{% endif %}">
     <i class="mdi mdi-account-multiple menu-icon"></i>
-    <span class="menu-title">User Management</span>
+    <span class="menu-title">Student Management</span>
     <i class="menu-arrow"></i>
   </a>
-  <div class="collapse {% if request.resolver_match.url_name in 'user_list add_user roles_permissions user_logs' %}show{% endif %}" id="user-management">
+  <div class="collapse {% if request.resolver_match.url_name in 'student_list add_student roles_permissions student_logs' %}show{% endif %}" id="student-management">
     <ul class="nav flex-column sub-menu">
-      <li class="nav-item"><a class="nav-link" href="#" style="{% if request.resolver_match.url_name == 'user_list' %}font-weight: bold; color: #0d6efd; background-color: rgba(13,110,253,0.1); border-radius: 4px;{% endif %}">All Users</a></li>
+      <li class="nav-item"><a class="nav-link" href="{% url 'all_users' %}" style="{% if request.resolver_match.url_name == 'user_list' %}font-weight: bold; color: #0d6efd; background-color: rgba(13,110,253,0.1); border-radius: 4px;{% endif %}">All Student</a></li>
       <li class="nav-item"><a class="nav-link" href="{% url 'add_user' %}" style="{% if request.resolver_match.url_name == 'add_user' %}font-weight: bold; color: #0d6efd; background-color: rgba(13,110,253,0.1); border-radius: 4px;{% endif %}">Add New User</a></li>
       <li class="nav-item"><a class="nav-link" href="#" style="{% if request.resolver_match.url_name == 'roles_permissions' %}font-weight: bold; color: #0d6efd; background-color: rgba(13,110,253,0.1); border-radius: 4px;{% endif %}">Roles & Permissions</a></li>
       <li class="nav-item"><a class="nav-link" href="#" style="{% if request.resolver_match.url_name == 'user_logs' %}font-weight: bold; color: #0d6efd; background-color: rgba(13,110,253,0.1); border-radius: 4px;{% endif %}">User Logs / Login History</a></li>
