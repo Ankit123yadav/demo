@@ -13,7 +13,9 @@ p {
     font-size: 15px
 }
 
-
+.text-yellow-400{
+    color: #FF9B00 !important;
+}
     /* General Styles */
 
 
@@ -1170,7 +1172,7 @@ textarea.form-control {
 .user-actions span a:hover,
 .widget-area .widget_categories ul li a:hover,
 .widget-area .widget_events_details ul li a:hover {
-    color: #ffe401
+    color: #FF9B00
 }
 
 .courses-details-desc .audience-list li strong,
@@ -4994,6 +4996,60 @@ blockquote cite {
     font-weight: 400
 }
 
+.mega-menu {
+                                        position: absolute;
+                                        left: 0;
+                                        top: 100%;
+                                        width: 100%;
+                                        background: #fff;
+                                        padding: 20px;
+                                        margin-top: 10px;
+                                        margin-left: 450px;
+                                        display: none;
+                                        /* box-shadow: 0 4px 10px rgba(0,0,0,0.1); */
+                                        grid-template-columns: repeat(3, 1fr);
+                                        gap: 20px;
+
+                                           max-height: 400px;   /* vertical limit */
+      max-width: 1000px;   /* horizontal limit */
+      overflow: auto;      /* enables both vertical + horizontal scroll */
+      white-space: nowrap;
+                                    }
+
+                                    nav ul li:hover .mega-menu {
+                                        display: grid;
+                                    }
+
+                                    .mega-menu h3 {
+                                        background: #FF9B00;
+                                        color: white;
+                                        padding: 6px 10px;
+                                        border-radius: 5px;
+                                        margin-bottom: 10px;
+                                        font-size: 16px;
+                                    }
+
+                                    .mega-menu p {
+                                        color: #1d4ed8;
+                                        font-weight: bold;
+                                        margin: 10px 0 5px;
+                                    }
+
+                                    .mega-menu ul {
+                                        list-style: none;
+                                        margin: 0;
+                                        padding: 0;
+                                    }
+
+                                    .mega-menu ul li {
+                                        padding: 3px 0;
+                                        color: #374151;
+                                    }
+
+                                    .mega-menu ul li:hover {
+                                        color: #1d4ed8;
+                                    }
+
 .courses-topbar .topbar-ordering-and-search .topbar-search form .input-search::-moz-placeholder {
     color: #727695;
     -moz-transition: .5s;
@@ -6396,6 +6452,7 @@ blockquote cite {
     background-color: #100561;
     margin-bottom: 0;
     color: #fff;
+    border-radius: 15px 15px 0 0;
     padding: 25px 20px;
     font-size: 25px;
     font-weight: 600
