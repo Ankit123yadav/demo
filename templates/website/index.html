@@ -772,31 +772,32 @@ rgb(236, 235, 230) 0%,
             </div>
 
             <div class="users-color-container">
+                
                 <span class="item" style="--i: 1"></span>
                 <img class="item"
-                    src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/274f29ce-0d3f-4ac2-a2aa-f9b7bd188b2a"
+                    src="{% static 'website/img/1.png' %}"
                     style="--i: 2" alt="" />
                 <span class="item" style="--i: 3"></span>
                 <img class="item"
-                    src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/b8a14493-3d9f-4b9b-b93a-56d0bc7243e9"
+                    src="{% static 'website/img/4.png' %}"
                     style="--i: 4" alt="" />
 
                 <img class="item"
-                    src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/03e51e1e-9750-45a5-b75e-a1e341d4562a"
+                    src="{% static 'website/img/2.png' %}"
                     style="--i: 10" alt="" />
                 <span class="item" style="--i: 11"></span>
                 <img class="item"
-                    src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/5eb50f89-3e5a-480e-860c-8d40d3ba9ffe"
+                    src="{% static 'website/img/3.png' %}"
                     style="--i: 12" alt="" />
                 <span class="item" style="--i: 5"></span>
 
                 <span class="item" style="--i: 9"></span>
                 <img class="item"
-                    src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/86c71a79-2efe-4567-8665-b1e5a1fd9735"
+                    src="{% static 'website/img/5.png' %}"
                     style="--i: 8" alt="" />
                 <span class="item" style="--i: 7"></span>
                 <img class="item"
-                    src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/97ef9643-5202-41aa-80f0-ceeabccdd099"
+                    src="{% static 'website/img/6.png' %}"
                     style="--i: 6" alt="" />
             </div>
 
@@ -1398,106 +1399,244 @@ rgb(236, 235, 230) 0%,
 
 
 
+    <style>
+    
+    .testimonial-section {
+      text-align: center;
+      max-width: 900px;
+      width: 100%;
+      margin: 0 auto 60px auto;
+    }
+
+    .testimonial-section h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .title-underline {
+      width: 120px;
+      height: 2px;
+      background: #f97316;
+      margin: 10px auto 40px auto;
+      position: relative;
+    }
+
+    .title-underline::after {
+      content: "•";
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #f97316;
+      font-size: 22px;
+    }
+
+    .testimonial-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Side avatars */
+    .side-avatar {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid white;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .side-avatar:hover {
+      transform: scale(1.1);
+    }
+
+    .side-avatar-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 150px;
+      margin: 0 30px;
+    }
+
+    .rating-badge {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background: #fff;
+      border: 1px solid #eee;
+      color: #f97316;
+      font-weight: bold;
+      font-size: 0.8rem;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Main testimonial box */
+    .testimonial-box {
+      background: #fafafa;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 50px 30px 30px 30px;
+      width: 500px;
+      text-align: center;
+      position: relative;
+    }
+
+    .main-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-top: -80px;
+      border: 4px solid white;
+    }
+
+    .client-name {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin: 10px 0;
+      color: #333;
+    }
+
+    .client-text {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* Arrows */
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .nav-buttons button {
+      background: none;
+      border: 2px solid #f97316;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      color: #f97316;
+      transition: 0.3s;
+    }
+
+    .nav-buttons button:hover {
+      background: #f97316;
+      color: white;
+    }
+  </style>
+
+
+
     <!-- Start Feedback Area -->
         <section class="feedback-area bg-white ptb-100">
         <div class="container">
-            <div class="feedback-slides owl-carousel owl-theme">
+           <section class="testimonial-section">
+    <h2>What Clients Say</h2>
+    <div class="title-underline"></div>
 
-                                <div class="single-feedback-item">
+    <div class="testimonial-container">
+      <!-- Left avatars -->
+      <div class="side-avatar-container">
+        <div style="position: relative;" onclick="showTestimonial(0)">
+          <img src="{%static 'website/img/1.png'%}" class="side-avatar">
+          <span class="rating-badge">5★</span>
+        </div>
+        <div style="position: relative;" onclick="showTestimonial(1)">
+            <img src="{%static 'website/img/2.png'%}" class="side-avatar">
+            <span class="rating-badge">4★</span>
+        </div>
+      </div>
 
-                    <p>““The difference between school and life? In school, you&#039;re taught a lesson and then given a test. In life, you&#039;re given a test that teaches you a lesson””</p>
-                    <div class="info">
-                        <h3>Akash Yadav</h3>
+      <!-- Main testimonial -->
+      <div class="testimonial-box" id="testimonial">
+        <img src="{%static 'website/img/4.png'%}" alt="Client" class="main-avatar" id="client-img">
+        <h3 class="client-name" id="client-name">Anaya</h3>
+                <p class="client-text" id="client-text">
+                    Sipher Web transformed our business operations with their custom CRM and employee management solutions. The seamless integration and user-friendly interface have greatly improved our workflow and productivity.
+                </p>
+      </div>
 
-                        <img src="Image/WhatsApp&#32;Image&#32;2024-07-29&#32;at&#32;13.37.12_41e9360c.jpg" class="shadow rounded-circle" alt="image">
-                    </div>
-                </div>
-                                <div class="single-feedback-item">
+      <!-- Right avatars -->
+      <div class="side-avatar-container">
+        <div style="position: relative;" onclick="showTestimonial(2)">
+          <img src="{%static 'website/img/3.png'%}" class="side-avatar">
+          <span class="rating-badge">5★</span>
+        </div>
+        <div style="position: relative;" onclick="showTestimonial(3)">
+          <img src="{%static 'website/img/5.png'%}" class="side-avatar">
+          <span class="rating-badge">4★</span>
+        </div>
+      </div>
+    </div>
 
-                    <p>“Sipher web provides latest technology,courses for training and gives experienced educator and mentors who teaches us very well.”</p>
-                    <div class="info">
-                        <h3>Rafique Ahamad</h3>
+    <!-- Arrows -->
+    <div class="nav-buttons">
+      <button onclick="prevTestimonial()">←</button>
+      <button onclick="nextTestimonial()">→</button>
+    </div>
+  </section>
 
-                        <img src="Image/IMG_20240413_181502.jpg" class="shadow rounded-circle" alt="image">
-                    </div>
-                </div>
-                                <div class="single-feedback-item">
+  <script>
+    const testimonials = [
+      {
+        name: "Anaya Sharma",
+        text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. It is a long established fact that a reader will be distracted by the readable its layout.",
+        img: "{%static 'website/img/1.png'%}"
+      },
+      {
+        name: "Anu",
+        text: "Amazing experience. The team is super professional and delivers high quality work.",
+        img: "{%static 'website/img/2.png'%}"
+      },
+      {
+        name: "Amit",
+        text: "This is the best service I have ever used. It really exceeded my expectations and I will recommend it to everyone.",
+        img: "{%static 'website/img/3.png'%}"
+      },
+      {
+        name: "Ravi",
+        text: "Very reliable and professional team. I am very satisfied with their work and results.",
+        img: "{%static 'website/img/5.png'%}"
+      }
 
-                    <p>“Amazing experience”</p>
-                    <div class="info">
-                        <h3>Suraj</h3>
+      
+    ];
 
-                        <img src="Image/1676376501679.jpg" class="shadow rounded-circle" alt="image">
-                    </div>
-                </div>
-                                <div class="single-feedback-item">
+    let index = 0;
 
-                    <p>“There are good teachers to teach here.”</p>
-                    <div class="info">
-                        <h3>Vipul Verma</h3>
+    function showTestimonial(i) {
+      index = i;
+      document.getElementById("client-name").textContent = testimonials[i].name;
+      document.getElementById("client-text").textContent = testimonials[i].text;
+      document.getElementById("client-img").src = testimonials[i].img;
+    }
 
-                        <img src="Image/1720413133528.jpg" class="shadow rounded-circle" alt="image">
-                    </div>
-                </div>
-                                <div class="single-feedback-item">
+    function nextTestimonial() {
+      index = (index + 1) % testimonials.length;
+      showTestimonial(index);
+    }
 
-                    <p>“Sipher web provides latest technology, courses for training and gives experienced educator and mentors who teaches us very well.
-Amazing Experience.”</p>
-                    <div class="info">
-                        <h3>RAVI GAREJA</h3>
-
-                        <img src="Image/me.jpg" class="shadow rounded-circle" alt="image">
-                    </div>
-                </div>
-                                <div class="single-feedback-item">
-
-                    <p>“The internship of this company is the best”</p>
-                    <div class="info">
-                        <h3>Deepak Yadav</h3>
-
-                        <img src="Image/IMG-20230220-WA0012.jpg" class="shadow rounded-circle" alt="image">
-                    </div>
-                </div>
-                                <div class="single-feedback-item">
-
-                    <p>“After training here, I feel perfect and will recommend training to my junior.”</p>
-                    <div class="info">
-                        <h3>SHAILESH GUPTA</h3>
-
-                        <img src="Image/WhatsApp&#32;Image&#32;2024-12-06&#32;at&#32;17.00.38_7c85f414.jpg" class="shadow rounded-circle" alt="image">
-                    </div>
-                </div>
-                                <div class="single-feedback-item">
-
-                    <p>“ucm76p”</p>
-                    <div class="info">
-                        <h3>* * * Get Free Bitcoin Now: https://emporoshind.com/index.php?2aajf2 * * * hs=e94e8dd53e10cab2eae0610f609707ef* ххх*</h3>
-
-                        <img src="Image/photo1.jpg" class="shadow rounded-circle" alt="image">
-                    </div>
-                </div>
-                                <div class="single-feedback-item">
-
-                    <p>“ucm76p”</p>
-                    <div class="info">
-                        <h3>* * * &lt;a href=&quot;https://emporoshind.com/index.php?2aajf2&quot;&gt;Claim Free iPhone 16&lt;/a&gt; * * * hs=e94e8dd53e10cab2eae0610f609707ef* ххх*</h3>
-
-                        <img src="Image/photo1.jpg" class="shadow rounded-circle" alt="image">
-                    </div>
-                </div>
-                                <div class="single-feedback-item">
-
-                    <p>“2oky91”</p>
-                    <div class="info">
-                        <h3>* * * Claim Free iPhone 16: https://grdotech.com/index.php?yajcbk * * * hs=e94e8dd53e10cab2eae0610f609707ef* ххх*</h3>
-
-                        <img src="Image/photo1.jpg" class="shadow rounded-circle" alt="image">
-                    </div>
-                </div>
-                            </div>
+    function prevTestimonial() {
+      index = (index - 1 + testimonials.length) % testimonials.length;
+      showTestimonial(index);
+    }
+  </script>
         </div>
     </section>
         <!-- End Feedback Area -->
+
 
 
 
