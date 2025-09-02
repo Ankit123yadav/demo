@@ -69,3 +69,9 @@ def demo(request):
 
 def download_certificate(request):
     return render(request, "website/download_certificate.html")
+
+def all_courses(request):
+    return render(request, "website/All_courses.html")
+
+def python(request):
+    return render(request, "website/python.html")

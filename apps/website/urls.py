@@ -23,6 +23,8 @@ urlpatterns = [
     path("teamgallery/", views.teamgallery, name="teamgallery"),
     path("verified/", views.verified, name="verified"),
     path("syllabus/", views.syllabus, name="syllabus"),
+    path("all_courses/", views.all_courses, name="all_courses"),
+    path("python/", views.python, name="python"),  # New URL for Python course page
     path("demo/", views.demo, name="demo"),  # New URL for demo page
     path("download_certificate/", views.download_certificate, name="download_certificate"),  # New URL for downloading certificate
     # Add any other URLs as needed
