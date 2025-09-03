@@ -75,3 +75,12 @@ def all_courses(request):
 
 def python(request):
     return render(request, "website/python.html")
+
+def digital_marketing(request):
+    return render(request, "website/digital _marketing.html")    
+
+def android(request):
+    return render(request, "website/android.html")    
+
+def mern(request):
+    return render(request, "website/mern_stack.html")    

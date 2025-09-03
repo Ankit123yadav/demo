@@ -231,7 +231,7 @@
     <div class="course-card" onclick="openCourse('digital-marketing.html')">
       <img src="{% static 'website/img/digital.jpg'%}" alt="Digital Marketing">
       <div class="course-content">
-        <h3>Digital Marketing</h3>
+     <a href="{% url 'digital_marketing' %}" > <h3>Digital Marketing</h3></a> 
         <p>SEO, SMO, PPC, Email Marketing etc.</p>
       </div>
       <div class="course-footer">
@@ -244,7 +244,7 @@
     <div class="course-card" onclick="openCourse('web-design.html')">
       <img src="{% static 'website/img/pp.webp'%}" alt="Web Designing">
       <div class="course-content">
-        <h3>Python</h3>
+      <a href="{% url 'python' %}" > <h3>Python</h3></a> 
         <p>HTML, CSS, JavaScript, Angular JS etc.</p>
       </div>
       <div class="course-footer">
@@ -257,7 +257,7 @@
     <div class="course-card" onclick="openCourse('java.html')">
       <img src="{% static 'website/img/and.jpg'%}" alt="Java Training">
       <div class="course-content">
-        <h3>Android</h3>
+  <a href="{% url 'android' %}" > <h3>Android</h3></a> 
         <p>OOPs, classes, objects, threads etc.</p>
       </div>
       <div class="course-footer">
@@ -323,7 +323,7 @@
     <div class="course-card" onclick="openCourse('fullstack.html')">
       <img src="{% static 'website/img/me.jpg'%}" alt="Full Stack Developer">
       <div class="course-content">
-        <h3>Mern Stack</h3>
+      <a href="{% url 'mern' %}" > <h3>Mern Stack</h3></a> 
         <p>HTML, CSS, Bootstrap, React, NodeJS, MongoDB</p>
       </div>
       <div class="course-footer">
