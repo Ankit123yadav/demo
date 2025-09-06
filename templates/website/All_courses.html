@@ -275,7 +275,7 @@
     <div class="course-card" onclick="openCourse('python.html')">
       <img src="{% static 'website/img/autoc.jpg'%}" alt="Python Training">
       <div class="course-content">
-        <h3>AutoCAD</h3>
+       <a href="{% url 'autocad' %}" > <h3>AutoCAD</h3></a> 
         <p>Lists, tuples, functions, modules etc.</p>
       </div>
       <div class="course-footer">
@@ -290,7 +290,7 @@
     <div class="course-card" onclick="openCourse('python.html')">
       <img src="{% static 'website/img/cyber.jpg'%}" alt="Python Training">
       <div class="course-content">
-        <h3>Cyber Security</h3>
+        <a href="{% url 'cybersecurity' %}" > <h3>CyberSecurity</h3></a> 
         <p>Lists, tuples, functions, modules etc.</p>
       </div>
       <div class="course-footer">
@@ -309,7 +309,7 @@
     <div class="course-card" onclick="openCourse('aws.html')">
       <img src="{% static 'website/img/iots.jpg'%}" alt="AWS">
       <div class="course-content">
-       <a href="{% url 'python' %}" > <h3>Internet Of Things(IOT)</h3></a> 
+       <a href="{% url 'iot' %}" > <h3>Internet Of Things(IOT)</h3></a> 
         <p>EC2, RDS, Auto scaling, Route 53 etc.</p>
       </div>
       <div class="course-footer">
@@ -346,7 +346,7 @@
     <div class="course-card" onclick="openCourse('python.html')">
       <img src="{% static 'website/img/autoc.jpg'%}" alt="Python Training">
       <div class="course-content">
-        <h3>AutoCAD</h3>
+         <a href="{% url 'autocad' %}" > <h3>AutoCAD</h3></a> 
         <p>Lists, tuples, functions, modules etc.</p>
       </div>
       <div class="course-footer">
@@ -358,7 +358,7 @@
     <div class="course-card" onclick="openCourse('python.html')">
       <img src="{% static 'website/img/neeet.jpg'%}" alt="Python Training">
       <div class="course-content">
-        <h3>ASP.Net</h3>
+      <a href="{% url 'asp_net' %}" > <h3>ASP.Net</h3></a> 
         <p>Lists, tuples, functions, modules etc.</p>
       </div>
       <div class="course-footer">
@@ -374,7 +374,7 @@
     <div class="course-card" onclick="openCourse('python.html')">
       <img src="{% static 'website/img/cyber.jpg'%}" alt="Python Training">
       <div class="course-content">
-        <h3>Cyber Security</h3>
+         <a href="{% url 'cybersecurity' %}" > <h3>CyberSecurity</h3></a> 
         <p>Lists, tuples, functions, modules etc.</p>
       </div>
       <div class="course-footer">
@@ -401,9 +401,7 @@
      <div class="course-card" onclick="openCourse('aws.html')">
       <img src="{% static 'website/img/pcb.jpg'%}" alt="AWS">
       <div class="course-content">
-       <a href="{% url 'python' %}" > <h3>
-
-
+       <a href="{% url 'pcb' %}" > <h3>
 PCB & Circuit
 Designing</h3></a> 
         <p>EC2, RDS, Auto scaling, Route 53 etc.</p>
@@ -419,7 +417,7 @@ Designing</h3></a>
      <div class="course-card" onclick="openCourse('aws.html')">
       <img src="{% static 'website/img/ind.jpg'%}" alt="AWS">
       <div class="course-content">
-       <a href="{% url 'python' %}" > <h3>Industrial Automation
+       <a href="{% url 'automation' %}" > <h3>Industrial Automation
 & Systems</h3></a> 
         <p>EC2, RDS, Auto scaling, Route 53 etc.</p>
       </div>
@@ -435,7 +433,7 @@ Designing</h3></a>
       <div class="course-card" onclick="openCourse('python.html')">
       <img src="{% static 'website/img/neeet.jpg'%}" alt="Python Training">
       <div class="course-content">
-        <h3>ASP.Net</h3>
+    <a href="{% url 'asp_net' %}" > <h3>ASP.Net</h3></a> 
         <p>Lists, tuples, functions, modules etc.</p>
       </div>
       <div class="course-footer">
@@ -450,7 +448,7 @@ Designing</h3></a>
        <div class="course-card" onclick="openCourse('python.html')">
       <img src="{% static 'website/img/pllc.jpg'%}" alt="Python Training">
       <div class="course-content">
-        <h3>PLC & SCADA
+ <a href="{% url 'plc' %}" > <h3>Plc</h3></a> 
 Systems</h3>
         <p>Lists, tuples, functions, modules etc.</p>
       </div>
@@ -469,7 +467,7 @@ Systems</h3>
     <div class="course-card" onclick="openCourse('fullstack.html')">
       <img src="{% static 'website/img/me.jpg'%}" alt="Full Stack Developer">
       <div class="course-content">
-        <h3>Mern Stack</h3>
+        <a href="{% url 'mern' %}" > <h3>Mern Stack</h3></a> 
         <p>HTML, CSS, Bootstrap, React, NodeJS, MongoDB</p>
       </div>
       <div class="course-footer">

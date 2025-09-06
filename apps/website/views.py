@@ -84,3 +84,28 @@ def android(request):
 
 def mern(request):
     return render(request, "website/mern_stack.html")    
+
+def asp_net(request):
+    return render(request, "website/asp net.html")
+
+def iot(request):
+    return render(request, "website/IOT.html")      
+
+
+def autocad(request):       
+    return render(request, "website/autocad.html")   
+
+def cybersecurity(request):
+    return render(request, "website/cybersecurity.html")
+
+def pcb(request):
+    return render(request, "website/pcb.html")
+
+
+def plc(request):
+    return render(request, "website/plc.html")
+
+def automation(request):
+    return render(request, "website/automation.html")    
+    
+        

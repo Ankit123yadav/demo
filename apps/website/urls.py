@@ -30,6 +30,14 @@ urlpatterns = [
     path("digital_marketing/", views.digital_marketing, name="digital_marketing"),  # New URL for Digital Marketing course page
     path("android/", views.android, name="android"),  # New URL for Android course page 
     path("mern/", views.mern, name="mern"),  # New URL for MERN course page
+    path("asp_net/", views.asp_net, name="asp_net"),  # New URL for ASP.NET course page
+    path("iot/", views.iot, name="iot"),  # New URL for IoT
+    path("autocad/", views.autocad, name="autocad"),  # New URL for AutoCAD course page
+    path("cybersecurity/", views.cybersecurity, name="cybersecurity"),  # New URL for Cyber Security course page
+    path("automation/", views.automation, name="automation"),  # New URL for Automation course page
+    path("pcb/", views.pcb, name="pcb"),  # New URL for PCB course page
+    path("plc/", views.plc, name="plc"),
+    
     # Add any other URLs as needed
     
 
