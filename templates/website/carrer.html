@@ -26,7 +26,7 @@
         }
 
         #scrollToTopBtn:hover {
-            background-color: #ffe401;
+            background-color: #FF9B00;
         }
 
 </style>
@@ -58,10 +58,10 @@ Commitment To Excellence.</h3>
             </div>
 
             <div class="col-lg-6 col-md-12">
-                <div class="students-feedback-form">
+                <div class="students-feedback-form" style="margin-top: 20px; margin-bottom:30px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius:10px; background-color:white;">
                     <h3>Get In Touch</h3>
 
-                    <form action="https://sipherweb.com/Insertcarrer" method="post" enctype="multipart/form-data">
+                    {% comment %} <form action="https://sipherweb.com/Insertcarrer" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="6yXCOc1Qtg7FOI2uWp6Nqq3i20wt0u7iR8BGmLvE" autocomplete="off">                        <div class="row">
                             <div class="col-lg-6 col-md-6">
                                 <div class="form-group">
@@ -105,7 +105,113 @@ Commitment To Excellence.</h3>
                                         Message</span><i class="bx bx-paper-plane icon-arrow after"></i></button>
                             </div>
                         </div>
-                    </form>
+                    </form> {% endcomment %}
+
+                     <form action="https://sipherweb.com/Insertfeedback" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="_token" value="6yXCOc1Qtg7FOI2uWp6Nqq3i20wt0u7iR8BGmLvE" autocomplete="off">                            <div class="row">
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Your name*" name="name" id="name">
+                                        <span class="label-title"><i class='bx bx-user'></i></span>
+                                                                            </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Your address*" name="address" id="address">
+                                        <span class="label-title"><i class='bx bx-home'></i></span>
+                                                                            </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Your email*" name="email">
+                                        <span class="label-title"><i class='bx bx-envelope'></i></span>
+                                                                            </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6">
+                                    <style>
+                                        /* .upload-btn-wrapper input[type="file"] {
+      font-size: 100px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      cursor: pointer;
+    } */
+
+    .hover-text {
+      margin-top: 8px;
+      font-size: 14px;
+      color: gray;
+      display: none; /* hidden by default */
+    }
+
+    /* Show text on hover */
+    .upload-btn-wrapper:hover .hover-text {
+      display: block;
+    }
+            
+    
+     .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3px;
+        max-width: max-content;
+        background: linear-gradient(90deg,
+                rgb(118, 167, 63) 0%,
+                rgb(51, 143, 118) 40%,
+                rgb(55, 141, 167) 50%,
+                rgb(117, 152, 242) 70%,
+                rgb(144, 118, 236) 100%);
+        background-size: 200%;
+        background-position: left;
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: 500;
+        border: 0;
+        margin-left: 100px;
+        padding: 12px 16px;
+        border-radius: 5px;
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5),
+            inset 0px 2px 2px rgba(255, 255, 255, 0.2);
+        cursor: pointer;
+        transition: all 0.3s ease-in;
+    }
+
+    .btn:hover {
+        background-position: right;
+    }
+
+                                        </style>
+                                    
+                                    <div class="form-group  upload-btn-wrapper" >
+                                         
+                                         <input type="text" class="form-control" placeholder="Your pic upload*" name="Img" style="display:none; ">
+                                        <input type="file" class="form-control" placeholder="Your pic upload*" name="Img" title="Upload your photo">
+                                         
+                                             <div class="hover-text"></div>
+                                        <span class="label-title"><i class='bx bx-file'></i></span>
+                                                                            </div>
+                                </div>
+
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="form-group">
+                                        <textarea cols="25" rows="4" id="text" name="text" class="form-control" placeholder="Write something here (Optional)"></textarea>
+                                        <span class="label-title"><i class='bx bx-edit'></i></span>
+                                                                            </div>
+                                </div>
+
+                                <div class="col-lg-12 col-md-12">
+                               
+                                            <button class="btn btn-danger mx-auto"  style="text-align: center; font-weight: 200; " ><span><b>Send Message</b></span><i class="bx bx-paper-plane icon-arrow after"></i></button>
+
+                                            
+                                </div>
+                            </div>
+                        </form>
                 </div>
             </div>
         </div>

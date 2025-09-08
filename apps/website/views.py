@@ -69,3 +69,43 @@ def demo(request):
 
 def download_certificate(request):
     return render(request, "website/download_certificate.html")
+
+def all_courses(request):
+    return render(request, "website/All_courses.html")
+
+def python(request):
+    return render(request, "website/python.html")
+
+def digital_marketing(request):
+    return render(request, "website/digital _marketing.html")    
+
+def android(request):
+    return render(request, "website/android.html")    
+
+def mern(request):
+    return render(request, "website/mern_stack.html")    
+
+def asp_net(request):
+    return render(request, "website/asp net.html")
+
+def iot(request):
+    return render(request, "website/IOT.html")      
+
+
+def autocad(request):       
+    return render(request, "website/autocad.html")   
+
+def cybersecurity(request):
+    return render(request, "website/cybersecurity.html")
+
+def pcb(request):
+    return render(request, "website/pcb.html")
+
+
+def plc(request):
+    return render(request, "website/plc.html")
+
+def automation(request):
+    return render(request, "website/automation.html")    
+    
+        
