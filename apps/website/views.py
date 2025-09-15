@@ -107,5 +107,37 @@ def plc(request):
 
 def automation(request):
     return render(request, "website/all_courses/automation.html")    
+
+def D3max(request):
+    return render(request, "website/all_courses/3DMax.html")   
+
+
+def data_science(request):
+    return render(request, "website/all_courses/data_science.html")
+
+def ecad(request):
+    return render(request, "website/all_courses/ecad.html")
+
+
+def embedded(request):
+    return render(request, "website/all_courses/embedded.html")
+
+
+def hvac(request):
+    return render(request, "website/all_courses/Hvac.html")
+
+
+def matlab(request):
+    return render(request, "website/all_courses/Matlab.html")
+
+
+def plumbing(request):
+    return render(request, "website/all_courses/plumbing.html")
+
+def solidworks(request):
+    return render(request, "website/all_courses/solidworks.html")
+
+def staad_pro(request):
+    return render(request, "website/all_courses/staad_pro.html")        
     
         
