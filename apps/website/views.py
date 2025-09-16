@@ -124,7 +124,8 @@ def embedded(request):
 
 
 def hvac(request):
-    return render(request, "website/all_courses/Hvac.html")
+    return render(request, "website/all_courses/hvac.html")
+
 
 
 def matlab(request):
