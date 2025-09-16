@@ -1,8 +1,8 @@
 Create all Link pages
 Update menu bar- Active page, title name 
 In home page's About Us​ section - update images according to section    
-       
 
+All courses pages- update hero section 
 
 
 
