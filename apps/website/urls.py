@@ -45,7 +45,7 @@ urlpatterns = [
     path("embedded/", views.embedded, name="embedded"),  # New URL for Embedded Systems course page
     path("matlab/", views.matlab, name="matlab"),  # New URL for MATLAB course page
     path("solidworks/", views.solidworks, name="solidworks"),  # New
-    path("staddpro/", views.staad_pro, name="staddpro"),  # New URL for STAAD Pro course page
+    path("all_courses/staddpro/", views.staad_pro, name="staddpro"),  # New URL for STAAD Pro course page
 
     
     # Add any other URLs as needed
