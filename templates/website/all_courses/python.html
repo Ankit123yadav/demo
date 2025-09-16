@@ -12,7 +12,7 @@
             bottom: 20px;
             right: 20px;
             background-color: #100562;
-            color: #fff;
+            color: #f7f6f6ff;
             border: none;
             border-radius: 50%;
             width: 50px;
@@ -30,20 +30,10 @@
         }
 
 </style>
-  <script src="https://cdn.tailwindcss.com"></script>
+  {% comment %} <script src="https://cdn.tailwindcss.com"></script> {% endcomment %}
 
  <style>
-    {% comment %} * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: "Segoe UI", sans-serif;
-    }
 
-    body {
-      background: #f8f9fa;
-      padding: 40px;
-    } {% endcomment %}
 
     .connects {
       display: flex;
@@ -164,12 +154,6 @@
 
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      margin: 0;
-      padding: 0;
-    }
 
     .curriculum-section {
       max-width: 1100px;
@@ -211,7 +195,7 @@
 
     .accordion-header span {
       font-size: 20px;
-      color: #ff6600;
+      color: #2600ffff;
       font-weight: bold;
     }
 
@@ -249,7 +233,7 @@
       }
     }
 
-    .btn {
+     .btn {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -307,6 +291,126 @@
     {% comment %}  {% endcomment %}
 </head>
 
+<style>
+  /* Global */
+body {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f9fafb;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Section base */
+section {
+  padding: 3rem 1rem;
+}
+
+.bg-gray-50 {
+  background-color: #f9fafb;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+/* Container */
+.max-w-6xl {
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid-cols-1 {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .md\:grid-cols-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Headings */
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ea580c; /* orange */
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Paragraphs */
+p {
+  line-height: 1.6;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-danger {
+  background-color: #dc2626;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background-color: #b91c1c;
+}
+
+/* Card styles */
+.p-6 {
+  padding: 1.5rem;
+}
+
+.rounded-2xl {
+  border-radius: 1rem;
+}
+
+.shadow-md {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Typography */
+.text-blue-600 {
+  color: #2563eb;
+}
+
+.text-gray-600 {
+  color: #4b5563;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+</style>
 
  <section class="bg-gray-50 py-12">
   <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -314,7 +418,7 @@
     <!-- Left: Image -->
     <div>
       <img 
-        src="{% static 'website/img/digital.jpg'%}" 
+        src="{% static 'website/img/pp.webp'%}" 
         alt="AI Training" 
         class="w-full rounded-xl shadow-lg"
       />
@@ -322,19 +426,17 @@
 
     <!-- Right: Text -->
     <div>
-      <h2 class="text-3xl md:text-4xl font-bold text-orange-600 mb-4">
-        Artificial Intelligence Training in Lucknow
-      </h2>
-      <p class="text-gray-600 leading-relaxed mb-6">
-        Upskill yourself with the world’s top-rated Sipher Web Academy India AI. Learn Python, Predictive Analytics, 
-        Machine Learning, Deep Learning, NLP, and more. Hands-on with 20+ projects, 100+ case studies, 
-        and industry experts.
-      </p>
-      {% comment %} <a href="#" class="inline-block px-6 py-3 bg-orange-600 text-white font-semibold rounded-lg shadow-md hover:bg-orange-700 transition">
-        Enroll Now
-      </a> {% endcomment %}
-      <button class="btn btn-danger mx-auto"  style="text-align: center; font-weight: 200; " ><span><b>Enroll Now</b></span><i class="bx bx-paper-plane icon-arrow after"></i></button>
+  <h2 class="text-3xl md:text-4xl font-bold text-orange-600 mb-4">
+  Python Training in Lucknow
+</h2>
+<p class="text-gray-600 leading-relaxed mb-6">
+  Kickstart your programming journey with Sipher Web Academy India’s comprehensive Python program. 
+  Learn Python from basics to advanced concepts including data structures, OOP, file handling, libraries, 
+  and frameworks. Work on 20+ real-world projects, 100+ case studies, and gain practical exposure with 
+  guidance from industry experts.
+</p>
 
+     <button class="btn btn-danger mx-auto"  style="text-align: center; font-weight: 200; " ><span><b>Enroll Now</b></span><i class="bx bx-paper-plane icon-arrow after"></i></button>
     </div>
 
   </div>
@@ -344,15 +446,15 @@
   <section class="bg-white py-8 border-t">
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
       <div>
-        <p class="text-2xl font-bold text-orange-600">8532+</p>
+        <p class="text-2xl font-bold text-blue-600">8532+</p>
         <p class="text-gray-600">Learners</p>
       </div>
       <div>
-        <p class="text-2xl font-bold text-orange-600">5/5</p>
+        <p class="text-2xl font-bold text-blue-600">5/5</p>
         <p class="text-gray-600">Ratings (1350 trainees, 250+ colleges)</p>
       </div>
       <div>
-        <p class="text-2xl font-bold text-orange-600">100+</p>
+        <p class="text-2xl font-bold text-blue-600">100+</p>
         <p class="text-gray-600">Case Studies</p>
       </div>
     </div>
@@ -379,45 +481,44 @@
   <section class="curriculum-section">
     
     <!-- Accordion -->
-  <div class="accordion">
-  <div class="accordion-item">
-    <div class="accordion-header">1. Introduction to ASP.NET <span>+</span></div>
-    <div class="accordion-content">Overview of ASP.NET framework, features, architecture, and setting up the environment.</div>
-  </div>
-  <div class="accordion-item">
-    <div class="accordion-header">2. C# Fundamentals for ASP.NET <span>+</span></div>
-    <div class="accordion-content">Learn C# basics including variables, data types, control structures, and OOP concepts.</div>
-  </div>
-  <div class="accordion-item">
-    <div class="accordion-header">3. Web Forms & MVC <span>+</span></div>
-    <div class="accordion-content">Understand ASP.NET Web Forms, MVC architecture, controllers, views, and models.</div>
-  </div>
-  <div class="accordion-item">
-    <div class="accordion-header">4. Data Access with ADO.NET & Entity Framework <span>+</span></div>
-    <div class="accordion-content">Work with databases, SQL Server, LINQ, and Entity Framework for data-driven apps.</div>
-  </div>
-  <div class="accordion-item">
-    <div class="accordion-header">5. State Management & Security <span>+</span></div>
-    <div class="accordion-content">Learn session management, cookies, authentication, authorization, and identity in ASP.NET.</div>
-  </div>
-  <div class="accordion-item">
-    <div class="accordion-header">6. Web APIs & Services <span>+</span></div>
-    <div class="accordion-content">Develop RESTful APIs, consume web services, and integrate third-party APIs.</div>
-  </div>
-  <div class="accordion-item">
-    <div class="accordion-header">7. Deployment & Performance Optimization <span>+</span></div>
-    <div class="accordion-content">Deploy ASP.NET apps on IIS/Azure, manage configuration, caching, and performance tuning.</div>
-  </div>
-  <div class="accordion-item">
-    <div class="accordion-header">8. Capstone Project <span>+</span></div>
-    <div class="accordion-content">Build and deploy a full-stack ASP.NET web application with database and API integration.</div>
-  </div>
-</div>
-
+    <div class="accordion">
+      <div class="accordion-item">
+        <div class="accordion-header">1. Python for AI-ML <span>+</span></div>
+        <div class="accordion-content">Learn Python basics, libraries like NumPy, Pandas, and apply them in AI/ML.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">2. Predictive Analytics <span>+</span></div>
+        <div class="accordion-content">Understand predictive models and real-world applications.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">3. Mid-Program Project 1 <span>+</span></div>
+        <div class="accordion-content">Hands-on project to apply concepts learned so far.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">4. Deep Learning <span>+</span></div>
+        <div class="accordion-content">Neural networks, TensorFlow, and Keras introduction.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">5. Natural Language Processing <span>+</span></div>
+        <div class="accordion-content">Learn NLP basics, text preprocessing, and sentiment analysis.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">6. Mid-Program Project 2 <span>+</span></div>
+        <div class="accordion-content">Industry-standard second project for practice.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">7. Sequence Learning <span>+</span></div>
+        <div class="accordion-content">RNN, LSTM, and sequence-based problem-solving.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">8. Industry Grade Project <span>+</span></div>
+        <div class="accordion-content">Capstone project with real-world dataset.</div>
+      </div>
+    </div>
 
     <!-- Certificate -->
     <div class="certificate-box">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Certificate_sample.jpg/960px-Certificate_sample.jpg?20211217184812" style="height:500px; width:600px;" alt="Sample Certificate" alt="Certificate">
+      <img src="{% static 'website/img/certificate.jpeg'%}" style="height:500px; width:1000px;" alt="Sample Certificate" alt="Certificate">
       <p>Certification: Sipher Web Academy’s Cyber Security Professional Certificate</p>
     </div>
   </section>

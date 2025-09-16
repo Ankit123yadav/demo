@@ -74,38 +74,38 @@ def all_courses(request):
     return render(request, "website/All_courses.html")
 
 def python(request):
-    return render(request, "website/python.html")
+    return render(request, "website/all_courses/python.html")
 
 def digital_marketing(request):
-    return render(request, "website/digital _marketing.html")    
+    return render(request, "website/all_courses/digital _marketing.html")    
 
 def android(request):
-    return render(request, "website/android.html")    
+    return render(request, "website/all_courses/android.html")    
 
 def mern(request):
-    return render(request, "website/mern_stack.html")    
+    return render(request, "website/all_courses/mern_stack.html")    
 
 def asp_net(request):
-    return render(request, "website/asp net.html")
+    return render(request, "website/all_courses/asp net.html")
 
 def iot(request):
-    return render(request, "website/IOT.html")      
+    return render(request, "website/all_courses/IOT.html")      
 
 
 def autocad(request):       
-    return render(request, "website/autocad.html")   
+    return render(request, "website/all_courses/autocad.html")   
 
 def cybersecurity(request):
-    return render(request, "website/cybersecurity.html")
+    return render(request, "website/all_courses/cybersecurity.html")
 
 def pcb(request):
-    return render(request, "website/pcb.html")
+    return render(request, "website/all_courses/pcb.html")
 
 
 def plc(request):
-    return render(request, "website/plc.html")
+    return render(request, "website/all_courses/plc.html")
 
 def automation(request):
-    return render(request, "website/automation.html")    
+    return render(request, "website/all_courses/automation.html")    
     
         

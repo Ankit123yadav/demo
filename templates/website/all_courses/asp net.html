@@ -30,7 +30,7 @@
         }
 
 </style>
-  <script src="https://cdn.tailwindcss.com"></script>
+  {% comment %} <script src="https://cdn.tailwindcss.com"></script> {% endcomment %}
 
  <style>
     {% comment %} * {
@@ -232,7 +232,7 @@
 
     .certificate-box img {
       width: 100%;
-      max-width: 450px;
+      max-width: 550px;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
@@ -279,6 +279,127 @@
     .btn:hover {
         background-position: right;
     }
+
+
+    /* Global */
+body {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f9fafb;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Section base */
+section {
+  padding: 3rem 1rem;
+}
+
+.bg-gray-50 {
+  background-color: #f9fafb;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+/* Container */
+.max-w-6xl {
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid-cols-1 {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .md\:grid-cols-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Headings */
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ea580c; /* orange */
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Paragraphs */
+p {
+  line-height: 1.6;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-danger {
+  background-color: #dc2626;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background-color: #b91c1c;
+}
+
+/* Card styles */
+.p-6 {
+  padding: 1.5rem;
+}
+
+.rounded-2xl {
+  border-radius: 1rem;
+}
+
+.shadow-md {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Typography */
+.text-blue-600 {
+  color: #2563eb;
+}
+
+.text-gray-600 {
+  color: #4b5563;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
   </style>
 
     <!-- End Preloader -->
@@ -314,7 +435,7 @@
     <!-- Left: Image -->
     <div>
       <img 
-        src="{% static 'website/img/and.jpg'%}" 
+        src="{% static 'website/img/neeet.jpg'%}" 
         alt="AI Training" 
         class="w-full rounded-xl shadow-lg"
       />
@@ -322,15 +443,21 @@
 
     <!-- Right: Text -->
     <div>
-      <h2 class="text-3xl md:text-4xl font-bold text-orange-600 mb-4">
-        Artificial Intelligence Training in Lucknow
-      </h2>
-      <p class="text-gray-600 leading-relaxed mb-6">
-        Upskill yourself with the world’s top-rated Sipher Web Academy India AI. Learn Python, Predictive Analytics, 
-        Machine Learning, Deep Learning, NLP, and more. Hands-on with 20+ projects, 100+ case studies, 
-        and industry experts.
-      </p>
-     <button class="btn btn-danger mx-auto"  style="text-align: center; font-weight: 200; " ><span><b>Enroll Now</b></span><i class="bx bx-paper-plane icon-arrow after"></i></button>
+     <h2 class="text-3xl md:text-4xl font-bold text-orange-600 mb-4">
+  ASP.NET Training in Lucknow
+</h2>
+<p class="text-gray-600 leading-relaxed mb-6">
+  Build dynamic web applications with Sipher Web Academy India’s expert-led ASP.NET program. 
+  Learn C#, .NET Framework, MVC architecture, Web API, and database integration with SQL Server. 
+  Gain practical experience through 20+ real-world projects, 100+ case studies, and mentorship 
+  from experienced ASP.NET developers.
+</p>
+
+      {% comment %} <a href="#" class="inline-block px-6 py-3 bg-orange-600 text-white font-semibold rounded-lg shadow-md hover:bg-orange-700 transition">
+        Enroll Now
+      </a> {% endcomment %}
+      <button class="btn btn-danger mx-auto"  style="text-align: center; font-weight: 200; " ><span><b>Enroll Now</b></span><i class="bx bx-paper-plane icon-arrow after"></i></button>
+
     </div>
 
   </div>
@@ -377,43 +504,43 @@
     <!-- Accordion -->
   <div class="accordion">
   <div class="accordion-item">
-    <div class="accordion-header">1. Introduction to Android Development <span>+</span></div>
-    <div class="accordion-content">Understand Android OS, app ecosystem, and development environment setup.</div>
+    <div class="accordion-header">1. Introduction to ASP.NET <span>+</span></div>
+    <div class="accordion-content">Overview of ASP.NET framework, features, architecture, and setting up the environment.</div>
   </div>
   <div class="accordion-item">
-    <div class="accordion-header">2. Java & Kotlin Basics <span>+</span></div>
-    <div class="accordion-content">Learn Java and Kotlin fundamentals for Android app development.</div>
+    <div class="accordion-header">2. C# Fundamentals for ASP.NET <span>+</span></div>
+    <div class="accordion-content">Learn C# basics including variables, data types, control structures, and OOP concepts.</div>
   </div>
   <div class="accordion-item">
-    <div class="accordion-header">3. Android Studio & UI Design <span>+</span></div>
-    <div class="accordion-content">Hands-on with Android Studio, XML layouts, Material Design, and UI components.</div>
+    <div class="accordion-header">3. Web Forms & MVC <span>+</span></div>
+    <div class="accordion-content">Understand ASP.NET Web Forms, MVC architecture, controllers, views, and models.</div>
   </div>
   <div class="accordion-item">
-    <div class="accordion-header">4. Activity, Intents & Navigation <span>+</span></div>
-    <div class="accordion-content">Work with activity lifecycle, explicit & implicit intents, and navigation components.</div>
+    <div class="accordion-header">4. Data Access with ADO.NET & Entity Framework <span>+</span></div>
+    <div class="accordion-content">Work with databases, SQL Server, LINQ, and Entity Framework for data-driven apps.</div>
   </div>
   <div class="accordion-item">
-    <div class="accordion-header">5. Data Storage & SQLite <span>+</span></div>
-    <div class="accordion-content">Implement shared preferences, local storage, and SQLite database integration.</div>
+    <div class="accordion-header">5. State Management & Security <span>+</span></div>
+    <div class="accordion-content">Learn session management, cookies, authentication, authorization, and identity in ASP.NET.</div>
   </div>
   <div class="accordion-item">
-    <div class="accordion-header">6. APIs & Networking <span>+</span></div>
-    <div class="accordion-content">Learn REST APIs, JSON parsing, Retrofit, and Firebase integration.</div>
+    <div class="accordion-header">6. Web APIs & Services <span>+</span></div>
+    <div class="accordion-content">Develop RESTful APIs, consume web services, and integrate third-party APIs.</div>
   </div>
   <div class="accordion-item">
-    <div class="accordion-header">7. Advanced Features <span>+</span></div>
-    <div class="accordion-content">Work with background services, notifications, multimedia, sensors, and location services.</div>
+    <div class="accordion-header">7. Deployment & Performance Optimization <span>+</span></div>
+    <div class="accordion-content">Deploy ASP.NET apps on IIS/Azure, manage configuration, caching, and performance tuning.</div>
   </div>
   <div class="accordion-item">
     <div class="accordion-header">8. Capstone Project <span>+</span></div>
-    <div class="accordion-content">Develop a complete Android app from scratch, publish it to the Google Play Store.</div>
+    <div class="accordion-content">Build and deploy a full-stack ASP.NET web application with database and API integration.</div>
   </div>
 </div>
 
 
     <!-- Certificate -->
     <div class="certificate-box">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Certificate_sample.jpg/960px-Certificate_sample.jpg?20211217184812" style="height:500px; width:600px;" alt="Sample Certificate" alt="Certificate">
+      <img src="{% static 'website/img/certificate.jpeg'%}" style="height:500px; width:600px;" alt="Sample Certificate" alt="Certificate">
       <p>Certification: Sipher Web Academy’s Cyber Security Professional Certificate</p>
     </div>
   </section>

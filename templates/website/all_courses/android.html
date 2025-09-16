@@ -30,7 +30,7 @@
         }
 
 </style>
-  <script src="https://cdn.tailwindcss.com"></script>
+  {% comment %} <script src="https://cdn.tailwindcss.com"></script> {% endcomment %}
 
  <style>
     {% comment %} * {
@@ -306,6 +306,126 @@
     <!-- Start Contact Area -->
     {% comment %}  {% endcomment %}
 </head>
+<style>
+  /* Global */
+body {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f9fafb;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Section base */
+section {
+  padding: 3rem 1rem;
+}
+
+.bg-gray-50 {
+  background-color: #f9fafb;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+/* Container */
+.max-w-6xl {
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid-cols-1 {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .md\:grid-cols-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Headings */
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ea580c; /* orange */
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Paragraphs */
+p {
+  line-height: 1.6;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-danger {
+  background-color: #dc2626;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background-color: #b91c1c;
+}
+
+/* Card styles */
+.p-6 {
+  padding: 1.5rem;
+}
+
+.rounded-2xl {
+  border-radius: 1rem;
+}
+
+.shadow-md {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Typography */
+.text-blue-600 {
+  color: #2563eb;
+}
+
+.text-gray-600 {
+  color: #4b5563;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+</style>
 
 
  <section class="bg-gray-50 py-12">
@@ -314,7 +434,7 @@
     <!-- Left: Image -->
     <div>
       <img 
-        src="{% static 'website/img/digital.jpg'%}" 
+        src="{% static 'website/img/and.jpg'%}" 
         alt="AI Training" 
         class="w-full rounded-xl shadow-lg"
       />
@@ -330,11 +450,7 @@
         Machine Learning, Deep Learning, NLP, and more. Hands-on with 20+ projects, 100+ case studies, 
         and industry experts.
       </p>
-      {% comment %} <a href="#" class="inline-block px-6 py-3 bg-orange-600 text-white font-semibold rounded-lg shadow-md hover:bg-orange-700 transition">
-        Enroll Now
-      </a> {% endcomment %}
-      <button class="btn btn-danger mx-auto"  style="text-align: center; font-weight: 200; " ><span><b>Enroll Now</b></span><i class="bx bx-paper-plane icon-arrow after"></i></button>
-
+     <button class="btn btn-danger mx-auto"  style="text-align: center; font-weight: 200; " ><span><b>Enroll Now</b></span><i class="bx bx-paper-plane icon-arrow after"></i></button>
     </div>
 
   </div>
@@ -381,43 +497,43 @@
     <!-- Accordion -->
   <div class="accordion">
   <div class="accordion-item">
-    <div class="accordion-header">1. Introduction to PCB Design <span>+</span></div>
-    <div class="accordion-content">Overview of printed circuit boards, types, applications, and manufacturing process.</div>
+    <div class="accordion-header">1. Introduction to Android Development <span>+</span></div>
+    <div class="accordion-content">Understand Android OS, app ecosystem, and development environment setup.</div>
   </div>
   <div class="accordion-item">
-    <div class="accordion-header">2. PCB Materials & Components <span>+</span></div>
-    <div class="accordion-content">Learn about substrates, copper layers, vias, surface finishes, and electronic components.</div>
+    <div class="accordion-header">2. Java & Kotlin Basics <span>+</span></div>
+    <div class="accordion-content">Learn Java and Kotlin fundamentals for Android app development.</div>
   </div>
   <div class="accordion-item">
-    <div class="accordion-header">3. Schematic Design <span>+</span></div>
-    <div class="accordion-content">Understand circuit schematics, symbols, and netlist generation using EDA tools.</div>
+    <div class="accordion-header">3. Android Studio & UI Design <span>+</span></div>
+    <div class="accordion-content">Hands-on with Android Studio, XML layouts, Material Design, and UI components.</div>
   </div>
   <div class="accordion-item">
-    <div class="accordion-header">4. PCB Layout & Routing <span>+</span></div>
-    <div class="accordion-content">Master component placement, signal routing, power planes, and design rules.</div>
+    <div class="accordion-header">4. Activity, Intents & Navigation <span>+</span></div>
+    <div class="accordion-content">Work with activity lifecycle, explicit & implicit intents, and navigation components.</div>
   </div>
   <div class="accordion-item">
-    <div class="accordion-header">5. Signal Integrity & Power Management <span>+</span></div>
-    <div class="accordion-content">Learn high-speed design, EMI/EMC considerations, grounding, and thermal management.</div>
+    <div class="accordion-header">5. Data Storage & SQLite <span>+</span></div>
+    <div class="accordion-content">Implement shared preferences, local storage, and SQLite database integration.</div>
   </div>
   <div class="accordion-item">
-    <div class="accordion-header">6. Design for Manufacturing (DFM) <span>+</span></div>
-    <div class="accordion-content">Optimize PCB designs for fabrication, assembly, and testing requirements.</div>
+    <div class="accordion-header">6. APIs & Networking <span>+</span></div>
+    <div class="accordion-content">Learn REST APIs, JSON parsing, Retrofit, and Firebase integration.</div>
   </div>
   <div class="accordion-item">
-    <div class="accordion-header">7. Advanced PCB Technologies <span>+</span></div>
-    <div class="accordion-content">Explore multilayer boards, HDI, flex PCBs, RF/microwave design, and 3D printing.</div>
+    <div class="accordion-header">7. Advanced Features <span>+</span></div>
+    <div class="accordion-content">Work with background services, notifications, multimedia, sensors, and location services.</div>
   </div>
   <div class="accordion-item">
     <div class="accordion-header">8. Capstone Project <span>+</span></div>
-    <div class="accordion-content">Design, simulate, and produce a PCB prototype for a real-world electronic application.</div>
+    <div class="accordion-content">Develop a complete Android app from scratch, publish it to the Google Play Store.</div>
   </div>
 </div>
 
 
     <!-- Certificate -->
     <div class="certificate-box">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Certificate_sample.jpg/960px-Certificate_sample.jpg?20211217184812" style="height:500px; width:600px;" alt="Sample Certificate" alt="Certificate">
+      <img src="{% static 'website/img/certificate.jpeg'%}" style="height:500px; width:600px;" alt="Sample Certificate" alt="Certificate">
       <p>Certification: Sipher Web Academy’s Cyber Security Professional Certificate</p>
     </div>
   </section>

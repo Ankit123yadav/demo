@@ -216,9 +216,11 @@
 <h1 style="color:#100562; font-weight:800; font-size:40px; ">Our Trending Technologies </h1>
   <div class="course-container">
     <div class="course-card" onclick="openCourse('aws.html')">
+        <a href="{% url 'android' %}" >
       <img src="{% static 'website/img/analytics.jpg'%}" alt="AWS">
       <div class="course-content">
-       <a href="{% url 'python' %}" > <h3>Data Analytics</h3></a> 
+      <h3>Data Analytics</h3>
+        
         <p>EC2, RDS, Auto scaling, Route 53 etc.</p>
       </div>
       <div class="course-footer">
@@ -226,38 +228,40 @@
         {% comment %} <span class="price">Rs 14000</span> {% endcomment %}
         {% comment %} <button class="btn">Buy Course</button> {% endcomment %}
       </div>
-    </div>
+    </div></a> 
 
     <div class="course-card" onclick="openCourse('digital-marketing.html')">
+     
       <img src="{% static 'website/img/digital.jpg'%}" alt="Digital Marketing">
       <div class="course-content">
-     <a href="{% url 'digital_marketing' %}" > <h3>Digital Marketing</h3></a> 
+      <h3>Digital Marketing</h3></a> 
         <p>SEO, SMO, PPC, Email Marketing etc.</p>
       </div>
       <div class="course-footer">
-         <button class="btn">Read More</button>
+         <button class="btn">Read More</button></a>
         {% comment %} <span class="price">Rs 14000</span> {% endcomment %}
         {% comment %} <button class="btn">Pay Now</button> {% endcomment %}
       </div>
-    </div>
+    </div></a> 
 
     <div class="course-card" onclick="openCourse('web-design.html')">
+       <a href="{% url 'python' %}" > 
       <img src="{% static 'website/img/pp.webp'%}" alt="Web Designing">
       <div class="course-content">
-      <a href="{% url 'python' %}" > <h3>Python</h3></a> 
+     <h3>Python</h3></a> 
         <p>HTML, CSS, JavaScript, Angular JS etc.</p>
       </div>
       <div class="course-footer">
-         <button class="btn">Read More</button>
+         <button class="btn">Read More</button></a>
         {% comment %} <span class="price">Rs 14000</span> {% endcomment %}
         {% comment %} <button class="btn">Pay Now</button> {% endcomment %}
       </div>
-    </div>
+    </div></a> 
 
     <div class="course-card" onclick="openCourse('java.html')">
       <img src="{% static 'website/img/and.jpg'%}" alt="Java Training">
       <div class="course-content">
-  <a href="{% url 'android' %}" > <h3>Android</h3></a> 
+ <h3>Android</h3></a> 
         <p>OOPs, classes, objects, threads etc.</p>
       </div>
       <div class="course-footer">
@@ -265,40 +269,40 @@
         {% comment %} <span class="price">Rs 14000</span> {% endcomment %}
         {% comment %} <button class="btn">Buy Course</button> {% endcomment %}
       </div>
-
-      
-    </div>
+    </div></a> 
 
     
     
 
     <div class="course-card" onclick="openCourse('python.html')">
+         <a href="{% url 'autocad' %}" >
       <img src="{% static 'website/img/autoc.jpg'%}" alt="Python Training">
       <div class="course-content">
-       <a href="{% url 'autocad' %}" > <h3>AutoCAD</h3></a> 
+     <h3>AutoCAD</h3>
         <p>Lists, tuples, functions, modules etc.</p>
       </div>
       <div class="course-footer">
         {% comment %} <span class="price">Rs 14000</span> {% endcomment %}
         {% comment %} <button class="btn">Buy Course</button> {% endcomment %}
-         <button class="btn">Read More</button>
+         <button class="btn">Read More</button></a> 
       </div>
-    </div>
+    </div></a> 
 
 
 
     <div class="course-card" onclick="openCourse('python.html')">
+      <a href="{% url 'cybersecurity' %}" >
       <img src="{% static 'website/img/cyber.jpg'%}" alt="Python Training">
       <div class="course-content">
-        <a href="{% url 'cybersecurity' %}" > <h3>CyberSecurity</h3></a> 
+         <h3>CyberSecurity</h3>
         <p>Lists, tuples, functions, modules etc.</p>
       </div>
       <div class="course-footer">
-         <button class="btn">Read More</button>
+         <button class="btn">Read More</button></a> 
         {% comment %} <span class="price">Rs 14000</span> {% endcomment %}
         {% comment %} <button class="btn">Buy Course</button> {% endcomment %}
       </div>
-    </div>
+    </div></a> 
 
 
 
@@ -307,31 +311,33 @@
 
 
     <div class="course-card" onclick="openCourse('aws.html')">
+       <a href="{% url 'iot' %}" >
       <img src="{% static 'website/img/iots.jpg'%}" alt="AWS">
       <div class="course-content">
-       <a href="{% url 'iot' %}" > <h3>Internet Of Things(IOT)</h3></a> 
+       <h3>Internet Of Things(IOT)</h3>
         <p>EC2, RDS, Auto scaling, Route 53 etc.</p>
       </div>
       <div class="course-footer">
-         <button class="btn">Read More</button>
+         <button class="btn">Read More</button></a> 
         {% comment %} <span class="price">Rs 14000</span> {% endcomment %}
         {% comment %} <button class="btn">Buy Course</button> {% endcomment %}
       </div>
-    </div>
+    </div></a> 
 
 
     <div class="course-card" onclick="openCourse('fullstack.html')">
+       <a href="{% url 'mern' %}" > 
       <img src="{% static 'website/img/me.jpg'%}" alt="Full Stack Developer">
       <div class="course-content">
-      <a href="{% url 'mern' %}" > <h3>Mern Stack</h3></a> 
+     <h3>Mern Stack</h3>
         <p>HTML, CSS, Bootstrap, React, NodeJS, MongoDB</p>
       </div>
       <div class="course-footer">
-         <button class="btn">Read More</button>
+         <button class="btn">Read More</button></a> 
         {% comment %} <span class="price">Rs 19000</span> {% endcomment %}
         {% comment %} <button class="btn">Buy Course</button> {% endcomment %}
       </div>
-    </div>
+    </div></a> 
 
   </div>
   
@@ -344,96 +350,103 @@
   <div class="course-container">
     
     <div class="course-card" onclick="openCourse('python.html')">
+       <a href="{% url 'autocad' %}" >
       <img src="{% static 'website/img/autoc.jpg'%}" alt="Python Training">
       <div class="course-content">
-         <a href="{% url 'autocad' %}" > <h3>AutoCAD</h3></a> 
+         <h3>AutoCAD</h3>
         <p>Lists, tuples, functions, modules etc.</p>
       </div>
       <div class="course-footer">
 
-         <button class="btn">Read More</button>
+         <button class="btn">Read More</button></a> 
       </div>
-    </div>
+    </div></a> 
 
     <div class="course-card" onclick="openCourse('python.html')">
+          <a href="{% url 'asp_net' %}" >
       <img src="{% static 'website/img/neeet.jpg'%}" alt="Python Training">
       <div class="course-content">
-      <a href="{% url 'asp_net' %}" > <h3>ASP.Net</h3></a> 
+   <h3>ASP.Net</h3>
         <p>Lists, tuples, functions, modules etc.</p>
       </div>
       <div class="course-footer">
-         <button class="btn">Read More</button>
+         <button class="btn">Read More</button></a> 
         {% comment %} <span class="price">Rs 14000</span> {% endcomment %}
         {% comment %} <button class="btn">Buy Course</button> {% endcomment %}
       </div>
-    </div>
+    </div></a> 
 
 
 
 
     <div class="course-card" onclick="openCourse('python.html')">
+        <a href="{% url 'cybersecurity' %}" >
       <img src="{% static 'website/img/cyber.jpg'%}" alt="Python Training">
       <div class="course-content">
-         <a href="{% url 'cybersecurity' %}" > <h3>CyberSecurity</h3></a> 
+        <h3>CyberSecurity</h3>
         <p>Lists, tuples, functions, modules etc.</p>
       </div>
       <div class="course-footer">
-         <button class="btn">Read More</button>
+         <button class="btn">Read More</button></a> 
         {% comment %} <span class="price">Rs 14000</span> {% endcomment %}
         {% comment %} <button class="btn">Buy Course</button> {% endcomment %}
       </div>
-    </div>
+    </div></a> 
 
  <div class="course-card" onclick="openCourse('aws.html')">
+    <a href="{% url 'python' %}" >
       <img src="{% static 'website/img/analytics.jpg'%}" alt="AWS">
       <div class="course-content">
-       <a href="{% url 'python' %}" > <h3>Data Analytics</h3></a> 
+      <h3>Data Analytics</h3>
         <p>EC2, RDS, Auto scaling, Route 53 etc.</p>
       </div>
       <div class="course-footer">
-         <button class="btn">Read More</button>
+         <button class="btn">Read More</button></a> 
         {% comment %} <span class="price">Rs 14000</span> {% endcomment %}
         {% comment %} <button class="btn">Buy Course</button> {% endcomment %}
       </div>
-    </div>
+    </div></a> 
 
 
      <div class="course-card" onclick="openCourse('aws.html')">
+      <a href="{% url 'pcb' %}" >
       <img src="{% static 'website/img/pcb.jpg'%}" alt="AWS">
       <div class="course-content">
-       <a href="{% url 'pcb' %}" > <h3>
+        <h3>
 PCB & Circuit
-Designing</h3></a> 
+Designing</h3>
         <p>EC2, RDS, Auto scaling, Route 53 etc.</p>
       </div>
       <div class="course-footer">
-         <button class="btn">Read More</button>
+         <button class="btn">Read More</button></a> 
         {% comment %} <span class="price">Rs 14000</span> {% endcomment %}
         {% comment %} <button class="btn">Buy Course</button> {% endcomment %}
       </div>
     </div>
-
+</a> 
 
      <div class="course-card" onclick="openCourse('aws.html')">
+        <a href="{% url 'automation' %}" >
       <img src="{% static 'website/img/ind.jpg'%}" alt="AWS">
       <div class="course-content">
-       <a href="{% url 'automation' %}" > <h3>Industrial Automation
-& Systems</h3></a> 
+      <h3>Industrial Automation
+& Systems</h3>
         <p>EC2, RDS, Auto scaling, Route 53 etc.</p>
       </div>
       <div class="course-footer">
-         <button class="btn">Read More</button>
+         <button class="btn">Read More</button></a> 
         {% comment %} <span class="price">Rs 14000</span> {% endcomment %}
         {% comment %} <button class="btn">Buy Course</button> {% endcomment %}
       </div>
-    </div>
+    </div></a> 
 
 
 
       <div class="course-card" onclick="openCourse('python.html')">
+        <a href="{% url 'asp_net' %}" > 
       <img src="{% static 'website/img/neeet.jpg'%}" alt="Python Training">
       <div class="course-content">
-    <a href="{% url 'asp_net' %}" > <h3>ASP.Net</h3></a> 
+    <h3>ASP.Net</h3>
         <p>Lists, tuples, functions, modules etc.</p>
       </div>
       <div class="course-footer">
@@ -441,14 +454,15 @@ Designing</h3></a>
         {% comment %} <span class="price">Rs 14000</span> {% endcomment %}
         {% comment %} <button class="btn">Buy Course</button> {% endcomment %}
       </div>
-    </div>
+    </div></a> 
 
      
-
+<a href="{% url 'plc' %}" >
        <div class="course-card" onclick="openCourse('python.html')">
+         
       <img src="{% static 'website/img/pllc.jpg'%}" alt="Python Training">
       <div class="course-content">
- <a href="{% url 'plc' %}" > <h3>Plc</h3></a> 
+ <h3>Plc</h3>
 Systems</h3>
         <p>Lists, tuples, functions, modules etc.</p>
       </div>
@@ -457,25 +471,24 @@ Systems</h3>
         {% comment %} <span class="price">Rs 14000</span> {% endcomment %}
         {% comment %} <button class="btn">Buy Course</button> {% endcomment %}
       </div>
-    </div>
+    </div></a> 
 
 
 
 
 
-
+ <a href="{% url 'mern' %}" >
     <div class="course-card" onclick="openCourse('fullstack.html')">
+      
       <img src="{% static 'website/img/me.jpg'%}" alt="Full Stack Developer">
       <div class="course-content">
-        <a href="{% url 'mern' %}" > <h3>Mern Stack</h3></a> 
+        <h3>Mern Stack</h3>
         <p>HTML, CSS, Bootstrap, React, NodeJS, MongoDB</p>
       </div>
       <div class="course-footer">
          <button class="btn">Read More</button>
-        {% comment %} <span class="price">Rs 19000</span> {% endcomment %}
-        {% comment %} <button class="btn">Buy Course</button> {% endcomment %}
       </div>
-    </div>
+    </div></a>
    
   </div>
 

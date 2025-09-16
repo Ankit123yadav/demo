@@ -30,9 +30,128 @@
         }
 
 </style>
-  <script src="https://cdn.tailwindcss.com"></script>
+  {% comment %} <script src="https://cdn.tailwindcss.com"></script> {% endcomment %}
 
  <style>
+  /* Global */
+body {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f9fafb;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Section base */
+section {
+  padding: 3rem 1rem;
+}
+
+.bg-gray-50 {
+  background-color: #f9fafb;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+/* Container */
+.max-w-6xl {
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid-cols-1 {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .md\:grid-cols-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Headings */
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ea580c; /* orange */
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Paragraphs */
+p {
+  line-height: 1.6;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-danger {
+  background-color: #dc2626;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background-color: #b91c1c;
+}
+
+/* Card styles */
+.p-6 {
+  padding: 1.5rem;
+}
+
+.rounded-2xl {
+  border-radius: 1rem;
+}
+
+.shadow-md {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Typography */
+.text-blue-600 {
+  color: #2563eb;
+}
+
+.text-gray-600 {
+  color: #4b5563;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
     {% comment %} * {
       box-sizing: border-box;
       margin: 0;
@@ -232,7 +351,7 @@
 
     .certificate-box img {
       width: 100%;
-      max-width: 450px;
+      max-width: 550px;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
@@ -314,7 +433,7 @@
     <!-- Left: Image -->
     <div>
       <img 
-        src="{% static 'website/img/digital.jpg'%}" 
+        src="{% static 'website/img/autoc.jpg'%}" 
         alt="AI Training" 
         class="w-full rounded-xl shadow-lg"
       />
@@ -322,14 +441,16 @@
 
     <!-- Right: Text -->
     <div>
-      <h2 class="text-3xl md:text-4xl font-bold text-orange-600 mb-4">
-        Artificial Intelligence Training in Lucknow
-      </h2>
-      <p class="text-gray-600 leading-relaxed mb-6">
-        Upskill yourself with the world’s top-rated Sipher Web Academy India AI. Learn Python, Predictive Analytics, 
-        Machine Learning, Deep Learning, NLP, and more. Hands-on with 20+ projects, 100+ case studies, 
-        and industry experts.
-      </p>
+   <h2 class="text-3xl md:text-4xl font-bold text-orange-600 mb-4">
+  AutoCAD Training in Lucknow
+</h2>
+<p class="text-gray-600 leading-relaxed mb-6">
+  Build a strong foundation in design and drafting with Sipher Web Academy India’s top-rated AutoCAD program. 
+  Learn 2D drafting, 3D modeling, architectural design, and engineering drawing using industry-standard tools. 
+  Gain practical experience with 20+ real-world projects, 100+ case studies, and expert guidance from 
+  certified trainers.
+</p>
+
       {% comment %} <a href="#" class="inline-block px-6 py-3 bg-orange-600 text-white font-semibold rounded-lg shadow-md hover:bg-orange-700 transition">
         Enroll Now
       </a> {% endcomment %}
@@ -379,44 +500,44 @@
   <section class="curriculum-section">
     
     <!-- Accordion -->
-   <div class="accordion">
+  <div class="accordion">
   <div class="accordion-item">
-    <div class="accordion-header">1. Introduction to Digital Marketing <span>+</span></div>
-    <div class="accordion-content">Overview of digital channels, marketing strategies, and tools for businesses.</div>
+    <div class="accordion-header">1. Introduction to AutoCAD <span>+</span></div>
+    <div class="accordion-content">Overview of AutoCAD software, interface, tools, and applications in design and drafting.</div>
   </div>
   <div class="accordion-item">
-    <div class="accordion-header">2. SEO (Search Engine Optimization) <span>+</span></div>
-    <div class="accordion-content">Learn on-page & off-page SEO, keyword research, technical SEO, and link building.</div>
+    <div class="accordion-header">2. Basic Drawing & Editing Tools <span>+</span></div>
+    <div class="accordion-content">Learn lines, circles, arcs, polylines, trimming, extending, and object modifications.</div>
   </div>
   <div class="accordion-item">
-    <div class="accordion-header">3. Google Ads & SEM <span>+</span></div>
-    <div class="accordion-content">Master pay-per-click campaigns, Google Ads setup, bidding, and performance tracking.</div>
+    <div class="accordion-header">3. Layers, Properties & Annotation <span>+</span></div>
+    <div class="accordion-content">Understand layer management, object properties, text styles, and dimensioning.</div>
   </div>
   <div class="accordion-item">
-    <div class="accordion-header">4. Social Media Marketing <span>+</span></div>
-    <div class="accordion-content">Plan and execute campaigns on Facebook, Instagram, LinkedIn, and Twitter.</div>
+    <div class="accordion-header">4. Blocks & Attributes <span>+</span></div>
+    <div class="accordion-content">Create and manage reusable symbols, dynamic blocks, and block attributes.</div>
   </div>
   <div class="accordion-item">
-    <div class="accordion-header">5. Content & Email Marketing <span>+</span></div>
-    <div class="accordion-content">Develop content strategies, blogs, and effective email campaigns with high ROI.</div>
+    <div class="accordion-header">5. Advanced Drawing & Modelling <span>+</span></div>
+    <div class="accordion-content">Explore hatching, gradients, external references, and introduction to 3D modeling.</div>
   </div>
   <div class="accordion-item">
-    <div class="accordion-header">6. Web Analytics <span>+</span></div>
-    <div class="accordion-content">Learn Google Analytics, tracking KPIs, and optimizing campaigns using data insights.</div>
+    <div class="accordion-header">6. Layouts, Printing & Plotting <span>+</span></div>
+    <div class="accordion-content">Set up layouts, viewports, scaling, and configure print/plot settings for output.</div>
   </div>
   <div class="accordion-item">
-    <div class="accordion-header">7. Affiliate & Influencer Marketing <span>+</span></div>
-    <div class="accordion-content">Understand affiliate networks, partnerships, and influencer collaborations.</div>
+    <div class="accordion-header">7. 3D Modeling & Visualization <span>+</span></div>
+    <div class="accordion-content">Learn solid modeling, surface modeling, rendering, and visualization techniques.</div>
   </div>
   <div class="accordion-item">
     <div class="accordion-header">8. Capstone Project <span>+</span></div>
-    <div class="accordion-content">Work on a live digital marketing campaign integrating SEO, SEM, and social media.</div>
+    <div class="accordion-content">Work on a complete design project, from 2D drafting to 3D modeling and presentation.</div>
   </div>
 </div>
 
     <!-- Certificate -->
     <div class="certificate-box">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Certificate_sample.jpg/960px-Certificate_sample.jpg?20211217184812" style="height:500px; width:600px;" alt="Sample Certificate" alt="Certificate">
+      <img src="{% static 'website/img/certificate.jpeg'%}" style="height:500px; width:600px;" alt="Sample Certificate" alt="Certificate">
       <p>Certification: Sipher Web Academy’s Cyber Security Professional Certificate</p>
     </div>
   </section>
