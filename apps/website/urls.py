@@ -37,6 +37,16 @@ urlpatterns = [
     path("automation/", views.automation, name="automation"),  # New URL for Automation course page
     path("pcb/", views.pcb, name="pcb"),  # New URL for PCB course page
     path("plc/", views.plc, name="plc"),
+    path("data_science/", views.data_science, name="data_science"),  # New URL for Data Science course page
+    path("ecad/", views.ecad, name="ecad"),  # New URL for ECAD course page
+    path("3DMax/", views.D3max, name="3DMax"),  # New URL for 3DMax course page
+    path("plumbing/", views.plumbing, name="plumbing"),  # New URL for Plumbing course page
+    path("hvac/", views.hvac, name="hvac"),  # New URL for HVAC course page
+    path("embedded/", views.embedded, name="embedded"),  # New URL for Embedded Systems course page
+    path("matlab/", views.matlab, name="matlab"),  # New URL for MATLAB course page
+    path("solidworks/", views.solidworks, name="solidworks"),  # New
+    path("staddpro/", views.staad_pro, name="staddpro"),  # New URL for STAAD Pro course page
+
     
     # Add any other URLs as needed
     
