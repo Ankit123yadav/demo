@@ -923,7 +923,7 @@ rgb(236, 235, 230) 0%,
       <div class="swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <img src="{% static 'website/img/ww.jpeg'%}" alt="Summer Training at Sipher Web Academy" />
+            <img src="{% static 'website/img/ad.jpeg'%}" alt="Summer Training at Sipher Web Academy" />
             <div class="cost">Summer Training</div>
             <div class="overlay" style="background: linear-gradient(180deg, rgba(16,5,98,0.7) 0%, rgba(0,0,0,0.5) 100%);">
               <h1 style="color: #FF9B00;padding-top: 10px; font-weight:bold; text-align:center">Summer Training</h1>
@@ -940,7 +940,7 @@ rgb(236, 235, 230) 0%,
                 </div>
             
               </div>
-              <a href="/courses" class="btn-grad" style="transform: translateY(5px);">Learn More</a>
+              <a href="{}" class="btn-grad" style="transform: translateY(5px);">Learn More</a>
             </div>
           </div>
           <div class="swiper-slide">
@@ -961,7 +961,7 @@ rgb(236, 235, 230) 0%,
                 </div>
                
               </div>
-              <a href="/courses" class="btn-grad"  style="transform: translateY(5px);">Learn More</a>
+              <a href="{% url 'all_courses' %}" class="btn-grad"  style="transform: translateY(5px);">Learn More</a>
             </div>
           </div>
           <div class="swiper-slide">
@@ -982,7 +982,7 @@ rgb(236, 235, 230) 0%,
                 </div>
           
               </div>
-              <a href="/courses" class="btn-grad" style="transform: translateY(5px);">Learn More</a>
+              <a href="{% url 'all_courses' %}" class="btn-grad" style="transform: translateY(5px);">Learn More</a>
             </div>
           </div>
           <div class="swiper-slide">
@@ -1165,28 +1165,19 @@ rgb(236, 235, 230) 0%,
 
                                     <div class="single-categories-courses-box mb-30">
                         <div class="icon">
-                            <img src="{% static 'website/img/php.png' %}" class="white-logo"
-                                alt="logo" style="border-radius:50%;">
-                                
-                                
-                                <!-- <img src="/storage/Image/php.png" class="white-logo"-->
-                                <!--alt="logo" style="border-raduis:50%;">-->
-                                
+                            <img src="{% static 'website/img/digital.jpg' %}" class="white-logo"
+                                alt="logo" style="border-radius:50%; height: 100px; width: 100px;">            
                         </div>
-                        <h3>Php Technology</h3>
+                        <h3>Digital Marketing</h3>
                     <a href="Registration"><button class="btn btn-danger mx-auto"><span>Register Now</span></button></a>
 
 
                     </div>
                                     <div class="single-categories-courses-box mb-30">
                         <div class="icon">
-                            <img src="{% static 'website/img/mern.jpeg' %}" class="white-logo"
-                                alt="logo" style="border-radius:50%;">
-                                
-                                
-                                <!-- <img src="/storage/Image/mern-stack-icon-1 (1).png" class="white-logo"-->
-                                <!--alt="logo" style="border-raduis:50%;">-->
-                                
+                            <img src="{% static 'website/img/me.jpg' %}" class="white-logo"
+                                alt="logo" style="border-radius:50%; height: 100px; width: 100px;">
+                        
                         </div>
                         <h3>Mern Technology</h3>
                     <a href="Registration"><button class="btn btn-danger mx-auto"><span>Register Now</span></button></a>
@@ -1195,27 +1186,22 @@ rgb(236, 235, 230) 0%,
                     </div>
                                     <div class="single-categories-courses-box mb-30">
                         <div class="icon">
-                            <img src="{% static 'website/img/bot.png' %}" class="white-logo"
-                                alt="logo" style="border-radius:50%;">
-                                
-                                
-                                <!-- <img src="/storage/Image/bot.png" class="white-logo"-->
-                                <!--alt="logo" style="border-raduis:50%;">-->
+                            <img src="{% static 'website/img/dat_sciences.jpg' %}" class="white-logo"
+                                alt="logo" style="border-radius:50%; height: 100px; width: 100px;">
                                 
                         </div>
-                        <h3>Bootstrap Technology</h3>
+                        <h3> Data Analytics</h3>
                     <a href="Registration"><button class="btn btn-danger mx-auto"><span>Register Now</span></button></a>
 
 
                     </div>
                                     <div class="single-categories-courses-box mb-30">
                         <div class="icon">
-                            <img src="{% static 'website/img/python-package-index.svg' %}" class="white-logo"
-                                alt="logo" style="border-radius:50%;">
+                            <img src="{% static 'website/img/pp.webp' %}" class="white-logo"
+                                alt="logo" style="border-radius:50%; height: 100px; width: 100px;">
                                 
                                 
-                                <!-- <img src="/storage/Image/python-icon-18.jpg" class="white-logo"-->
-                                <!--alt="logo" style="border-raduis:50%;">-->
+                             
                                 
                         </div>
                         <h3>Python Technology</h3>
@@ -1229,8 +1215,7 @@ rgb(236, 235, 230) 0%,
                                 alt="logo" style="border-radius:50%;">
                                 
                                 
-                                <!-- <img src="/storage/Image/auto.jpg" class="white-logo"-->
-                                <!--alt="logo" style="border-raduis:50%;">-->
+                              
                                 
                         </div>
                         <h3>AutoCAD</h3>
