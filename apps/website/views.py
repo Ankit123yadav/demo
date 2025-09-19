@@ -140,5 +140,22 @@ def solidworks(request):
 
 def staad_pro(request):
     return render(request, "website/all_courses/staad_pro.html")        
+
+def revit(request):
+    return render(request, "website/all_courses/Revit_Architect.html")
+
+def robotics(request):
+    return render(request, "website/all_courses/robotics.html")
+  
+
+def java(request):
+    return render(request, "website/all_courses/javaa.html")
+
+def php(request):
+    return render(request, "website/all_courses/php.html")
+
+
+def ai(request):
+    return render(request, "website/all_courses/ai.html")
     
         

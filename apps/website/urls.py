@@ -47,6 +47,12 @@ urlpatterns = [
     path("all_courses/solidworks/", views.solidworks, name="solidworks"),  # New
     path("all_courses/staddpro/", views.staad_pro, name="staddpro"),  # New URL for STAAD Pro course page
 
+    path("all_courses/revit/", views.revit, name="revit"),  # New URL for Revit course page
+    path("all_courses/php/", views.php, name="php"),  # New URL for PHP course page
+    path("all_courses/java/", views.java, name="java"),
+    path("all_courses/ai/", views.ai, name="ai"),  # New URL for AI course page
+    path("all_courses/robotics/", views.robotics, name="robotics"),
+
     
     # Add any other URLs as needed
     
