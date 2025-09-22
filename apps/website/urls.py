@@ -52,6 +52,7 @@ urlpatterns = [
     path("all_courses/java/", views.java, name="java"),
     path("all_courses/ai/", views.ai, name="ai"),  # New URL for AI course page
     path("all_courses/robotics/", views.robotics, name="robotics"),
+    path("all_courses/data_analytics/", views.data_analytics, name="data_analytics"),
 
     
     # Add any other URLs as needed

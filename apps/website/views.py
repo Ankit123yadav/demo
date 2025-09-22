@@ -157,5 +157,9 @@ def php(request):
 
 def ai(request):
     return render(request, "website/all_courses/ai.html")
+
+
+def data_analytics(request):
+    return render(request, "website/all_courses/data_analytics.html")
     
         
