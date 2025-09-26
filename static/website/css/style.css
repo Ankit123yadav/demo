@@ -7617,7 +7617,7 @@ blockquote::after {
     color: #fff;
     position: absolute;
     right: -25px;
-    top: -3px;
+    top: 19px;
     opacity: .85;
     font-weight: 400;
     font-size: 20px
