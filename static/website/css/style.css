@@ -7617,10 +7617,10 @@ blockquote::after {
     color: #fff;
     position: absolute;
     right: -25px;
-    top: 19px;
+    /* top: 10px; */
     opacity: .85;
     font-weight: 400;
-    font-size: 20px
+    /* font-size: 20px; */
 }
 
 .page-title-content h2 {
