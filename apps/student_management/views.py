@@ -45,6 +45,7 @@ def register_user(request):
             qualification = request.POST['qualification'],
             branch = request.POST['branch'],
             college_name = request.POST['college_name'],
+            course_name = request.POST['course_name'],
          
         )
         return redirect('all_users')  # after saving, show all users

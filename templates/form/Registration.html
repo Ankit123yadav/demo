@@ -248,6 +248,7 @@
   }
 </style>
 
+<<<<<<< HEAD:templates/website/Registration.html
 {% comment %} <div class="filter-buttons">
   <button class="filter-btn active" data-filter="all">Training Registration</button>
   <button class="filter-btn" data-filter="trending">Workshop Registration</button>
@@ -436,19 +437,21 @@
         </div> {% endcomment %} 
 
 
+=======
+>>>>>>> origin/amisha:templates/form/Registration.html
 
 
 
 
      <!-- Filter Buttons -->
 <div class="filter-buttons">
-  <button class="filter-btn active" data-filter="student">Student Registration</button>
+  <button class="filter-btn active" data-filter="student">Training Registration</button>
   <button class="filter-btn" data-filter="workshop">Workshop Registration</button>
 </div>
 
 <!-- Student Registration Form -->
 <div id="student-form" class="form-container form-section active">
-  <h2><b>Student Registration Form</b></h2>
+  <h2><b>Training Registration Form</b></h2>
  <form method="post" >
       {% csrf_token %}
 
@@ -566,7 +569,7 @@
          <input type="text" id="college_name" name="college_name" required />
         </div>
         <div class="col-3">
-          <label for="percentage_or_cgpa">Percentage / CGPA</label>
+          <label for="percentage_or_cgpa">College Address</label>
           <input type="text" id="percentage_or_cgpa" name="percentage_or_cgpa" />
         </div>
       </div>
@@ -576,7 +579,7 @@
       <!--Course Details-->
 
 
-      <h3 class="title">Course Details</h3>
+      <h3 class="title">Training Details</h3>
 
 <div class="row rows">
   <div class="col-3">
@@ -617,7 +620,7 @@
   </div>
 </div>
 
-      {% comment %} <button type="submit" onclick="showSubmitNotification(event)">Submit</button> {% endcomment %}
+    
        <button class="btn btn-danger mx-auto"  style="text-align: center; font-weight: 200; " ><span><b>Submit</b></span><i class="bx bx-paper-plane icon-arrow after"></i></button>
 
   </form>
@@ -743,7 +746,7 @@
          <input type="text" id="college_name" name="college_name" required />
         </div>
         <div class="col-3">
-          <label for="percentage_or_cgpa">Percentage / CGPA</label>
+          <label for="percentage_or_cgpa">College Address</label>
           <input type="text" id="percentage_or_cgpa" name="percentage_or_cgpa" />
         </div>
       </div>
@@ -755,7 +758,7 @@
 
     
 
-      {% comment %} <button type="submit" onclick="showSubmitNotification(event)">Submit</button> {% endcomment %}
+      
        <button class="btn btn-danger mx-auto"  style="text-align: center; font-weight: 200; " ><span><b>Submit</b></span><i class="bx bx-paper-plane icon-arrow after"></i></button>
 
   </form>
