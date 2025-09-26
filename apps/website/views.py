@@ -17,7 +17,7 @@ def carrer(request):
     return render(request, "website/Carrer.html")
 
 def contactus(request):
-    return render(request, "website/Contactus.html")
+    return render(request, "form/Contactus.html")
 
 def courses(request):
     return render(request, "website/Course.html")

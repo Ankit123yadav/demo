@@ -7560,14 +7560,14 @@ blockquote::after {
 .page-title-area {
     position: relative;
     z-index: 1;
-    background-color: #ff1949;
+    background-color: #100562;
     padding-top: 330px;
     padding-bottom: 120px
 }
 
 
 .page-title-area.page-title-style-two {
-    padding-top: 280px;
+    padding-top: 115px;
     padding-bottom: 120px
 }
 
@@ -7576,7 +7576,7 @@ blockquote::after {
     padding-bottom: 140px
 }
 
-.page-title-area.item-bg1 {
+/* .page-title-area.item-bg1 {
     background-image: url(../img/jh.jpg)
 }
 
@@ -7591,7 +7591,7 @@ blockquote::after {
 
 .page-title-area.item-bg4 {
  background-image: url(../img/jh.jpg)
-}
+} */
 
 .page-title-content ul {
     padding-left: 0;
@@ -7601,7 +7601,7 @@ blockquote::after {
 
 .page-title-content ul li {
     display: inline-block;
-    margin-right: 25px;
+    margin-right: 125px;
     position: relative;
     color: #fff
 }
@@ -7617,7 +7617,7 @@ blockquote::after {
     color: #fff;
     position: absolute;
     right: -25px;
-    top: 9px;
+    top: -3px;
     opacity: .85;
     font-weight: 400;
     font-size: 20px
