@@ -412,13 +412,14 @@ p {
    <div class=" item-bg2 jarallax" data-jarallax='{"speed": 0.3}' style="height: 200px; font-size: 30px; background-color: #100562; margin-bottom:20px; padding-top:60px; padding-left:700px;">
         <div class="container">
        
-             <div class="page-title-content">
-                <ul>
+             <div class="page-title-content" style="translateY(-20px);">
+                <ul style="text-align: center; transform:translateX(-300px);">
                     <li><a href="{% url 'index' %}">Home</a></li>
-                             <li><a href="{% url 'all_courses' %}">All Courses</a></li>
-                    <li><a href="https://sipherweb.com/courses-2-columns-style-1.html">ASP.NET</a></li>
+                             <li style=" transform:translateX(-110px)"><a href="{% url 'all_courses' %}">All Courses</a></li>
+                    {% comment %} <li><a href="https://sipherweb.com/courses-2-columns-style-1.html">ASP.NET</a></li> {% endcomment %}
 
                 </ul>
+                <h2 style="text-align: center; transform:translateX(-350px);">ASP.NET</h2>
             </div> 
         </div>
     </div>
