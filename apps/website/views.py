@@ -8,7 +8,7 @@ def about(request):
     return render(request, "website/About.html")
 
 def registration(request):
-    return render(request, "website/Registration.html")
+    return render(request, "form/Registration.html")
 
 def apprenticeship(request):
     return render(request, "website/Apprenticeship.html")
