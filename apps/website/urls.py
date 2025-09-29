@@ -21,6 +21,7 @@ urlpatterns = [
     path("website/", views.website, name="website"),
     path("winter/", views.winter, name="winter"),
     path("teamgallery/", views.teamgallery, name="teamgallery"),
+    path("eventgallery/", views.eventgallery, name="eventgallery"),
     path("verified/", views.verified, name="verified"),
     path("syllabus/", views.syllabus, name="syllabus"),
     path("all_courses/", views.all_courses, name="all_courses"),
@@ -53,6 +54,8 @@ urlpatterns = [
     path("all_courses/ai/", views.ai, name="ai"),  # New URL for AI course page
     path("all_courses/robotics/", views.robotics, name="robotics"),
     path("all_courses/data_analytics/", views.data_analytics, name="data_analytics"),
+
+    path("del/", views.delhi_ncr, name="delhi_ncr"),  # New URL for Delhi NCR page
 
     
     # Add any other URLs as needed

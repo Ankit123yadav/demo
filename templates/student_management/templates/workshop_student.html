@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}All Workshop Registrations{% endblock %}
+{% block content %}
+<div class="container">
+    <h2 style="margin:30px 0;">All Student Registrations</h2>
+    <table class="table table-bordered table-striped  " style="width: 25%;">
+        <thead>
+            <tr>
+                <th class="text-center">S.No</th>
+                <th>Full Name</th>
+                {% comment %} <th>Phone</th> {% endcomment %}
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Father Name</th>
+                <th>Address</th>
+                <th>College Name</th>
+                <th>Qualification</th>
+                <th>Course</th>
+                <th>Actions</th>    
+             
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.full_name }}</td>
+                <td>{{ user.phone }}</td>
+               
+                <td>{{ user.email }}</td>
+                <td>{{ user.father_name }}</td>
+              
+                <td>{{ user.address }}</td>
+                <td>{{ user.qualification }}</td>
+                <td>{{ user.branch }}</td>
+                <td>{{ user.college_name }}</td>
+                <td>{{ user.coursre_name }}</td>
+                <td>{{ user.action}}</td>
+          
+            </tr>
+            {% endfor %}
+            {% if not users %}
+   
+            <tr><td colspan="19" style="text-align:center;">No registrations found.</td></tr>
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

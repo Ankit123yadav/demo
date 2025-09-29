@@ -57,6 +57,10 @@ def all_users(request):
     users = Registration.objects.all().order_by('-email')
     return render(request, 'student_management/templates/all_user.html', { 'users': users })
 
+def workshop_student(request):
+    # users = Registration.objects.all().order_by('-email')
+    return render(request, 'student_management/templates/workshop_student.html')
+
 # def all_users(request):
 #     users = Registration.objects.all()
     

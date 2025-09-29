@@ -58,6 +58,9 @@ def winter(request):
 def teamgallery(request):
     return render(request, "website/teamgallery.html")
 
+def eventgallery(request):
+    return render(request, "website/eventgallery.html")
+
 def verified(request):
     return render(request, "website/verified.html")   
 
@@ -161,5 +164,9 @@ def ai(request):
 
 def data_analytics(request):
     return render(request, "website/all_courses/data_analytics.html")
+
+
+def delhi_ncr(request):
+    return render(request, "website/dem.html")
     
         
