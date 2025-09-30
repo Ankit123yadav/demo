@@ -363,18 +363,18 @@
                                             <h3 style="text-align: center;">Graphic Designing</h3>
                                             <ul>
                                                <li style="display: flex; align-items: center; gap: 6px; margin-left: 100px;">
-                                                    <img src="{% static 'images/robot.png' %}" alt="Python"
+                                                    <img src="{% static 'website/img/pi.jpg' %}" alt="Python"
                                                         style="width: 18px; height: 18px;">
                                                    Adobe Photoshop
                                                 </li>
                                                 <li style="display: flex; align-items: center; gap: 6px; margin-left: 100px;">
-                                                    <img src="static/images/business-intelligence.png" alt="Python"
+                                                    <img src="{% static 'website/img/aic.png' %}" alt="Python"
                                                         style="width: 18px; height: 18px;">
                                                     Adobe Illustrator
                                                 </li>
 
                                                 <li style="display: flex; align-items: center; gap: 6px; margin-left: 100px;">
-                                                    <img src="static/images/Data.png" alt="Python"
+                                                    <img src="{% static 'website/img/xc.png' %}" alt="Python"
                                                         style="width: 18px; height: 18px;">
                                                    Adobe XD
                                                 </li>
@@ -552,7 +552,7 @@
                 <div class="raque-nav">
                     <div class="container">
                         <nav class="navbar navbar-expand-md navbar-light">
-                            <a class="navbar-brand" href="https://sipherweb.com/index.html">
+                            <a class="navbar-brand" href="{% url 'index' %}">
                                 <img src="{% static 'website/img/Logo 1.png' %}" class="black-logo" alt="logo">
                                 <img src="{% static 'website/img/logo 2.png' %}" class="white-logo" alt="logo">
                             </a>
