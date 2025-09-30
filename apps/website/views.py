@@ -169,4 +169,14 @@ def data_analytics(request):
 def delhi_ncr(request):
     return render(request, "website/dem.html")
     
+def adobe_photoshop(request):
+    return render(request, "website/all_courses/adobe_photoshop.html")
+
+
+def aadobe_illustrator(request):
+    return render(request, "website/all_courses/adobe_illustrator.html")
+
+
+def adobe_xd(request):
+    return render(request, "website/all_courses/adobe_xd.html")
         

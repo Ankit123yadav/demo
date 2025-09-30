@@ -57,6 +57,10 @@ urlpatterns = [
 
     path("del/", views.delhi_ncr, name="delhi_ncr"),  # New URL for Delhi NCR page
 
+    path("all_courses/adobe_photoshop/", views.adobe_photoshop, name="adobe_photoshop"),  # New URL for Adobe Photoshop course page
+    path("all_courses/adobe_illustrator/", views.aadobe_illustrator, name="adobe_illustrator"),  # New URL for Adobe Illustrator course page
+    path("all_courses/adobe_xd/", views.adobe_xd, name="adobe_xd"),  # New URL for Adobe XD course page
+
     
     # Add any other URLs as needed
     
