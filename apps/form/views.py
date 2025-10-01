@@ -3,9 +3,6 @@ from .models import Registration,Contactus
 from django.contrib import messages
 # Create your views here.
 
-
-
-
 def student_register(request):
     if request.method == 'POST':
         form = Registration(request.POST)
@@ -17,7 +14,6 @@ def student_register(request):
         form = Registration()
 
     return render(request, 'website/registration.html', {'form': form})
-
 
 
 # def contact(request):

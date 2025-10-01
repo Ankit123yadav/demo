@@ -79,7 +79,21 @@ class Registration(models.Model):
 
 
 
+# Workshop Registration Form model
 
+class WorkshopRegistration(models.Model):
+    full_name = models.CharField(max_length=100)
+    phone = models.CharField(max_length=20)
+    email = models.EmailField()
+    workshop_name = models.CharField(max_length=100)
+    registration_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.full_name
+
+
+
+# Contact us model
 
 class Contactus(models.Model):
     name= models.CharField(max_length=100)
