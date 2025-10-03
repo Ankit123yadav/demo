@@ -267,6 +267,7 @@
   <h2><b>Training Registration Form</b></h2>
  <form method="post" >
       {% csrf_token %}
+      <input type="hidden" name="form_kind" value="student" />
 
       <!-- Personal Details -->
       <h3 class="title">Personal Details</h3>
@@ -444,6 +445,7 @@
   <h2><b>Workshop Registration Form</b></h2>
   <form method="post" >
       {% csrf_token %}
+      <input type="hidden" name="form_kind" value="workshop" />
 
       <!-- Personal Details -->
       <h3 class="title">Personal Details</h3>

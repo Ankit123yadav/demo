@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from apps.form.models import Registration, WorkshopRegistration
 
 # Create your views here.
 def index(request):
@@ -8,6 +10,47 @@ def about(request):
     return render(request, "website/About.html")
 
 def registration(request):
+    if request.method == 'POST':
+        form_kind = request.POST.get('form_kind')
+        try:
+            if form_kind == 'student':
+                Registration.objects.create(
+                    full_name=request.POST.get('full_name', '').strip(),
+                    phone=request.POST.get('phone', '').strip(),
+                    guardian_number=request.POST.get('guardian_number', '').strip(),
+                    email=request.POST.get('email', '').strip(),
+                    father_name=request.POST.get('father_name', '').strip(),
+                    mother_name=request.POST.get('mother_name', '').strip(),
+                    gender=request.POST.get('gender', '').strip(),
+                    dob=request.POST.get('dob'),
+                    address=request.POST.get('address', '').strip(),
+                    qualification=request.POST.get('qualification', '').strip(),
+                    branch=request.POST.get('branch', '').strip(),
+                    year=request.POST.get('year', '').strip(),
+                    semester=request.POST.get('semester', '').strip(),
+                    college_name=request.POST.get('college_name', '').strip(),
+                    percentage_or_cgpa=request.POST.get('percentage_or_cgpa', '').strip() or None,
+                    course_name=request.POST.get('course_name', '').strip(),
+                    duration=request.POST.get('duration', '').strip(),
+                    mode=request.POST.get('mode', '').strip(),
+                )
+            elif form_kind == 'workshop':
+                WorkshopRegistration.objects.create(
+                    full_name=request.POST.get('full_name', '').strip(),
+                    phone=request.POST.get('phone', '').strip(),
+                    email=request.POST.get('email', '').strip(),
+                    workshop_name=request.POST.get('course_name', '').strip(),
+                )
+            else:
+                messages.error(request, 'Invalid form submission.')
+                return redirect('registration')
+
+            messages.success(request, 'Registration submitted successfully!')
+            return redirect('/dashboard/all_users/')
+        except Exception:
+            messages.error(request, 'There was a problem saving your registration. Please try again.')
+            return redirect('registration')
+
     return render(request, "form/Registration.html")
 
 def apprenticeship(request):
