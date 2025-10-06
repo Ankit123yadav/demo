@@ -222,4 +222,9 @@ def aadobe_illustrator(request):
 
 def adobe_xd(request):
     return render(request, "website/all_courses/adobe_xd.html")
+
+
+
+def workshop_registration(request):
+    return render(request, "form/workshop_registration.html")
         

@@ -60,6 +60,7 @@ urlpatterns = [
     path("all_courses/adobe_photoshop/", views.adobe_photoshop, name="adobe_photoshop"),  # New URL for Adobe Photoshop course page
     path("all_courses/adobe_illustrator/", views.aadobe_illustrator, name="adobe_illustrator"),  # New URL for Adobe Illustrator course page
     path("all_courses/adobe_xd/", views.adobe_xd, name="adobe_xd"),  # New URL for Adobe XD course page
+    path("workshop_registration/", views.workshop_registration, name="workshop_registration"),  # New URL for workshop registration page
 
     
     # Add any other URLs as needed

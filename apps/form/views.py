@@ -54,3 +54,49 @@ def contact(request):
         return redirect('contact')
 
     return render(request, 'templates/form/contactus.html')
+
+
+
+
+
+
+
+
+
+
+
+# def student_register(request):
+#     if request.method == 'POST':
+#         form = Registration(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             messages.success(request, "Registration successful!")
+#             return redirect('student_list')  # Redirect to list page
+#     else:
+#         form = Registration()
+#     return render(request, 'website/registration.html', {'form': form})
+
+# # Read (list)
+# def student_list(request):
+#     students = Registration.objects.all()
+#     return render(request, 'website/student_list.html', {'students': students})
+
+# # Update
+# def student_edit(request, pk):
+#     student = get_object_or_404(Registration, pk=pk)
+#     if request.method == 'POST':
+#         form = Registration(request.POST, instance=student)
+#         if form.is_valid():
+#             form.save()
+#             messages.success(request, "Student updated successfully!")
+#             return redirect('student_list')
+#     else:
+#         form = Registration(instance=student)
+#     return render(request, 'website/registration.html', {'form': form})
+
+# # Delete
+# def student_delete(request, pk):
+#     student = get_object_or_404(Registration, pk=pk)
+#     student.delete()
+#     messages.success(request, "Student deleted successfully!")
+#     return redirect('student_list')
